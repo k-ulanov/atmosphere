@@ -77,6 +77,7 @@
 		}
 
 		a {
+			color: #fff;
 			text-decoration: none;
 			border-bottom: 1px solid rgba(255,255,255,0.2);
 		}
@@ -89,9 +90,54 @@
 			color: #ebd4ff;
 			border-color: #ebd4ff;
 		}
+
+
+		.title_box {
+			position: absolute;
+			bottom: 1350px;
+			width: 100%;
+		}
+
+		table, tr, td {
+			border: none;
+		}
+
+		h1 {
+			font-family: sans-serif;
+			font-weight: 200;
+			letter-spacing: 30px;
+			font-size: 80px;
+		}
+		.title_role {
+			margin: 0 auto 30px;
+			text-align: center;
+		}
+
+		.title_role_role {
+			font-size: 12px;
+		}
+
+		.title_role_name {
+			font-size: 20px;
+			letter-spacing: 3px;
+			margin: 0;
+			text-transform: uppercase;
+
+		}
+
+		.title_link {
+			font-size: 12px;
+
+		}
+
+		.content {
+			position: relative;
+		}
+
 	</style>
 </head>
 <body onload="readurl()">
+<div class="content">
 	<div class="space">
 		<div class="sky_gradient"></div>
 		<div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
@@ -106,36 +152,43 @@
 		</div>
 		<div class="point" id=plane style="bottom: 110px"></div>
 		<div class="line" id= plane_line style="bottom: 110px"></div>
-		<span class="badge" style="bottom: calc(110px - 4px);"><a>Самолёт</a> 11 км</span>
+		<span class="badge" style="bottom: calc(110px - 4px);"><a href="https://ru.wikipedia.org/wiki/Пассажирский_самолёт">Авиалайнер</a> 11 км</span>
 
 		<img src="img/silver_clouds.png" style="position: absolute; width: calc(1072px/2); bottom: 760px; left: calc(50% - 1072px/4) ">
 		<div class="line" style="left: calc(50% + 350px); bottom: 760px;"></div>
-		<span class="badge" style="bottom: calc(760px - 4px); "><a>Серебристые облака</a> <br>76-85 км</span>
+		
+
+				<!--img src="img/aurora.png" style="position: absolute; height: 700px; bottom: 695px; left: calc(50% - 500px) "-->
+		<img src="img/aurora_top.png" style="position: absolute; height: 457px; bottom: 873px; left: calc(50% - 260px) ">
+		<img src="img/aurora_mid.png" style="position: absolute; height: 580px; bottom: 759px; left: calc(50% - 435px) ">
+		<img src="img/aurora_bot.png" style="position: absolute; height: 303px; bottom: 839px; left: calc(50% - 434px) ">
+		
+		<span class="badge" style="bottom: calc(760px - 4px); "><a href="https://ru.wikipedia.org/wiki/Серебристые_облака">Серебристые облака</a> <br>76-85 км</span>
 
 		<div class="line" style="bottom: 200px"></div>
-		<span class="title left-2" style="bottom: calc(200px - 24px)">Тропосфера</span>
+		<span class="title left-2" style="bottom: calc(200px - 24px)"><a href="https://ru.wikipedia.org/wiki/Тропосфера">Тропосфера</a></span>
 		<span class="title left-1" style="bottom: 200px">20 км</span>
-		<span class="title left-2" style="bottom: 200px">Стратосфера</span>
+		<span class="title left-2" style="bottom: 200px"><a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a></span>
 
 		<div class="line" style="bottom: 500px"></div>
-		<span class="title left-2" style="bottom: calc(500px - 24px)">Стратосфера</span>
+		<span class="title left-2" style="bottom: calc(500px - 24px)"><a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a></span>
 		<span class="title left-1" style="bottom: 500px">50</span>
-		<span class="title left-2" style="bottom: 500px">Мезосфера</span>
+		<span class="title left-2" style="bottom: 500px"><a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a></span>
 
 		<div class="line" style="bottom: 850px"></div>
-		<span class="title left-2" style="bottom: calc(850px - 24px)">Мезосфера</span>
+		<span class="title left-2" style="bottom: calc(850px - 24px)"><a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a></span>
 		<span class="title left-1" style="bottom: 850px">85</span>
-		<span class="title left-2" style="bottom: 850px">Термосфера</span>
+		<span class="title left-2" style="bottom: 850px"><a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a></span>
 
 		<div class="line" style="bottom: 1000px"></div>
 
 		<span class="title left-1" style="bottom: 1000px">100</span>
-		<span class="title left-2" style="bottom: 1000px">Линия Кармана</span>
+		<span class="title left-2" style="bottom: 1000px"><a href="https://ru.wikipedia.org/wiki/Линия_Кармана">Линия Кармана</a></span>
 
 		<div class="line" style="bottom: 6900px"></div>
-		<span class="title left-2" style="bottom: calc(6900px - 24px)">Термосфера</span>
+		<span class="title left-2" style="bottom: calc(6900px - 24px)"><a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a></span>
 		<span class="title left-1" style="bottom: 6900px">690 км</span>
-		<span class="title left-2" style="bottom: 6900px">Экзосфера</span>
+		<span class="title left-2" style="bottom: 6900px"><a href="https://ru.wikipedia.org/wiki/Экзосфера">Экзосфера</a></span>
 
 		<img src="img/everest.png" style="position: absolute; width: 300px; bottom: 0; left: calc(50% - 150px);">
 		<div class="line" style="left: 50%; bottom: 87px; "></div>
@@ -228,19 +281,42 @@
 		</div>
 		<span class="badge" style="bottom: calc(3843990px - 4px); "><a href="">Луна</a> <br>384 399 км</span>
 
-		<!--img src="img/aurora.png" style="position: absolute; height: 700px; bottom: 695px; left: calc(50% - 500px) "-->
-		<img src="img/aurora_top.png" style="position: absolute; height: 457px; bottom: 873px; left: calc(50% - 260px) ">
-		<img src="img/aurora_mid.png" style="position: absolute; height: 580px; bottom: 759px; left: calc(50% - 435px) ">
-		<img src="img/aurora_bot.png" style="position: absolute; height: 303px; bottom: 839px; left: calc(50% - 434px) ">
 
 		<div class="line" style="left: calc(50% + 350px); bottom: 800px;"></div>
 		<span class="badge" style="bottom: calc(800px - 4px); "><a href="">Полярное сияние</a> <br>80-400 км</span>
 
-		
-
-
 	</div>
 
+<div class="title_box">
+	<table border="1" cellpadding="0" cellspacing="0" style="margin: 0 auto; border: none">
+		<tbody>
+			<tr>
+				<td colspan="2" style="text-align: center; vertical-align: top; height: 300px"><h1>АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<div class="title_role">
+						<span class="title_role_role">Дизайнер</span><br>
+						<span class="title_role_name">Константин Уланов</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<div class="title_role">
+						<span class="title_role_role">Арт-директор</span><br>
+						<span class="title_role_name">Артём Горбунов</span>
+					</div>
+				</td>
+			</tr>
+			<tr class="title_link">
+				<td><a href="http://artgorbunov.ru/school" class="title_link">Школа стажёров Бюро Горбунова</a>, 2017</td>
+				<td style="text-align: right;"><a href="https://docs.google.com/document/d/1cNWj1mYV7mxqBgzl8CVFIlhgKXnwfUTpuR9kq_Dtsdw/edit?usp=sharing" class="title_link">Пользовательское соглашение</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
 
 
 	<script type="text/javascript">
