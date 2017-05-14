@@ -8,7 +8,7 @@
 			margin: 0;
 			padding: 0;
 			overflow-x: hidden;
-			background-color: red;
+			background-color: #000;
 
 			font-family: sans-serif;
 			font-size: 12px;
@@ -93,18 +93,16 @@
 		}
 
 
-		function move(obj,speed,pos) {
+		function move(obj,speed,pos,time) {
 				if(pos > document.documentElement.clientWidth) {pos = 0};
 				obj.style.left = pos + "px";
 
-				setTimeout(move,20,obj,speed,pos+speed/1000*20);
-		//console.log(obj);
-				//console.log(pos+" "+document.documentElement.clientWidth);
-				
-
+				setTimeout(move,time,obj,speed,pos+speed,time);
 		}
 
 
+		//console.log(obj);
+		//console.log(pos+" "+document.documentElement.clientWidth);
 		/*function move() {
 			time = document.documentElement.clientWidth / plane_speed;
 			plane.style.animation = "move_p "+time+"s 0s linear infinite";
@@ -118,10 +116,13 @@
 	<div class="space">
 		<div class="sky_gradient"></div>
 
-		<div class="point" id=plane style="left:0; bottom: 110px"></div>
+		<div class="point" id=plane style="bottom: 110px"></div>
 		<div class="line" id= plane_line style="bottom: 110px"></div>
 		<span class="badge" style="bottom: calc(110px - 4px);"><a>Самолёт</a> 11 км</span>
 
+		<img src="img/silver_clouds.png" style="position: absolute; width: calc(1072px/2); bottom: 760px; left: calc(50% - 1072px/4) ">
+		<div class="line" style="left: calc(50% + 350px); bottom: 760px;"></div>
+		<span class="badge" style="bottom: calc(760px - 4px); "><a>Серебристые облака</a> <br>76-85 км</span>
 
 		<div class="line" style="bottom: 200px"></div>
 		<span class="title left-2" style="bottom: calc(200px - 24px)">Тропосфера</span>
@@ -150,67 +151,67 @@
 
 		<img src="img/everest.png" style="position: absolute; width: 300px; bottom: 0; left: calc(50% - 150px);">
 		<div class="line" style="left: 50%; bottom: 87px; "></div>
-		<span class="badge" style="bottom: calc(87px - 4px); "><a>Эверест</a> 8,848 км</span>
+		<span class="badge" style="bottom: calc(87px - 4px); "><a href="https://ru.wikipedia.org/wiki/Джомолунгма">Эверест</a> 8,848 км</span>
 
 		<!--div class="line" style="bottom: 230px; background-color: rgba(90,255,255,0.1);"></div-->
-		<span class="badge" style="bottom: calc(230px - 4px);"><a>Озоновый слой</a> 20-25 км</span>
+		<span class="badge" style="bottom: calc(230px - 4px);"><a href="https://ru.wikipedia.org/wiki/Озоновый_слой">Озоновый слой</a> 20-25 км</span>
 
 		<div class="point" style="left: 70%; bottom: 260px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 260px; "></div>
-		<span class="badge" style="bottom: calc(260px - 4px); "><a>Реактивный истребитль</a> 26 км</span>
+		<span class="badge" style="bottom: calc(260px - 4px); "><a href="https://ru.wikipedia.org/wiki/Реактивный_самолёт">Реактивный самолёт</a> 26 км</span>
 
 		<div class="point" style="left: 70%; bottom: 414.22px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 414.22px; "></div>
-		<span class="badge" style="bottom: calc(414.22px - 4px); "><a>Прыжок из стратосферы</a> <br>42,422 км</span>
+		<span class="badge" style="bottom: calc(414.22px - 4px); "><a href="">Прыжок из стратосферы</a> <br>42,422 км</span>
 
 		<div class="point" style="left: 70%; bottom: 530px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 530px; "></div>
-		<span class="badge" style="bottom: calc(530px - 4px); "><a>Метеозонд</a> <br>53 км</span>
+		<span class="badge" style="bottom: calc(530px - 4px); "><a href="https://ru.wikipedia.org/wiki/Метеозонд">Метеозонд</a> <br>53 км</span>
 
 		<div class="point" id=x15 style="left: 70%; bottom: 1077px"></div>
 		<div class="line" id=x15_line style="left: calc(70% + 10px); bottom: 1077px; "></div>
-		<span class="badge" style="bottom: calc(1077px - 4px); "><a>X-15</a> <br>107,7 км</span>
+		<span class="badge" style="bottom: calc(1077px - 4px); "><a href="https://ru.wikipedia.org/wiki/North_American_X-15">X-15</a> <br>107,7 км</span>
 
 		<div class="point" style="left: 70%; bottom: 1120px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 1120px; "></div>
-		<span class="badge" style="bottom: calc(1120px - 4px); "><a>SpaseShipOne</a> <br>112,01 км</span>
+		<span class="badge" style="bottom: calc(1120px - 4px); "><a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaseShipOne</a> <br>112,01 км</span>
 
 		<div class="point" style="left: 70%; bottom: 1880px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 1880px; "></div>
-		<span class="badge" style="bottom: calc(1880px - 4px); "><a>ФАУ-2</a> <br>188 км</span>
+		<span class="badge" style="bottom: calc(1880px - 4px); "><a href="https://ru.wikipedia.org/wiki/Фау-2">ФАУ-2</a> <br>188 км</span>
 
 		<div class="point" style="left: 70%; bottom: 2150px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 2150px; "></div>
-		<span class="badge" style="bottom: calc(2150px - 4px); "><a>Спутник-1</a> <br>215 км</span>
+		<span class="badge" style="bottom: calc(2150px - 4px); "><a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1 (перицентр)</a> <br>215 км</span>
 
 		<div class="point" style="left: 70%; bottom: 3020px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 3020px; "></div>
-		<span class="badge" style="bottom: calc(3020px - 4px); "><a>Восток-1</a> <br>302 км</span>
+		<span class="badge" style="bottom: calc(3020px - 4px); "><a href="https://ru.wikipedia.org/wiki/Восток-1">Восток-1</a> <br>302 км</span>
 
 		<div class="point" id=iss style="left:0; bottom: 4150px"></div>
 		<div class="line" id= iss_line style="bottom: 4150px"></div>
-		<span class="badge" style="bottom: calc(4150px - 4px);"><a>МКС</a> 415 км</span>
+		<span class="badge" style="bottom: calc(4150px - 4px);"><a href="https://ru.wikipedia.org/wiki/Международная_космическая_станция">МКС</a> 415 км</span>
 
-		<div class="point" style="left: 70%; bottom: 5950px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 5950px; "></div>
-		<span class="badge" style="bottom: calc(5950px - 4px);"><a>Телескоп Хаббл</a> 595 км</span>
+		<div class="point" style="left: 70%; bottom: 5690px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 5690px; "></div>
+		<span class="badge" style="bottom: calc(5690px - 4px);"><a href="https://ru.wikipedia.org/wiki/Хаббл_(телескоп)">Телескоп Хаббл</a> 569 км</span>
 
 		<div class="point" style="left: 70%; bottom: 9390px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 9390px; "></div>
-		<span class="badge" style="bottom: calc(9390px - 4px); "><a>Спутник-1 (апоцентр)</a> <br>939 км</span>
+		<span class="badge" style="bottom: calc(9390px - 4px); "><a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1 (апоцентр)</a> <br>939 км</span>
 
 		<div class="point" style="left: 70%; bottom: 203500px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 203500px;"></div>
-		<span class="badge" style="bottom: calc(203500px - 4px); "><a>Спутники GPS</a> <br>20 350 км<br>
+		<span class="badge" style="bottom: calc(203500px - 4px); "><a href="https://ru.wikipedia.org/wiki/GPS">Спутники GPS</a> <br>20 350 км<br>
 		Полусинхронная орбита<br>Два оборота в день</span>
 
 		<div class="point" style="left: 70%; bottom: 277430px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 277430px;"></div>
-		<span class="badge" style="bottom: calc(277430px - 4px); "><a>астеройд 2012 DA14</a> <br>27743 км</span>
+		<span class="badge" style="bottom: calc(277430px - 4px); "><a href="https://ru.wikipedia.org/wiki/(367943)_Дуэнде">астеройд 2012 DA14</a> <br>27743 км</span>
 
 		<div class="point" style="left: 70%; bottom: 357860px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 357860px;"></div>
-		<span class="badge" style="bottom: calc(357860px - 4px); "><a>Геостационарная орбита</a> <br>35786 км</span>
+		<span class="badge" style="bottom: calc(357860px - 4px); "><a href="">Геостационарная орбита</a> <br>35786 км</span>
 
 		
 		<!--div style="overflow: hidden; position: absolute; bottom: 0px; height: 21px; width: 100%;">
@@ -237,7 +238,7 @@
 
 		<!--img src="img/moon.png" style="position: absolute; width: 6360px; bottom: 3843991px; left: calc(50% - 6360px/2);"-->
 		</div>
-		<span class="badge" style="bottom: calc(3843990px - 4px); "><a>Луна</a> <br>384 399 км</span>
+		<span class="badge" style="bottom: calc(3843990px - 4px); "><a href="">Луна</a> <br>384 399 км</span>
 
 		<!--img src="img/aurora.png" style="position: absolute; height: 700px; bottom: 695px; left: calc(50% - 500px) "-->
 		<img src="img/aurora_top.png" style="position: absolute; height: 457px; bottom: 873px; left: calc(50% - 260px) ">
@@ -245,7 +246,9 @@
 		<img src="img/aurora_bot.png" style="position: absolute; height: 303px; bottom: 839px; left: calc(50% - 434px) ">
 
 		<div class="line" style="left: calc(50% + 350px); bottom: 800px;"></div>
-		<span class="badge" style="bottom: calc(800px - 4px); "><a>Полярное сияние</a> <br>80-400 км</span>
+		<span class="badge" style="bottom: calc(800px - 4px); "><a href="">Полярное сияние</a> <br>80-400 км</span>
+
+		
 
 		<div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
 			<div style="width: calc(127562px + 230px*2); 
@@ -263,12 +266,40 @@
 
 	<script type="text/javascript">
 		//console.log("move("+plane+")");
-		move(plane,1.94,400);
-		move(plane_line,1.94,410);
-		move(iss,76.6,30);
-		move(iss_line,76.6,40);
-		move(x15,17.88,330);
-		move(x15_line,17.88,340);
+		FPS = 50;
+		t= 1000/FPS;
+		move(plane,700*10/3600/FPS,300,t); //700 km/h
+		move(plane_line,700*10/3600/FPS,310,t);
+
+		move(iss,7.6*10/FPS,30,t); //7.6 km/s
+		move(iss_line,7.6*10/FPS,40,t);
+
+		move(x15,6437*10/3600/FPS,300,t); //6437 км/ч
+		move(x15_line,6437*10/3600/FPS,310,t);
+
+
+		window.onscroll = function position() {
+			H = document.documentElement.scrollHeight;
+			h = window.pageYOffset || document.documentElement.scrollTop;
+			console.log(H);
+			vh = document.documentElement.clientHeight;
+			y = H - h - vh/2;
+			window.location = "#" + Math.round(y/10);
+		}
+
+		window.onresize = console.log("resize");
+
+		function readurl()
+			{
+			    var url = decodeURIComponent(document.URL).split("#");
+			    
+			    if(url.length > 1)
+			    {
+			        search.value = url[1];
+			        read(search.value);
+			    }
+			    else placeholder();
+			}
 	</script>
 </body>
 </html>
