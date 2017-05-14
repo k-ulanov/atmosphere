@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atmosptere</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			overflow-x: hidden;
+			background-color: red;
+
+			font-family: sans-serif;
+			font-size: 12px;
+			color: #fff;
+		}
+		.space {
+			width: 100%;
+			height: 3844590px;
+			position: relative;
+			background-color: #000;
+			overflow: hidden;
+		}
+
+		.sky_gradient {
+			background: linear-gradient(to top, #8cb4da 0%,#5788c4 28%,#2c5f98 50%,#22112e 73%,#000000 100%);
+			width: 100%;
+			height: 250px;
+			position: absolute;
+			bottom: 0;
+		}
+
+		.point {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			bottom: 110px;
+			background-color: #fff;
+		}
+
+		.line {
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			bottom: 110px;
+			background-color: rgba(255,255,255,0.1);
+		}
+
+		.title {
+			position: absolute;
+			height: 20px;
+			left: 10px;
+		}
+
+		.left-1 {
+			left: 5px;
+		}
+
+		.left-2 {
+			left: 60px;
+		}
+
+		.badge {
+			position: absolute;
+			left: calc(100% - 200px);
+			height: 20px;
+		}
+
+		@keyframes move_p {
+			from {
+				left: 0;
+			}
+
+			to {
+				left: 100%;
+			}
+		}
+
+		a {
+			text-decoration: none;
+			border-bottom: 1px solid rgba(255,255,255,0.2);
+		}
+
+		a:hover {
+			border-bottom-color: #fff;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		function begin(){
+		window.scrollBy(0,document.documentElement.scrollHeight);
+		}
+
+
+		function move(obj,speed,pos) {
+				if(pos > document.documentElement.clientWidth) {pos = 0};
+				obj.style.left = pos + "px";
+
+				setTimeout(move,20,obj,speed,pos+speed/1000*20);
+		//console.log(obj);
+				//console.log(pos+" "+document.documentElement.clientWidth);
+				
+
+		}
+
+
+		/*function move() {
+			time = document.documentElement.clientWidth / plane_speed;
+			plane.style.animation = "move_p "+time+"s 0s linear infinite";
+
+		}*/
+
+
+	</script>
+</head>
+<body onload="begin();">
+	<div class="space">
+		<div class="sky_gradient"></div>
+
+		<div class="point" id=plane style="left:0; bottom: 110px"></div>
+		<div class="line" id= plane_line style="bottom: 110px"></div>
+		<span class="badge" style="bottom: calc(110px - 4px);"><a>Самолёт</a> 11 км</span>
+
+
+		<div class="line" style="bottom: 200px"></div>
+		<span class="title left-2" style="bottom: calc(200px - 24px)">Тропосфера</span>
+		<span class="title left-1" style="bottom: 200px">20 км</span>
+		<span class="title left-2" style="bottom: 200px">Стратосфера</span>
+
+		<div class="line" style="bottom: 500px"></div>
+		<span class="title left-2" style="bottom: calc(500px - 24px)">Стратосфера</span>
+		<span class="title left-1" style="bottom: 500px">50</span>
+		<span class="title left-2" style="bottom: 500px">Мезосфера</span>
+
+		<div class="line" style="bottom: 850px"></div>
+		<span class="title left-2" style="bottom: calc(850px - 24px)">Мезосфера</span>
+		<span class="title left-1" style="bottom: 850px">85</span>
+		<span class="title left-2" style="bottom: 850px">Термосфера</span>
+
+		<div class="line" style="bottom: 1000px"></div>
+
+		<span class="title left-1" style="bottom: 1000px">100</span>
+		<span class="title left-2" style="bottom: 1000px">Линия Кармана</span>
+
+		<div class="line" style="bottom: 6900px"></div>
+		<span class="title left-2" style="bottom: calc(6900px - 24px)">Термосфера</span>
+		<span class="title left-1" style="bottom: 6900px">690 км</span>
+		<span class="title left-2" style="bottom: 6900px">Экзосфера</span>
+
+		<img src="img/everest.png" style="position: absolute; width: 300px; bottom: 0; left: calc(50% - 150px);">
+		<div class="line" style="left: 50%; bottom: 87px; "></div>
+		<span class="badge" style="bottom: calc(87px - 4px); "><a>Эверест</a> 8,848 км</span>
+
+		<div class="line" style="bottom: 230px; background-color: rgba(90,255,255,0.1);"></div>
+		<span class="badge" style="bottom: calc(230px - 4px);"><a>Озоновый слой</a> 20-25 км</span>
+
+		<div class="point" style="left: 70%; bottom: 260px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 260px; "></div>
+		<span class="badge" style="bottom: calc(260px - 4px); "><a>Реактивный истребитль</a> 26 км</span>
+
+		<div class="point" style="left: 70%; bottom: 414.22px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 414.22px; "></div>
+		<span class="badge" style="bottom: calc(414.22px - 4px); "><a>Прыжок из стратосферы</a> <br>42,422 км</span>
+
+		<div class="point" style="left: 70%; bottom: 530px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 530px; "></div>
+		<span class="badge" style="bottom: calc(530px - 4px); "><a>Метеозонд</a> <br>53 км</span>
+
+		<div class="point" style="left: 70%; bottom: 1077px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 1077px; "></div>
+		<span class="badge" style="bottom: calc(1077px - 4px); "><a>X-15</a> <br>107,7 км</span>
+
+		<div class="point" style="left: 70%; bottom: 1120px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 1120px; "></div>
+		<span class="badge" style="bottom: calc(1120px - 4px); "><a>SpaseShipOne</a> <br>112,01 км</span>
+
+		<div class="point" style="left: 70%; bottom: 1880px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 1880px; "></div>
+		<span class="badge" style="bottom: calc(1880px - 4px); "><a>ФАУ-2</a> <br>188 км</span>
+
+		<div class="point" style="left: 70%; bottom: 2150px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 2150px; "></div>
+		<span class="badge" style="bottom: calc(2150px - 4px); "><a>Спутник-1</a> <br>215 км</span>
+
+		<div class="point" style="left: 70%; bottom: 3020px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 3020px; "></div>
+		<span class="badge" style="bottom: calc(3020px - 4px); "><a>Восток-1</a> <br>302 км</span>
+
+		<div class="point" id=iss style="left:0; bottom: 4150px"></div>
+		<div class="line" id= iss_line style="bottom: 4150px"></div>
+		<span class="badge" style="bottom: calc(4150px - 4px);"><a>МКС</a> 415 км</span>
+
+		<div class="point" style="left: 70%; bottom: 5950px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 5950px; "></div>
+		<span class="badge" style="bottom: calc(5950px - 4px);"><a>Телескоп Хаббл</a> 595 км</span>
+
+		<div class="point" style="left: 70%; bottom: 9390px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 9390px; "></div>
+		<span class="badge" style="bottom: calc(9390px - 4px); "><a>Спутник-1 (апоцентр)</a> <br>939 км</span>
+
+		<div class="point" style="left: 70%; bottom: 203500px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 203500px;"></div>
+		<span class="badge" style="bottom: calc(203500px - 4px); "><a>Спутники GPS</a> <br>20 350 км<br>
+		Полусинхронная орбита<br>Два оборота в день</span>
+
+		<div class="point" style="left: 70%; bottom: 277430px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 277430px;"></div>
+		<span class="badge" style="bottom: calc(277430px - 4px); "><a>астеройд 2012 DA14</a> <br>27743 км</span>
+
+		<div class="point" style="left: 70%; bottom: 357860px"></div>
+		<div class="line" style="left: calc(70% + 10px); bottom: 357860px;"></div>
+		<span class="badge" style="bottom: calc(357860px - 4px); "><a>Геостационарная орбита</a> <br>35786 км</span>
+
+		
+		<div style="overflow: hidden; position: absolute; bottom: 0px; height: 21px; width: 100%;">
+					<div style="width: 127562px; 
+						height: 127136px;
+						position: absolute; 
+						border: 1px solid green; 
+						left: calc(50% - 127562px/2); 
+						top: 0px;
+						border-radius: 50%">
+					</div>
+		</div>
+
+		<div style="overflow: hidden; position: absolute; top: 0px; height: 600px; width: 100%;">
+		<div style="width: 34762.8px; 
+					height: 34719.4px;
+					position: absolute; 
+					background-color: #7c7876;
+					/*border: 1px solid green;*/
+					left: calc(50% - 34762.8px/2); 
+					bottom: 0px;
+					border-radius: 50%">
+					</div>
+
+		<!--img src="img/moon.png" style="position: absolute; width: 6360px; bottom: 3843991px; left: calc(50% - 6360px/2);"-->
+		</div>
+		<span class="badge" style="bottom: calc(3843990px - 4px); "><a>Луна</a> <br>384 399 км</span>
+
+	</div>
+
+
+
+	<script type="text/javascript">
+		//console.log("move("+plane+")");
+		move(plane,1.94,400);
+		move(plane_line,1.94,410);
+		move(iss,76.6,30);
+		move(iss_line,76.6,40);
+	</script>
+</body>
+</html>
