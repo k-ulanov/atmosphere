@@ -85,37 +85,25 @@
 			border-bottom-color: #fff;
 		}
 
+		a:visited {
+			color: #ebd4ff;
+			border-color: #ebd4ff;
+		}
 	</style>
-
-	<script type="text/javascript">
-		function begin(){
-		window.scrollBy(0,document.documentElement.scrollHeight);
-		}
-
-
-		function move(obj,speed,pos,time) {
-				if(pos > document.documentElement.clientWidth) {pos = 0};
-				obj.style.left = pos + "px";
-
-				setTimeout(move,time,obj,speed,pos+speed,time);
-		}
-
-
-		//console.log(obj);
-		//console.log(pos+" "+document.documentElement.clientWidth);
-		/*function move() {
-			time = document.documentElement.clientWidth / plane_speed;
-			plane.style.animation = "move_p "+time+"s 0s linear infinite";
-
-		}*/
-
-
-	</script>
 </head>
-<body onload="begin();">
+<body onload="readurl()">
 	<div class="space">
 		<div class="sky_gradient"></div>
-
+		<div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
+			<div style="width: calc(127562px + 230px*2); 
+						height: calc(127136px + 230px*2);
+						position: absolute; 
+						border: 1px solid rgba(90,255,255,0.2); 
+						left: calc(50% - 127562px/2 - 230px); 
+						top: 1px;
+						border-radius: 50%">
+					</div>
+		</div>
 		<div class="point" id=plane style="bottom: 110px"></div>
 		<div class="line" id= plane_line style="bottom: 110px"></div>
 		<span class="badge" style="bottom: calc(110px - 4px);"><a>Самолёт</a> 11 км</span>
@@ -211,7 +199,7 @@
 
 		<div class="point" style="left: 70%; bottom: 357860px"></div>
 		<div class="line" style="left: calc(70% + 10px); bottom: 357860px;"></div>
-		<span class="badge" style="bottom: calc(357860px - 4px); "><a href="">Геостационарная орбита</a> <br>35786 км</span>
+		<span class="badge" style="bottom: calc(357860px - 4px); "><a href="https://ru.wikipedia.org/wiki/Геостационарная_орбита">Геостационарная орбита</a> <br>35786 км</span>
 
 		
 		<!--div style="overflow: hidden; position: absolute; bottom: 0px; height: 21px; width: 100%;">
@@ -250,16 +238,7 @@
 
 		
 
-		<div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
-			<div style="width: calc(127562px + 230px*2); 
-						height: calc(127136px + 230px*2);
-						position: absolute; 
-						border: 1px solid rgba(90,255,255,0.2); 
-						left: calc(50% - 127562px/2 - 230px); 
-						top: 1px;
-						border-radius: 50%">
-					</div>
-		</div>
+
 	</div>
 
 
@@ -289,17 +268,44 @@
 
 		window.onresize = console.log("resize");
 
-		function readurl()
-			{
+		function readurl() {
 			    var url = decodeURIComponent(document.URL).split("#");
-			    
-			    if(url.length > 1)
-			    {
-			        search.value = url[1];
-			        read(search.value);
+			    H = document.documentElement.scrollHeight;
+			    console.log(H+" "+url.length);
+			    if(url.length*1 > 1) {
+			    	y = url[1]*10;
+			    	vh = document.documentElement.clientHeight;
+					h = H - y - vh/2;
+
+			    	console.log(H+" "+h);
+					window.scrollTo(0,h);
 			    }
-			    else placeholder();
+			    else {
+			    	window.scrollTo(0,H);
+			    }
 			}
+
+		readurl();
+
+
+		function move(obj,speed,pos,time) {
+				if(pos > document.documentElement.clientWidth) {pos = 0};
+				obj.style.left = pos + "px";
+
+				setTimeout(move,time,obj,speed,pos+speed,time);
+		}
+
+
+		//console.log(obj);
+		//console.log(pos+" "+document.documentElement.clientWidth);
+		/*function move() {
+			time = document.documentElement.clientWidth / plane_speed;
+			plane.style.animation = "move_p "+time+"s 0s linear infinite";
+
+		}*/
+
+
+
 	</script>
 </body>
 </html>
