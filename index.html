@@ -152,7 +152,7 @@
 		<div class="line" style="left: 50%; bottom: 87px; "></div>
 		<span class="badge" style="bottom: calc(87px - 4px); "><a>Эверест</a> 8,848 км</span>
 
-		<div class="line" style="bottom: 230px; background-color: rgba(90,255,255,0.1);"></div>
+		<!--div class="line" style="bottom: 230px; background-color: rgba(90,255,255,0.1);"></div-->
 		<span class="badge" style="bottom: calc(230px - 4px);"><a>Озоновый слой</a> 20-25 км</span>
 
 		<div class="point" style="left: 70%; bottom: 260px"></div>
@@ -167,8 +167,8 @@
 		<div class="line" style="left: calc(70% + 10px); bottom: 530px; "></div>
 		<span class="badge" style="bottom: calc(530px - 4px); "><a>Метеозонд</a> <br>53 км</span>
 
-		<div class="point" style="left: 70%; bottom: 1077px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 1077px; "></div>
+		<div class="point" id=x15 style="left: 70%; bottom: 1077px"></div>
+		<div class="line" id=x15_line style="left: calc(70% + 10px); bottom: 1077px; "></div>
 		<span class="badge" style="bottom: calc(1077px - 4px); "><a>X-15</a> <br>107,7 км</span>
 
 		<div class="point" style="left: 70%; bottom: 1120px"></div>
@@ -213,16 +213,16 @@
 		<span class="badge" style="bottom: calc(357860px - 4px); "><a>Геостационарная орбита</a> <br>35786 км</span>
 
 		
-		<div style="overflow: hidden; position: absolute; bottom: 0px; height: 21px; width: 100%;">
+		<!--div style="overflow: hidden; position: absolute; bottom: 0px; height: 21px; width: 100%;">
 					<div style="width: 127562px; 
 						height: 127136px;
 						position: absolute; 
-						border: 1px solid green; 
+						border: 1px solid ; 
 						left: calc(50% - 127562px/2); 
 						top: 0px;
 						border-radius: 50%">
 					</div>
-		</div>
+		</div-->
 
 		<div style="overflow: hidden; position: absolute; top: 0px; height: 600px; width: 100%;">
 		<div style="width: 34762.8px; 
@@ -239,6 +239,24 @@
 		</div>
 		<span class="badge" style="bottom: calc(3843990px - 4px); "><a>Луна</a> <br>384 399 км</span>
 
+		<!--img src="img/aurora.png" style="position: absolute; height: 700px; bottom: 695px; left: calc(50% - 500px) "-->
+		<img src="img/aurora_top.png" style="position: absolute; height: 457px; bottom: 873px; left: calc(50% - 260px) ">
+		<img src="img/aurora_mid.png" style="position: absolute; height: 580px; bottom: 759px; left: calc(50% - 435px) ">
+		<img src="img/aurora_bot.png" style="position: absolute; height: 303px; bottom: 839px; left: calc(50% - 434px) ">
+
+		<div class="line" style="left: calc(50% + 350px); bottom: 800px;"></div>
+		<span class="badge" style="bottom: calc(800px - 4px); "><a>Полярное сияние</a> <br>80-400 км</span>
+
+		<div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
+			<div style="width: calc(127562px + 230px*2); 
+						height: calc(127136px + 230px*2);
+						position: absolute; 
+						border: 1px solid rgba(90,255,255,0.2); 
+						left: calc(50% - 127562px/2 - 230px); 
+						top: 1px;
+						border-radius: 50%">
+					</div>
+		</div>
 	</div>
 
 
@@ -249,6 +267,8 @@
 		move(plane_line,1.94,410);
 		move(iss,76.6,30);
 		move(iss_line,76.6,40);
+		move(x15,17.88,330);
+		move(x15_line,17.88,340);
 	</script>
 </body>
 </html>
