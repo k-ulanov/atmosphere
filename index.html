@@ -71,15 +71,15 @@
 		.badge {
 			position: absolute;
 			height: 1px;
-			right: 0px;
+			right: -10px;
 			width: 250px;
 			max-width: 50%;
 		}
 
 		.all-width
 		{
-			width: 100%; 
-			max-width: 100%;
+			width: calc(100% + 10px); 
+			max-width: calc(100% + 10px);
 		}
 
 		.badge_title {
@@ -98,7 +98,7 @@
 		}
 
 		.height {
-			left: calc(100% - 70px);
+			left: calc(100% - 80px);
 		}
 
 		.line {
@@ -291,7 +291,7 @@
 			<div class="badge_title height">8,848 км</div>
 		</div>
 
-		<div class="badge line" style="bottom: 110px;">
+		<div id=plane class="badge line" style="bottom: 110px; max-width: 100%; width: calc(50% + 100px);">
 			<div class="dot"></div>
 			<div class="badge_title">
 				<a href="https://ru.wikipedia.org/wiki/Пассажирский_самолёт">Авиалайнер</a>
@@ -347,7 +347,7 @@
 			<div class="badge_title height">80-400 км</div>
 		</div>
 
-		<div class="badge line" style="bottom: 1077px;">
+		<div id=x15 class="badge line" style="bottom: 1077px; max-width: 100%;  width: calc(100% - 300px);">
 			<div class="dot"></div>
 			<div class="badge_title">
 				<a href="https://ru.wikipedia.org/wiki/North_American_X-15">X-15</a>
@@ -390,7 +390,7 @@
 			<div class="badge_title badge_descriptor">Апогей полёта</div>
 		</div>
 
-		<div class="badge line" style="bottom: 4150px;">
+		<div id=iss class="badge line" style="bottom: 4150px; max-width: 100%; width: calc(100% - 30px);">
 			<div class="dot"></div>
 			<div class="badge_title">
 				<a href="https://ru.wikipedia.org/wiki/Международная_космическая_станция">МКС</a>
@@ -492,39 +492,57 @@
 
 	<script type="text/javascript">
 		//console.log("move("+plane+")");
-		FPS = 50;
+		FPS = 1;
 		t= 1000/FPS;
-		move(plane,700*10/3600/FPS,300,t); //700 km/h
-		move(plane_line,700*10/3600/FPS,310,t);
 
-		move(iss,7.6*10/FPS,30,t); //7.6 km/s
-		move(iss_line,7.6*10/FPS,40,t);
+		move_interval(plane,700*10/3600/FPS,document.documentElement.clientWidth/2+100,t); //700 km/h
+		move_interval(x15,6437*10/3600/FPS,document.documentElement.clientWidth-300,t); //6437 км/ч
+		move_interval(iss,7.6*10/FPS,document.documentElement.clientWidth-30,t); //7.6 km/s
 
-		move(x15,6437*10/3600/FPS,300,t); //6437 км/ч
-		move(x15_line,6437*10/3600/FPS,310,t);
 
+		function move(obj,speed,pos,time) {
+				
+				if(pos < 0) pos = document.documentElement.clientWidth;
+				obj.style.width = pos + "px";
+				setTimeout(move,time,obj,speed,pos-speed,time);
+		}
+
+		function move_interval(obj,speed,pos,time) {
+			setInterval(function() {
+					pos -= speed;
+					if(pos < 0) { 
+						obj.style.transition = "none";
+						pos = document.documentElement.clientWidth;
+						obj.style.width = pos + "px";
+					}		
+					else {
+						obj.style.transition = "width "+time+"ms linear";
+						obj.style.width = pos + "px";
+					}
+			},time);
+		} 
 
 		window.onscroll = function position() {
 			H = document.documentElement.scrollHeight;
 			h = window.pageYOffset || document.documentElement.scrollTop;
-			console.log(H);
+			//console.log(H);
 			vh = document.documentElement.clientHeight;
 			y = H - h - vh/2;
 			window.location = "#" + Math.round(y/10);
 		}
 
-		window.onresize = console.log("resize");
+		//window.onresize = console.log("resize");
 
 		function readurl() {
 			    var url = decodeURIComponent(document.URL).split("#");
 			    H = document.documentElement.scrollHeight;
-			    console.log(H+" "+url.length);
+			    //console.log(H+" "+url.length);
 			    if(url.length*1 > 1) {
 			    	y = url[1]*10;
 			    	vh = document.documentElement.clientHeight;
 					h = H - y - vh/2;
 
-			    	console.log(H+" "+h);
+			    	//console.log(H+" "+h);
 					window.scrollTo(0,h);
 			    }
 			    else {
@@ -535,12 +553,6 @@
 		readurl();
 
 
-		function move(obj,speed,pos,time) {
-				if(pos > document.documentElement.clientWidth) {pos = 0};
-				obj.style.left = pos + "px";
-
-				setTimeout(move,time,obj,speed,pos+speed,time);
-		}
 
 
 		//console.log(obj);
