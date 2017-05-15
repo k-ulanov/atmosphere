@@ -62,10 +62,55 @@
 			left: 60px;
 		}
 
-		.badge {
+		/*.badge {
 			position: absolute;
 			left: calc(100% - 200px);
 			height: 20px;
+		}*/
+
+		.badge {
+			position: absolute;
+			height: 1px;
+			right: -10px;
+			width: 250px;
+			max-width: 50%;
+		}
+
+		.all-width
+		{
+			width: calc(100% + 10px); 
+			max-width: calc(100% + 10px);
+		}
+
+		.badge_title {
+			position: absolute;
+			bottom: 1px;
+			left: calc(100% - 250px);
+		}
+
+		.left {
+			left: 10px;
+		}
+
+		.badge_descriptor {
+			position: absolute;
+			top: 4px;
+		}
+
+		.height {
+			left: calc(100% - 80px);
+		}
+
+		.line {
+			background-color: rgba(255,255,255,0.2);
+		}
+
+		.dot {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			left: -10px;
+			background-color: #fff;
 		}
 
 		@keyframes move_p {
@@ -149,7 +194,8 @@
 <div class="content">
 	<div class="space">
 		<div class="sky_gradient"></div>
-		<div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
+
+		<!--div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
 			<div style="width: calc(127562px + 230px*2); 
 						height: calc(127136px + 230px*2);
 						position: absolute; 
@@ -158,142 +204,258 @@
 						top: 1px;
 						border-radius: 50%">
 					</div>
-		</div>
-		<div class="point" id=plane style="bottom: 110px"></div>
-		<div class="line" id= plane_line style="bottom: 110px"></div>
-		<span class="badge" style="bottom: calc(110px - 4px);"><a href="https://ru.wikipedia.org/wiki/Пассажирский_самолёт">Авиалайнер</a> 11 км</span>
-
+		</div-->
+	
 		<img src="img/silver_clouds.png" style="position: absolute; width: calc(1072px/2); bottom: 760px; left: calc(50% - 1072px/4) ">
-		<div class="line" style="left: calc(50% + 350px); bottom: 760px;"></div>
-		
 
-				<!--img src="img/aurora.png" style="position: absolute; height: 700px; bottom: 695px; left: calc(50% - 500px) "-->
 		<img src="img/aurora_top.png" style="position: absolute; height: 457px; bottom: 873px; left: calc(50% - 260px) ">
 		<img src="img/aurora_mid.png" style="position: absolute; height: 580px; bottom: 759px; left: calc(50% - 435px) ">
 		<img src="img/aurora_bot.png" style="position: absolute; height: 303px; bottom: 839px; left: calc(50% - 434px) ">
-		
-		<span class="badge" style="bottom: calc(760px - 4px); "><a href="https://ru.wikipedia.org/wiki/Серебристые_облака">Серебристые облака</a> <br>76-85 км</span>
 
-		<div class="line" style="bottom: 200px"></div>
-		<span class="title left-2" style="bottom: calc(200px - 24px)"><a href="https://ru.wikipedia.org/wiki/Тропосфера">Тропосфера</a></span>
-		<span class="title left-1" style="bottom: 200px">20 км</span>
-		<span class="title left-2" style="bottom: 200px"><a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a></span>
+		<div class="badge line all-width" style="bottom: 200px;">
+			<div class="badge_title height">20 км</div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Тропопауза">Тропопауза</a>
+			</div>
+			<div class="badge_title left">
+				<a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a>
+			</div>
+			<div class="badge_title badge_descriptor left">
+				<a href="https://ru.wikipedia.org/wiki/Тропосфера">Тропосфера</a>
+			</div>
+		</div>
 
-		<div class="line" style="bottom: 500px"></div>
-		<span class="title left-2" style="bottom: calc(500px - 24px)"><a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a></span>
-		<span class="title left-1" style="bottom: 500px">50</span>
-		<span class="title left-2" style="bottom: 500px"><a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a></span>
 
-		<div class="line" style="bottom: 850px"></div>
-		<span class="title left-2" style="bottom: calc(850px - 24px)"><a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a></span>
-		<span class="title left-1" style="bottom: 850px">85</span>
-		<span class="title left-2" style="bottom: 850px"><a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a></span>
+		<div class="badge line all-width" style="bottom: 500px;">
+			<div class="badge_title height">50 км</div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Стратопауза">Стратопауза</a>
+			</div>
+			<div class="badge_title left">
+				<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
+			</div>
+			<div class="badge_title badge_descriptor left">
+				<a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a>
+			</div>
+		</div>
 
-		<div class="line" style="bottom: 1000px"></div>
+		<div class="badge line all-width" style="bottom: 850px;">
+			<div class="badge_title height">85 км</div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Мезопауза">Мезопауза</a>
+			</div>
+			<div class="badge_title left">
+				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
+			</div>
+			<div class="badge_title badge_descriptor left">
+				<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
+			</div>
+		</div>
 
-		<span class="title left-1" style="bottom: 1000px">100</span>
-		<span class="title left-2" style="bottom: 1000px"><a href="https://ru.wikipedia.org/wiki/Линия_Кармана">Линия Кармана</a></span>
+		<div class="badge line all-width" style="bottom: 6900px;">
+			<div class="badge_title height">690 км</div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Термопауза">Термопауза</a>
+			</div>
+			<div class="badge_title left">
+				<a href="https://ru.wikipedia.org/wiki/Экзосфера">Экзосфера</a>
+			</div>
+			<div class="badge_title badge_descriptor left">
+				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
+			</div>
+		</div>
 
-		<div class="line" style="bottom: 6900px"></div>
-		<span class="title left-2" style="bottom: calc(6900px - 24px)"><a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a></span>
-		<span class="title left-1" style="bottom: 6900px">690 км</span>
-		<span class="title left-2" style="bottom: 6900px"><a href="https://ru.wikipedia.org/wiki/Экзосфера">Экзосфера</a></span>
+		<div class="badge line all-width" style="bottom: 1000px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Линия_Кармана">Линия Кармана</a>
+			</div>
+			<div class="badge_title height">100 км</div>
+		</div>
+
+		<div class="badge line all-width" style="bottom: 0px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Земля">Поверхность земли</a>
+			</div>
+			<div class="badge_title height">0 км</div>
+		</div>
 
 		<img src="img/everest.png" style="position: absolute; width: 300px; bottom: 0; left: calc(50% - 150px);">
-		<div class="line" style="left: 50%; bottom: 87px; "></div>
-		<span class="badge" style="bottom: calc(87px - 4px); "><a href="https://ru.wikipedia.org/wiki/Джомолунгма">Эверест</a> 8,848 км</span>
 
-		<!--div class="line" style="bottom: 230px; background-color: rgba(90,255,255,0.1);"></div-->
-		<span class="badge" style="bottom: calc(230px - 4px);"><a href="https://ru.wikipedia.org/wiki/Озоновый_слой">Озоновый слой</a> 20-25 км</span>
+		<div class="badge line" style="bottom: 88px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Джомолунгма">Эверест</a>
+			</div>
+			<div class="badge_title height">8,848 км</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 260px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 260px; "></div>
-		<span class="badge" style="bottom: calc(260px - 4px); "><a href="https://ru.wikipedia.org/wiki/Реактивный_самолёт">Реактивный самолёт</a> 26 км</span>
+		<div id=plane class="badge line" style="bottom: 110px; max-width: 100%; width: calc(50% + 100px);">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Пассажирский_самолёт">Авиалайнер</a>
+			</div>
+			<div class="badge_title height">11 км</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 414.22px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 414.22px; "></div>
-		<span class="badge" style="bottom: calc(414.22px - 4px); "><a href="https://ru.wikipedia.org/wiki/Юстас,_Алан">Прыжок из стратосферы</a> <br>42,422 км</span>
+		<div class="badge line all-width" style="bottom: 230px;">
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Озоновый_слой">Озоновый слой</a>
+		</div>
+			<div class="badge_title height">20-25 км</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 530px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 530px; "></div>
-		<span class="badge" style="bottom: calc(530px - 4px); "><a href="https://ru.wikipedia.org/wiki/Метеозонд">Метеозонд</a> <br>53 км</span>
+		<div class="badge line" style="bottom: 260px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Реактивный_самолёт">Реактивный самолёт</a>
+			</div>
+			<div class="badge_title height">26 км</div>
+		</div>
 
-		<div class="point" id=x15 style="left: 70%; bottom: 1077px"></div>
-		<div class="line" id=x15_line style="left: calc(70% + 10px); bottom: 1077px; "></div>
-		<span class="badge" style="bottom: calc(1077px - 4px); "><a href="https://ru.wikipedia.org/wiki/North_American_X-15">X-15</a> <br>107,7 км</span>
+		<div class="badge line" style="bottom: 424px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Аэростат">Аэростат</a>
+			</div>
+			<div class="badge_title height">42,422 км</div>
+			<div class="badge_title badge_descriptor">
+				<a href="https://ru.wikipedia.org/wiki/Юстас,_Алан">Алан Юстас</a>
+				</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 1120px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 1120px; "></div>
-		<span class="badge" style="bottom: calc(1120px - 4px); "><a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaseShipOne</a> <br>112,01 км</span>
+		<div class="badge line" style="bottom: 530px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Метеозонд">Метеозонд</a>
+			</div>
+			<div class="badge_title height">53 км</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 1880px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 1880px; "></div>
-		<span class="badge" style="bottom: calc(1880px - 4px); "><a href="https://ru.wikipedia.org/wiki/Фау-2">ФАУ-2</a> <br>188 км</span>
+		<div class="badge line" style="bottom: 760px;">
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Серебристые_облака">Серебристые облака</a>
+			</div>
+			<div class="badge_title height">76-85 км</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 2150px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 2150px; "></div>
-		<span class="badge" style="bottom: calc(2150px - 4px); "><a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1 (перицентр)</a> <br>215 км</span>
+		<div class="badge line" style="bottom: 800px;">
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Полярное_сияние">Полярное сияние</a>
+			</div>
+			<div class="badge_title height">80-400 км</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 3020px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 3020px; "></div>
-		<span class="badge" style="bottom: calc(3020px - 4px); "><a href="https://ru.wikipedia.org/wiki/Восток-1">Восток-1</a> <br>302 км</span>
+		<div id=x15 class="badge line" style="bottom: 1077px; max-width: 100%;  width: calc(100% - 300px);">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/North_American_X-15">X-15</a>
+			</div>
+			<div class="badge_title height">107,7 км</div>
+		</div>
 
-		<div class="point" id=iss style="left:0; bottom: 4150px"></div>
-		<div class="line" id= iss_line style="bottom: 4150px"></div>
-		<span class="badge" style="bottom: calc(4150px - 4px);"><a href="https://ru.wikipedia.org/wiki/Международная_космическая_станция">МКС</a> 415 км</span>
+		<div class="badge line" style="bottom: 1120px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaseShipOne</a>
+			</div>
+			<div class="badge_title height">112,01 км</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 5690px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 5690px; "></div>
-		<span class="badge" style="bottom: calc(5690px - 4px);"><a href="https://ru.wikipedia.org/wiki/Хаббл_(телескоп)">Телескоп Хаббл</a> 569 км</span>
+		<div class="badge line" style="bottom: 1880px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Фау-2">ФАУ-2</a>
+			</div>
+			<div class="badge_title height">188 км</div>
+			<div class="badge_title badge_descriptor">В вертикальном полёте</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 9390px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 9390px; "></div>
-		<span class="badge" style="bottom: calc(9390px - 4px); "><a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1 (апоцентр)</a> <br>939 км</span>
+		<div class="badge line" style="bottom: 2150px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1</a>
+			</div>
+			<div class="badge_title height">215 км</div>
+			<div class="badge_title badge_descriptor">Перицентр</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 203500px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 203500px;"></div>
-		<span class="badge" style="bottom: calc(203500px - 4px); "><a href="https://ru.wikipedia.org/wiki/GPS">Спутники GPS</a> <br>20 350 км<br>
-		Полусинхронная орбита<br>Два оборота в день</span>
+		<div class="badge line" style="bottom: 3020px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Восток-1">Восток-1</a>
+			</div>
+			<div class="badge_title height">302 км</div>
+			<div class="badge_title badge_descriptor">Апогей полёта</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 277430px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 277430px;"></div>
-		<span class="badge" style="bottom: calc(277430px - 4px); "><a href="https://ru.wikipedia.org/wiki/(367943)_Дуэнде">астеройд 2012 DA14</a> <br>27743 км</span>
+		<div id=iss class="badge line" style="bottom: 4150px; max-width: 100%; width: calc(100% - 30px);">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Международная_космическая_станция">МКС</a>
+			</div>
+			<div class="badge_title height">415 км</div>
+		</div>
 
-		<div class="point" style="left: 70%; bottom: 357860px"></div>
-		<div class="line" style="left: calc(70% + 10px); bottom: 357860px;"></div>
-		<span class="badge" style="bottom: calc(357860px - 4px); "><a href="https://ru.wikipedia.org/wiki/Геостационарная_орбита">Геостационарная орбита</a> <br>35786 км</span>
+		<div class="badge line" style="bottom: 5690px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Хаббл_(телескоп)">Телескоп Хаббл</a>
+			</div>
+			<div class="badge_title height">569 км</div>
+		</div>
 
-		
-		<!--div style="overflow: hidden; position: absolute; bottom: 0px; height: 21px; width: 100%;">
-					<div style="width: 127562px; 
-						height: 127136px;
-						position: absolute; 
-						border: 1px solid ; 
-						left: calc(50% - 127562px/2); 
-						top: 0px;
-						border-radius: 50%">
-					</div>
-		</div-->
+		<div class="badge line" style="bottom: 9390px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1</a>
+			</div>
+			<div class="badge_title height">939 км</div>
+			<div class="badge_title badge_descriptor">Апоцентр</div>
+		</div>
+
+		<div class="badge line" style="bottom: 203500px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/GPS">Спутники GPS</a>
+			</div>
+			<div class="badge_title height">20 350 км</div>
+			<div class="badge_title badge_descriptor">Геосинхронная орбита</div>
+		</div>
+
+		<div class="badge line" style="bottom: 277430px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/(367943)_Дуэнде">астеройд 2012 DA14</a>
+			</div>
+			<div class="badge_title height">27 743 км</div>
+		</div>
+
+		<div class="badge line" style="bottom: 357860px; width: 100%">
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Геостационарная_орбита">Геостационарная орбита</a>
+			</div>
+			<div class="badge_title height">35 786 км</div>
+		</div>
 
 		<div style="overflow: hidden; position: absolute; top: 0px; height: 600px; width: 100%;">
-		<div style="width: 34762.8px; 
-					height: 34719.4px;
-					position: absolute; 
-					background-color: #7c7876;
-					/*border: 1px solid green;*/
-					left: calc(50% - 34762.8px/2); 
-					bottom: 0px;
-					border-radius: 50%">
-					</div>
-
-		<!--img src="img/moon.png" style="position: absolute; width: 6360px; bottom: 3843991px; left: calc(50% - 6360px/2);"-->
+			<div style="width: 34762.8px; 
+						height: 34719.4px;
+						position: absolute; 
+						background-color: #7c7876;
+						left: calc(50% - 34762.8px/2); 
+						bottom: 0px;
+						border-radius: 50%">
+			</div>
 		</div>
-		<span class="badge" style="bottom: calc(3843990px - 4px); "><a href="">Луна</a> <br>384 399 км</span>
 
-
-		<div class="line" style="left: calc(50% + 350px); bottom: 800px;"></div>
-		<span class="badge" style="bottom: calc(800px - 4px); "><a href="">Полярное сияние</a> <br>80-400 км</span>
-
+		<div class="badge line" style="bottom: 3843990px;">
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Луна">Луна</a>
+			</div>
+			<div class="badge_title height">384 399 км</div>
+		</div>
 	</div>
 
 <div class="title_box">
@@ -330,39 +492,57 @@
 
 	<script type="text/javascript">
 		//console.log("move("+plane+")");
-		FPS = 50;
+		FPS = 1;
 		t= 1000/FPS;
-		move(plane,700*10/3600/FPS,300,t); //700 km/h
-		move(plane_line,700*10/3600/FPS,310,t);
 
-		move(iss,7.6*10/FPS,30,t); //7.6 km/s
-		move(iss_line,7.6*10/FPS,40,t);
+		move_interval(plane,700*10/3600/FPS,document.documentElement.clientWidth/2+100,t); //700 km/h
+		move_interval(x15,6437*10/3600/FPS,document.documentElement.clientWidth-300,t); //6437 км/ч
+		move_interval(iss,7.6*10/FPS,document.documentElement.clientWidth-30,t); //7.6 km/s
 
-		move(x15,6437*10/3600/FPS,300,t); //6437 км/ч
-		move(x15_line,6437*10/3600/FPS,310,t);
 
+		function move(obj,speed,pos,time) {
+				
+				if(pos < 0) pos = document.documentElement.clientWidth;
+				obj.style.width = pos + "px";
+				setTimeout(move,time,obj,speed,pos-speed,time);
+		}
+
+		function move_interval(obj,speed,pos,time) {
+			setInterval(function() {
+					pos -= speed;
+					if(pos < 0) { 
+						obj.style.transition = "none";
+						pos = document.documentElement.clientWidth;
+						obj.style.width = pos + "px";
+					}		
+					else {
+						obj.style.transition = "width "+time+"ms linear";
+						obj.style.width = pos + "px";
+					}
+			},time);
+		} 
 
 		window.onscroll = function position() {
 			H = document.documentElement.scrollHeight;
 			h = window.pageYOffset || document.documentElement.scrollTop;
-			console.log(H);
+			//console.log(H);
 			vh = document.documentElement.clientHeight;
 			y = H - h - vh/2;
 			window.location = "#" + Math.round(y/10);
 		}
 
-		window.onresize = console.log("resize");
+		//window.onresize = console.log("resize");
 
 		function readurl() {
 			    var url = decodeURIComponent(document.URL).split("#");
 			    H = document.documentElement.scrollHeight;
-			    console.log(H+" "+url.length);
+			    //console.log(H+" "+url.length);
 			    if(url.length*1 > 1) {
 			    	y = url[1]*10;
 			    	vh = document.documentElement.clientHeight;
 					h = H - y - vh/2;
 
-			    	console.log(H+" "+h);
+			    	//console.log(H+" "+h);
 					window.scrollTo(0,h);
 			    }
 			    else {
@@ -373,12 +553,6 @@
 		readurl();
 
 
-		function move(obj,speed,pos,time) {
-				if(pos > document.documentElement.clientWidth) {pos = 0};
-				obj.style.left = pos + "px";
-
-				setTimeout(move,time,obj,speed,pos+speed,time);
-		}
 
 
 		//console.log(obj);
