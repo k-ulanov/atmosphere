@@ -163,8 +163,10 @@
 			font-family: 'Exo 2', sans-serif;
 		}
 		.title_role {
-			margin: 0 auto 30px;
-			text-align: center;
+			position: fixed;
+			left: 100px;
+			bottom: 20%;
+			opacity: 0;
 		}
 
 		.title_role_role {
@@ -219,7 +221,7 @@
 				<a href="https://ru.wikipedia.org/wiki/Тропопауза">Тропопауза</a>
 			</div>
 			<div class="badge_title left">
-				<a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a>
+				20 км
 			</div>
 			<div class="badge_title badge_descriptor left">
 				<a href="https://ru.wikipedia.org/wiki/Тропосфера">Тропосфера</a>
@@ -233,7 +235,7 @@
 				<a href="https://ru.wikipedia.org/wiki/Стратопауза">Стратопауза</a>
 			</div>
 			<div class="badge_title left">
-				<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
+				50 км
 			</div>
 			<div class="badge_title badge_descriptor left">
 				<a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a>
@@ -246,9 +248,15 @@
 				<a href="https://ru.wikipedia.org/wiki/Мезопауза">Мезопауза</a>
 			</div>
 			<div class="badge_title left">
-				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
+				85 км
 			</div>
-			<div class="badge_title badge_descriptor left">
+			<div id=mezo class="badge_title badge_descriptor left">
+				<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
+			</div>
+		</div>
+
+		<div id=mezo_fixed class="badge all-width" style="bottom: 600px; visibility: hidden; opacity: 0; transition: opacity 0.2s ease-out">
+			<div  class="badge_title badge_descriptor left">
 				<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
 			</div>
 		</div>
@@ -259,13 +267,18 @@
 				<a href="https://ru.wikipedia.org/wiki/Термопауза">Термопауза</a>
 			</div>
 			<div class="badge_title left">
-				<a href="https://ru.wikipedia.org/wiki/Экзосфера">Экзосфера</a>
+				690 км
 			</div>
-			<div class="badge_title badge_descriptor left">
+			<div id=termo class="badge_title badge_descriptor left">
 				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
 			</div>
 		</div>
 
+		<div id=termo_fixed class="badge all-width">
+					<div class="badge_title badge_descriptor left">
+				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
+			</div>
+		</div>
 		<div class="badge line all-width" style="bottom: 1000px;">
 			<div class="dot"></div>
 			<div class="badge_title">
@@ -359,7 +372,7 @@
 		<div class="badge line" style="bottom: 1120px;">
 			<div class="dot"></div>
 			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaseShipOne</a>
+				<a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaceShipOne</a>
 			</div>
 			<div class="badge_title height">112,01 км</div>
 		</div>
@@ -459,11 +472,29 @@
 		</div>
 	</div>
 
+
+<h1 id=atmos_title style="position: fixed; 
+left: 80px; 
+right: 80px;
+bottom: 30%;
+opacity: 0;
+text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1>
+
+					<div id=des_title class="title_role">
+						<div class="title_role_role">Дизайнер</div>
+						<span class="title_role_name">Константин Уланов</span>
+					</div>
+
+					<div id=art_title class="title_role">
+						<div class="title_role_role">Арт-директор</div>
+						<span class="title_role_name">Артём Горбунов</span>
+					</div>
+
 <div class="title_box">
-	<table border="1" cellpadding="0" cellspacing="0" style="margin: 0 auto; border: none">
+	<!--table border="1" cellpadding="0" cellspacing="0" style="margin: 0 auto; border: none">
 		<tbody>
 			<tr>
-				<td colspan="2" style="text-align: center; vertical-align: top; height: 300px"><h1>АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1></td>
+				<td colspan="2" style="text-align: center; vertical-align: top; height: 300px"></td>
 			</tr>
 			<tr>
 				<td colspan="2" style="text-align: center;">
@@ -486,8 +517,12 @@
 				<td style="text-align: right;"><a href="https://docs.google.com/document/d/1cNWj1mYV7mxqBgzl8CVFIlhgKXnwfUTpuR9kq_Dtsdw/edit?usp=sharing" class="title_link">Пользовательское соглашение</a></td>
 			</tr>
 		</tbody>
-	</table>
+	</table-->
 </div>
+
+	
+
+
 </div>
 
 
@@ -518,7 +553,7 @@
 					}		
 					else {
 						obj.style.transition = "width "+time+"ms linear";
-						obj.style.width = pos + "px";
+						obj.style.width = Math.round(pos) + "px";
 					}
 			},time);
 		} 
@@ -530,6 +565,13 @@
 			vh = document.documentElement.clientHeight;
 			y = H - h - vh/2;
 			window.location = "#" + Math.round(y/10);
+
+			float(mezo,mezo_fixed,50,85);
+			float(termo,termo_fixed,85,690);
+
+			float_title(atmos_title,0,60);
+			float_title(des_title,140,170);
+			float_title(art_title,250,280);
 		}
 
 		//window.onresize = console.log("resize");
@@ -554,7 +596,45 @@
 		readurl();
 
 
+		function float(obj, obj_fix, min, max) {
+			h_top = H - h;
+			margin = 10;
+			//console.log(h_top);
+			if(h_top < min*10+60) {
+				obj_fix.style.visibility = "hidden";
+				obj_fix.style.opacity = "0";
+				obj_fix.style.transition = "opacity 0.2s ease-out";
+			}
+			else if (h_top > max*10+margin) {
+				obj_fix.style.visibility = "hidden";
+				obj_fix.style.transition = "none";
+				obj_fix.style.opacity = "0";
+				
+				obj.style.visibility = "visible";
+			}
+			else { 
+				obj.style.visibility = "hidden";
 
+				obj_fix.style.visibility = "visible";
+				obj_fix.style.opacity = "100";
+			}
+			obj_fix.style.bottom = h_top - margin + "px";
+		}
+
+
+		function float_title(obj, min, max) {
+
+			//console.log(h_top);
+			(y < min*10 || y > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "100"; 
+			if(obj.style.opacity == 0) {
+				obj.style.transition = "opacity 0.5s ease-in-out, visibility 0.5s step-end"; //visibility будет сохранять свойство до конца анимации
+				obj.style.visibility = "hidden";
+			}
+			else {
+				obj.style.transition = "opacity 0.3s ease-in-out, visibility 0.3s step-start"; //visibility сменит свойство в начале анимации
+				obj.style.visibility = "visible";
+			}
+		}
 
 		//console.log(obj);
 		//console.log(pos+" "+document.documentElement.clientWidth);
