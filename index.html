@@ -88,8 +88,9 @@ font-family: Geometria-Light;
 
 		.badge_title {
 			position: absolute;
-			bottom: 1px;
-			left: calc(100% - 250px);
+			bottom: 0px;
+			right: 0px;
+			width: 250px;
 		}
 
 		.left {
@@ -102,7 +103,7 @@ font-family: Geometria-Light;
 		}
 
 		.height {
-			left: calc(100% - 80px);
+			width: 80px;
 		}
 
 		.line {
@@ -568,7 +569,7 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 					}		
 					else {
 						obj.style.transition = "width "+time+"ms linear";
-						obj.style.width = Math.round(pos) + "px";
+						obj.style.width = Math.floor(pos) + "px";
 					}
 			},time);
 		} 
