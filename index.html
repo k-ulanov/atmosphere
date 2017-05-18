@@ -3,7 +3,6 @@
 <head>
 	<title>Atmosptere</title>
 	<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css?family=Arsenal|Comfortaa:300|Exo+2:100|Jura:300|Oswald:200|Poiret+One" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
 	<style type="text/css">
 		body {
@@ -12,19 +11,16 @@
 			overflow-x: hidden;
 			background-color: #000;
 
-			font-family: sans-serif;
-			font-family: 'Exo 2', sans-serif;
 			font-size: 12px;
 			color: #fff;
-
-font-family: 'Gill Sans Pro Cyrillic Medium';
-font-family: Geometria-Light;
+			
+			font-family: Geometria-Light,sans-serif;
 		}
 		.space {
-			width: 100%;
+			width: calc(100% - 40px);
+			left: 40px;
 			height: 3844590px;
 			position: relative;
-			background-color: #000;
 			overflow: hidden;
 		}
 
@@ -88,7 +84,7 @@ font-family: Geometria-Light;
 
 		.badge_title {
 			position: absolute;
-			bottom: 0px;
+			top: 4px;
 			right: 0px;
 			width: 250px;
 		}
@@ -99,7 +95,7 @@ font-family: Geometria-Light;
 
 		.badge_descriptor {
 			position: absolute;
-			top: 4px;
+			top: 24px;
 		}
 
 		.height {
@@ -155,13 +151,8 @@ font-family: Geometria-Light;
 		}
 
 		h1 {
-			font-family: sans-serif;
-			font-weight: 200;
 			letter-spacing: 0.3em;
 			font-size: 100px;
-
-			font-family: 'Gill Sans Pro Cyrillic Light';
-			font-family: Geometria-Light;
 		}
 		.title_role {
 			position: fixed;
@@ -195,24 +186,47 @@ font-family: Geometria-Light;
 			position: relative;
 		}
 
+		.abso-100 {
+			width: 100%;
+			position: absolute;
+			}
+
+		.temp_gradient {
+			background: linear-gradient(to top, 
+				#753e27 0%,
+				#00022e 5.9%,
+				#221854 25%,
+				#000226 43%,
+				#ca3b21 100%);
+			height: 2000px;
+			bottom: 0;
+		}
+
+		.temo-temp-grad {
+			background: linear-gradient(to top, 
+				#ca3b21 0%,#000000 100%);
+			height: 1500000px;
+			bottom: 2000px;
+
+		}
+
+		.infoscroll {
+			width: 40px; 
+			left: 0px; 
+			bottom: 0px; 
+			position: fixed; 
+			z-index: 10;
+		}
+
 	</style>
-<script type="text/javascript">
-    (function() {
-        var path = '//easy.myfonts.net/v2/js?sid=212935(font-family=Gill+Sans+Std+Bold)&sid=212952(font-family=Gill+Sans+Std+Light)&sid=213599(font-family=Gill+Sans+Pro+Cyrillic+Light)&sid=213613(font-family=Gill+Sans+Pro+Cyrillic+Medium)&key=blaceHiWID',
-            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
-            trial = document.createElement('script');
-        trial.type = 'text/javascript';
-        trial.async = true;
-        trial.src = protocol + path;
-        var head = document.getElementsByTagName("head")[0];
-        head.appendChild(trial);
-    })();
-</script>
 </head>
 <body onload="readurl()">
 <div class="content">
 	<div class="space">
 		<div class="sky_gradient"></div>
+		<div class="abso-100 temp_gradient"></div>
+		<div class="abso-100 temo-temp-grad"></div>
+		<div class="infoscroll temp_gradient" style="bottom: 0px; height: 0.6vh;"></div>
 
 		<!--div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
 			<div style="width: calc(127562px + 230px*2); 
@@ -343,6 +357,16 @@ font-family: Geometria-Light;
 			</div>
 			<div class="badge_title height">26 км</div>
 		</div>
+		
+
+		<div class="badge line" style="bottom: 4000px;">
+			<div class="dot"></div>
+			<div class="badge_title">
+				<a href="https://ru.wikipedia.org/wiki/Starfish_Prime">Взрыв ядерной<br>бомбы в космосе</a>
+			</div>
+			<div class="badge_title height">400 км</div>
+		</div>
+
 
 		<div class="badge line" style="bottom: 424px;">
 			<div class="dot"></div>
@@ -574,13 +598,15 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 			},time);
 		} 
 
+		readurl();
+
 		window.onscroll = function position() {
 			H = document.documentElement.scrollHeight;
 			h = window.pageYOffset || document.documentElement.scrollTop;
 			//console.log(H);
 			vh = document.documentElement.clientHeight;
 			y = H - h - vh/2;
-			window.location = "#" + Math.round(y/10);
+			//window.location = "#" + Math.round(y/10);
 
 			float(mezo,mezo_fixed,50,85);
 			float(termo,termo_fixed,85,690);
@@ -609,7 +635,6 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 			    }
 			}
 
-		readurl();
 
 
 		function float(obj, obj_fix, min, max) {
@@ -651,6 +676,7 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 				obj.style.visibility = "visible";
 			}
 		}
+
 
 		//console.log(obj);
 		//console.log(pos+" "+document.documentElement.clientWidth);
