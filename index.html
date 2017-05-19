@@ -206,7 +206,7 @@
 			bottom: 0;
 		}
 
-		.temo-temp-grad {
+		.termo-temp-grad {
 			background: linear-gradient(to top, 
 				#ca3b21 0%,#000000 100%);
 			height: 1500000px;
@@ -222,11 +222,10 @@
 			position: fixed;
 		}
 
-
 		.infoscroll.slider {
 			width: 38px;
 			height: auto;
-			border: 1px solid #b02500;
+			border: 1px solid #001eff;
 
 		}		
 
@@ -235,6 +234,9 @@
 			display: none;
 		}
 
+		.infoscroll.gradient {
+			height: auto;
+		}
 
 		.info_line {
 			position: fixed;
@@ -244,8 +246,6 @@
 			
 			background-color: rgba(255,255,255,0.2);
 		}
-
-
 
 		.info_line:nth-child(9n+1) {
 			background-color: rgba(255,255,255,0.8);
@@ -263,7 +263,7 @@
 	<div class="space">
 		<div class="sky_gradient"></div>
 		<div class="abso-100 temp_gradient"></div>
-		<div class="abso-100 temo-temp-grad"></div>
+		<div class="abso-100 termo-temp-grad"></div>
 
 		<!--div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
 			<div style="width: calc(127562px + 230px*2); 
@@ -550,18 +550,15 @@
 	</div>
 
 	<div id="infoscroll" class="infoscroll" style="background-color: black;">
+		<div id=termo_temp_gradient class="infoscroll gradient  termo-temp-grad"></div>
+		<div id=temp_gradient class="infoscroll gradient temp_gradient"></div>
 
-	
-	
-	<div id=log_greed class="infoscroll">
-		
-	</div>
-<div class="infoscroll temp_gradient" style="bottom: 0px; height: 0.6vh;"></div>
-	<!--img src="img/grid.png" class="infoscroll" style="height: 100vh;"-->
-	<div id=info_slider class="infoscroll slider" ></div>
+		<div id=log_greed class="infoscroll"></div>
 
-	<div id=info_hover class="infoscroll slider hover" ></div>
-	</div>
+		<!--img src="img/grid.png" class="infoscroll" style="height: 100vh;"-->
+		<div id=info_slider class="infoscroll slider" ></div>
+		<div id=info_hover class="infoscroll slider hover" ></div>
+		</div>
 
 <h1 id=atmos_title style="position: fixed; 
 left: 80px; 
@@ -745,7 +742,7 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 		}
 
 
-		function place_frame_2(obj,top,bot) {
+		function place_frame_2(obj,bot,top) {
 			//console.log(top+" "+bot);
 			obj.style.bottom = log_height(bot) + "px";
 			obj.style.top = log_height(H) - log_height(top) + "px";
@@ -795,7 +792,7 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 			//console.log(Y+" "+(vh-Y)+" "+full_height(vh-Y));
 
 			var y = full_height(vh-Y);
-			place_frame_2(info_hover,y+vh/2,y-vh/2);
+			place_frame_2(info_hover,y-vh/2,y+vh/2);
 		}
 
 		function fly_to(Y) {
@@ -810,6 +807,9 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 
 		}*/
 
+
+		place_frame_2(temp_gradient,100,2000);
+		place_frame_2(termo_temp_gradient,2000,2000000);
 
 		var drag = false;
 
