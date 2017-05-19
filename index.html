@@ -17,8 +17,7 @@
 			font-family: Geometria-Light,sans-serif;
 		}
 		.space {
-			width: calc(100% - 40px);
-			left: 40px;
+			width: 100%;
 			height: 3844590px;
 			position: relative;
 			overflow: hidden;
@@ -90,12 +89,17 @@
 		}
 
 		.left {
-			left: 10px;
+			left: 50px;
 		}
 
 		.badge_descriptor {
 			position: absolute;
 			top: 24px;
+		}
+
+		.badge_sticky {
+			position: fixed;
+			top: 10px;
 		}
 
 		.height {
@@ -206,7 +210,7 @@
 			background: linear-gradient(to top, 
 				#ca3b21 0%,#000000 100%);
 			height: 1500000px;
-			bottom: 2000px;
+			bottom: 1999px;
 
 		}
 
@@ -219,21 +223,39 @@
 		}
 
 
-		.info_slider {
-			position: fixed;
+		.infoscroll.slider {
 			width: 38px;
-			left: 0px;
-			border: 1px solid red;
+			height: auto;
+			border: 1px solid #b02500;
 
+		}		
+
+		.infoscroll.slider.hover {
+			opacity: 0.5;
+			display: none;
 		}
+
 
 		.info_line {
 			position: fixed;
-			width: 38px;
-			left: 1px;
+			width: 10px;
+			left: 0px;
 			height: 1px;
-			background-color: green;
+			
+			background-color: rgba(255,255,255,0.2);
 		}
+
+
+
+		.info_line:nth-child(9n+1) {
+			background-color: rgba(255,255,255,0.8);
+			width: 20px;
+		}
+
+		.info_line:nth-child(9n+5) {
+			background-color: rgba(255,255,255,0.4);
+		}
+
 	</style>
 </head>
 <body onload="readurl()">
@@ -300,7 +322,7 @@
 			</div>
 		</div>
 
-		<div id=mezo_fixed class="badge all-width" style="bottom: 600px; visibility: hidden; opacity: 0; transition: opacity 0.2s ease-out">
+		<div id=mezo_fixed class="badge all-width badge_sticky" style="visibility: hidden; opacity: 0; transition: opacity 0.2s ease-out">
 			<div  class="badge_title badge_descriptor left">
 				<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
 			</div>
@@ -527,18 +549,19 @@
 		</div>
 	</div>
 
-		<div id="infoscroll" class="infoscroll" onmousemove="draw_info(event.offsetY)">
-		<div class="infoscroll temp_gradient" style="bottom: 0px; height: 0.6vh;"></div>
-		<!--img src="img/grid.png" class="infoscroll" style="height: 100vh;"-->
+	<div id="infoscroll" class="infoscroll" style="background-color: black;">
+
+	
+	
+	<div id=log_greed class="infoscroll">
 		
-		<div id=log_greed class="infoscroll">
-			
-		</div>
+	</div>
+<div class="infoscroll temp_gradient" style="bottom: 0px; height: 0.6vh;"></div>
+	<!--img src="img/grid.png" class="infoscroll" style="height: 100vh;"-->
+	<div id=info_slider class="infoscroll slider" ></div>
 
-		<div id= info_slider class="info_slider" ></div>
-
-		<div id= info_slider class="info_hover" ></div>
-		</div>
+	<div id=info_hover class="infoscroll slider hover" ></div>
+	</div>
 
 <h1 id=atmos_title style="position: fixed; 
 left: 80px; 
@@ -597,6 +620,9 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 		//console.log("move("+plane+")");
 		FPS = 1;
 		t= 1000/FPS;
+
+		vh = document.documentElement.clientHeight;
+		shize = 100;
 
 		move_interval(plane,700*10/3600/FPS,document.documentElement.clientWidth/2+100,t); //700 km/h
 		move_interval(x15,6437*10/3600/FPS,document.documentElement.clientWidth-300,t); //6437 км/ч
@@ -690,7 +716,6 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 				obj_fix.style.opacity = "100";
 			}
 
-			obj_fix.style.bottom = h_top - margin + "px";
 		}
 
 
@@ -707,12 +732,6 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 			}
 		}
 
-		/*принимает высоту
-		отдаёт высоту относительно экрана
-		для начала линейно, потом логарифмически*/
-		function log_height(height) {
-			return  document.documentElement.clientHeight * Math.log(height/100) / Math.log(H/100);
-		}
 
 		function log(x) {
 			 return Math.log(x) / Math.log(10);
@@ -724,6 +743,14 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 			obj.style.bottom = log_height(view_height("bot")) + "px";
 			obj.style.top = log_height(H) - log_height(view_height("top")) + "px";
 		}
+
+
+		function place_frame_2(obj,top,bot) {
+			//console.log(top+" "+bot);
+			obj.style.bottom = log_height(bot) + "px";
+			obj.style.top = log_height(H) - log_height(top) + "px";
+		}
+
 
 		function place_line(obj, height) {
 			obj.innerHTML += "<div class=info_line style='bottom:"+log_height(height*10)+"px'></div>";
@@ -745,17 +772,34 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 
 		for(pow = 1; pow < 6; pow++) {
 			for (l = 1; l < 10; l++) {
+				//console.log(l*Math.pow(10,pow));
 				place_line(log_greed,l*Math.pow(10,pow));
 			}
 		}
 
-		function full_height(num) {
-			return Math.pow(10,((log_height(num)*log(H/100)/document.documentElement.clientHeight)*100));
-		}
-console.log(full_height(1000));
-		function draw_info(Y) {
-			console.log(Y+" "+full_height(document.documentElement.clientHeight-Y));
 
+
+		/*принимает высоту
+		отдаёт высоту относительно экрана
+		для начала линейно, потом логарифмически*/
+		function log_height(height) {
+			return  vh * log(height/shize) / log(H/shize);
+		}
+
+
+		function full_height(num) {
+			return Math.pow(10,(num*log(H/shize)/vh))*shize;
+		}
+
+		function draw_info(Y) {
+			//console.log(Y+" "+(vh-Y)+" "+full_height(vh-Y));
+
+			var y = full_height(vh-Y);
+			place_frame_2(info_hover,y+vh/2,y-vh/2);
+		}
+
+		function fly_to(Y) {
+			window.scrollTo(0,H-full_height(vh-Y)-vh/2);
 		}
 
 		//console.log(obj);
@@ -767,6 +811,32 @@ console.log(full_height(1000));
 		}*/
 
 
+		var drag = false;
+
+		infoscroll.onmousedown = function(event) {
+			drag = true;
+			fly_to(event.clientY);
+		}
+
+		infoscroll.onmouseup = function() {
+			drag = false;
+		}
+
+		infoscroll.onmousemove = function(event) {
+			draw_info(event.clientY);
+
+			if(drag) {
+				fly_to(event.clientY);
+			}
+		}
+
+		infoscroll.onmouseover = function() {
+			info_hover.style.display='block';
+		}
+
+		infoscroll.onmouseout = function() {
+			info_hover.style.display='none';
+		}
 
 	</script>
 </body>
