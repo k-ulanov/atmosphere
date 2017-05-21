@@ -13,6 +13,7 @@
 
 			font-size: 12px;
 			color: #fff;
+			line-height: 130%;
 			
 			font-family: Geometria-Light,sans-serif;
 		}
@@ -29,93 +30,6 @@
 			height: 250px;
 			position: absolute;
 			bottom: 0;
-		}
-
-		.point {
-			position: absolute;
-			width: 1px;
-			height: 1px;
-			bottom: 110px;
-			background-color: #fff;
-		}
-
-		.line {
-			position: absolute;
-			width: 100%;
-			height: 1px;
-			bottom: 110px;
-			background-color: rgba(255,255,255,0.1);
-		}
-
-		.title {
-			position: absolute;
-			height: 20px;
-			left: 10px;
-		}
-
-		.left-1 {
-			left: 5px;
-		}
-
-		.left-2 {
-			left: 60px;
-		}
-
-		/*.badge {
-			position: absolute;
-			left: calc(100% - 200px);
-			height: 20px;
-		}*/
-
-		.badge {
-			position: absolute;
-			height: 1px;
-			right: -10px;
-			width: 250px;
-			max-width: 50%;
-		}
-
-		.all-width
-		{
-			width: calc(100% + 10px); 
-			max-width: calc(100% + 10px);
-		}
-
-		.badge_title {
-			position: absolute;
-			top: 4px;
-			right: 0px;
-			width: 250px;
-		}
-
-		.left {
-			left: 50px;
-		}
-
-		.badge_descriptor {
-			position: absolute;
-			top: 24px;
-		}
-
-		.badge_sticky {
-			position: fixed;
-			top: 10px;
-		}
-
-		.height {
-			width: 80px;
-		}
-
-		.line {
-			background-color: rgba(255,255,255,0.2);
-		}
-
-		.dot {
-			position: absolute;
-			width: 1px;
-			height: 1px;
-			left: -10px;
-			background-color: #fff;
 		}
 
 		@keyframes move_p {
@@ -256,6 +170,115 @@
 			background-color: rgba(255,255,255,0.4);
 		}
 
+		.sticky {
+			position: fixed;
+			opacity: 0;
+			visibility: hidden;
+			top: 24px;
+		}
+
+		/*--------------------------------------------------------------------------------------------*/
+
+		.point {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			bottom: 110px;
+			background-color: #fff;
+		}
+
+		.line {
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			bottom: 110px;
+			background-color: rgba(255,255,255,0.1);
+		}
+
+		.title {
+			position: absolute;
+			height: 20px;
+			left: 10px;
+		}
+
+		.left-1 {
+			left: 5px;
+		}
+
+		.left-2 {
+			left: 60px;
+		}
+
+		.bdg {
+			position: absolute;
+			height: 1px;
+			right: -10px;
+			width: 250px;
+		}
+
+		.all-width
+		{
+			width: calc(100% + 10px); 
+			max-width: calc(100% + 10px);
+		}
+
+		.bdg_title {
+			position: absolute;
+			top: 4px;
+			right: 0px;
+			width: 250px;
+		}
+
+		.left {
+			left: 50px;
+		}
+
+		.bdg_descriptor {
+			position: absolute;
+			top: 24px;
+		}
+
+		.bdg_sticky {
+			position: fixed;
+			top: 10px;
+		}
+
+		.height {
+			width: 80px;
+		}
+
+		.line {
+			background-color: rgba(255,255,255,0.2);
+		}
+
+		.dot {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			left: -10px;
+			background-color: #fff;
+		}
+
+		.badge {
+			position: absolute;
+			height: 1px;
+			width: 250px;
+		}
+
+		.descr {
+			/*white-space: pre;*/
+		}
+
+		.col-1 {
+			left: 50%;
+		}
+
+		.col-2 {
+			left: 75%;
+		}
+
+
+
 	</style>
 </head>
 <body onload="readurl()">
@@ -282,253 +305,379 @@
 		<img src="img/aurora_mid.png" style="position: absolute; height: 580px; bottom: 759px; left: calc(50% - 435px) ">
 		<img src="img/aurora_bot.png" style="position: absolute; height: 303px; bottom: 839px; left: calc(50% - 434px) ">
 
-		<div class="badge line all-width" style="bottom: 200px;">
-			<div class="badge_title height">20 км</div>
-			<div class="badge_title">
+		<div class="bdg line all-width" style="bottom: 200px;">
+			<div class="bdg_title height">20 км</div>
+			<div class="bdg_title">
 				<a href="https://ru.wikipedia.org/wiki/Тропопауза">Тропопауза</a>
 			</div>
-			<div class="badge_title left">
+			<div class="bdg_title left">
 				20 км
 			</div>
-			<div class="badge_title badge_descriptor left">
+			<div class="bdg_title bdg_descriptor left">
 				<a href="https://ru.wikipedia.org/wiki/Тропосфера">Тропосфера</a>
 			</div>
 		</div>
 
 
-		<div class="badge line all-width" style="bottom: 500px;">
-			<div class="badge_title height">50 км</div>
-			<div class="badge_title">
+		<div class="bdg line all-width" style="bottom: 500px;">
+			<div class="bdg_title height">50 км</div>
+			<div class="bdg_title">
 				<a href="https://ru.wikipedia.org/wiki/Стратопауза">Стратопауза</a>
 			</div>
-			<div class="badge_title left">
+			<div class="bdg_title left">
 				50 км
 			</div>
-			<div class="badge_title badge_descriptor left">
+			<div class="bdg_title bdg_descriptor left">
 				<a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a>
 			</div>
 		</div>
 
-		<div class="badge line all-width" style="bottom: 850px;">
-			<div class="badge_title height">85 км</div>
-			<div class="badge_title">
+		<div class="bdg line all-width" style="bottom: 850px;">
+			<div class="bdg_title height">85 км</div>
+			<div class="bdg_title">
 				<a href="https://ru.wikipedia.org/wiki/Мезопауза">Мезопауза</a>
 			</div>
-			<div class="badge_title left">
+			<div class="bdg_title left top">
 				85 км
 			</div>
-			<div id=mezo class="badge_title badge_descriptor left">
+			<div id=mezo class="bdg_title bdg_descriptor left">
 				<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
 			</div>
 		</div>
 
-		<div id=mezo_fixed class="badge all-width badge_sticky" style="visibility: hidden; opacity: 0; transition: opacity 0.2s ease-out">
-			<div  class="badge_title badge_descriptor left">
-				<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
-			</div>
+		<div id=mezo_fixed class="sticky left" style="visibility: hidden; opacity: 0; transition: opacity 0.2s ease-out">
+			<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
 		</div>
 
-		<div class="badge line all-width" style="bottom: 6900px;">
-			<div class="badge_title height">690 км</div>
-			<div class="badge_title">
+		<div class="bdg line all-width" style="bottom: 6900px;">
+			<div class="bdg_title height">690 км</div>
+			<div class="bdg_title">
 				<a href="https://ru.wikipedia.org/wiki/Термопауза">Термопауза</a>
 			</div>
-			<div class="badge_title left">
+			<div class="bdg_title left">
 				690 км
 			</div>
-			<div id=termo class="badge_title badge_descriptor left">
+			<div id=termo class="bdg_title bdg_descriptor left">
 				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
 			</div>
 		</div>
 
-		<div id=termo_fixed class="badge all-width">
-					<div class="badge_title badge_descriptor left">
+		<div id=termo_fixed class="sticky left">
 				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
-			</div>
 		</div>
-		<div class="badge line all-width" style="bottom: 1000px;">
+		<div class="bdg line all-width" style="bottom: 1000px;">
 			<div class="dot"></div>
-			<div class="badge_title">
+			<div class="bdg_title">
 				<a href="https://ru.wikipedia.org/wiki/Линия_Кармана">Линия Кармана</a>
 			</div>
-			<div class="badge_title height">100 км</div>
+			<div class="bdg_title height">100 км</div>
 		</div>
 
-		<div class="badge line all-width" style="bottom: 0px;">
+		<div class="bdg line all-width" style="bottom: 0px;">
 			<div class="dot"></div>
-			<div class="badge_title">
+			<div class="bdg_title">
 				<a href="https://ru.wikipedia.org/wiki/Земля">Поверхность земли</a>
 			</div>
-			<div class="badge_title height">0 км</div>
+			<div class="bdg_title height">0 км</div>
 		</div>
 
 		<img src="img/everest.png" style="position: absolute; width: 300px; bottom: 0; left: calc(50% - 150px);">
 
-		<div class="badge line" style="bottom: 88px;">
-			<div class="dot"></div>
-			<div class="badge_title">
+		<div class="badge" style="bottom: 88px; left: calc(50% + 130px)">
 				<a href="https://ru.wikipedia.org/wiki/Джомолунгма">Эверест</a>
-			</div>
-			<div class="badge_title height">8,848 км</div>
-		</div>
-
-		<div id=plane class="badge line" style="bottom: 110px; max-width: 100%; width: calc(50% + 100px);">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Пассажирский_самолёт">Авиалайнер</a>
-			</div>
-			<div class="badge_title height">11 км</div>
-		</div>
-
-		<div class="badge line all-width" style="bottom: 230px;">
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Озоновый_слой">Озоновый слой</a>
-		</div>
-			<div class="badge_title height">20-25 км</div>
-		</div>
-
-		<div class="badge line" style="bottom: 260px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Реактивный_самолёт">Реактивный самолёт</a>
-			</div>
-			<div class="badge_title height">26 км</div>
-		</div>
-		
-
-		<div class="badge line" style="bottom: 4000px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Starfish_Prime">Взрыв ядерной<br>бомбы в космосе</a>
-			</div>
-			<div class="badge_title height">400 км</div>
-		</div>
-
-
-		<div class="badge line" style="bottom: 424px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Аэростат">Аэростат</a>
-			</div>
-			<div class="badge_title height">42,422 км</div>
-			<div class="badge_title badge_descriptor">
-				<a href="https://ru.wikipedia.org/wiki/Юстас,_Алан">Алан Юстас</a>
+				<div class="height-2">8,848 км</div>
+				<div class="descr">
+				Высочайшая точка Земли
 				</div>
 		</div>
 
-		<div class="badge line" style="bottom: 530px;">
+		<div class="badge col-2" style="bottom: 110px;">
+				<a href="https://ru.wikipedia.org/wiki/Пассажирский_самолёт">Авиалайнер</a>
+				<div class="height-2">10 — 12 км</div>
+				<div class="descr">
+				Высота полёта гражданских лайнеров
+				</div>
+		</div>
+
+		<div id=plane class="bdg" style="bottom: 110px; max-width: 100%; width: calc(50% + 100px);">
 			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Метеозонд">Метеозонд</a>
-			</div>
-			<div class="badge_title height">53 км</div>
+			<div class="bdg_title"></div>
 		</div>
 
-		<div class="badge line" style="bottom: 760px;">
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Серебристые_облака">Серебристые облака</a>
-			</div>
-			<div class="badge_title height">76-85 км</div>
+		<div class="bdg line all-width" style="bottom: 230px;">
+			<div class="bdg_title">
+				<a href="https://ru.wikipedia.org/wiki/Озоновый_слой">Озоновый слой</a>
+		</div>
+			<div class="bdg_title height">20-25 км</div>
 		</div>
 
-		<div class="badge line" style="bottom: 800px;">
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Полярное_сияние">Полярное сияние</a>
-			</div>
-			<div class="badge_title height">80-400 км</div>
+		<div class="badge col-1" style="bottom: 376px;">
+				<a href="https://ru.wikipedia.org/wiki/Реактивный_самолёт">Реактивный самолёт</a><br>
+				<div class="height-2">37,650 км</div>
+				<div class="descr">
+				Рекорд абсолютой высоты<br>
+				полёта на МиГ-25<br>
+				1977 год
+				</div>
+		</div>
+		
+		<div class="badge col-2" style="bottom: 424px;">
+			<a href="https://ru.wikipedia.org/wiki/Аэростат">Аэростат</a><br>
+			<div class="height-2">41,421 км</div>
+			<div class="descr">
+			Рекорд высоты<br>
+			Алан Юстас<br> 
+			2014 год
+				</div>
 		</div>
 
-		<div id=x15 class="badge line" style="bottom: 1077px; max-width: 100%;  width: calc(100% - 300px);">
+		
+		<div class="badge col-1" style="bottom: 530px;">
+			<a href="https://ru.wikipedia.org/wiki/Метеозонд">Метеозонд</a><br>
+			<div class="height-2">53 км</div>
+			<div class="descr">
+			Рекорд для беспилотного шара<br>
+				Япония, 2002
+				</div>
+		</div>
+
+		<div class="badge col-1" style="bottom: 760px;">
+			<a href="https://ru.wikipedia.org/wiki/Серебристые_облака">Серебристые облака</a>
+			<div class="height-2">76 — 85 км</div>
+			<div class="descr">
+			Сравнительно редкое<br>атмосферное явление.
+				</div>
+		</div>
+
+
+		<div class="badge" style="bottom: 800px; left: calc(50% + 350px)">
+			<a href="https://ru.wikipedia.org/wiki/Полярное_сияние">Полярное сияние</a>
+			<div class="height-2">80 — 400 км</div>
+			<div class="descr">
+			Сравнительно редкое<br>атмосферное явление.
+				</div>
+		</div>
+
+		<div class="badge col-1" style="bottom: 1000px;">
+			<a href="https://ru.wikipedia.org/wiki/Метеорологическая_ракета">Метеорологическая ракета</a><br>
+			<div class="height-2">40-100 км</div>
+			<div class="descr">
+			Изучение cлоёв атмосферы
+				</div>
+		</div>
+
+
+		<div class="badge col-2" style="bottom: 1096px;">
+			<a href="https://ru.wikipedia.org/wiki/North_American_X-15">X-15</a><br>
+			<div class="height-2">107,960 км</div>
+			<div class="descr">
+			Экспериментальный ракетоплан<br>
+			Джозеф уокер<br>
+			1963 год
+				</div>
+		</div>
+
+		<div id=x15 class="bdg" style="bottom: 1096px; max-width: 100%;  width: calc(100% - 300px);">
 			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/North_American_X-15">X-15</a>
-			</div>
-			<div class="badge_title height">107,7 км</div>
 		</div>
 
-		<div class="badge line" style="bottom: 1120px;">
+		<div class="badge col-1" style="bottom: 1120px;">
+			<a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaceShipOne</a><br>
+			<div class="height-2">112,01 км</div>
+			<div class="descr">
+			Рекорд суборбитального полёта<br>
+			Брайан Бинни, 2004 год<br>
+			Побит рекорд X-15
+				</div>
+		</div>
+
+		<div class="badge col-1" style="bottom: 1880px;">
+			<a href="https://ru.wikipedia.org/wiki/Фау-2">ФАУ-2</a><br>
+			<div class="height-2">188 км</div>
+			<div class="descr">
+			Первый беспилотный суборбитальный<br>космический полёт<br>
+			1944 год
+				</div>
+		</div>
+
+		<div class="badge col-1" style="bottom: 2150px;">
+			<a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1</a><br>
+			<div class="height-2">215 км, перигей</div>
+			<div class="descr">
+			Первый искусственный спутник земли<br>
+			4 октября 1957 — 4 января 1958
+				</div>
+		</div>
+
+		<div class="badge col-1" style="bottom: 3020px;">
+			<a href="https://ru.wikipedia.org/wiki/Спутник-1">Восток-1</a><br>
+			<div class="height-2">302 км, апогей</div>
+			<div class="descr">
+			Первый полёт человека в космос<br>
+			12 апреля 1961
+				</div>
+		</div>
+
+
+		<div class="badge col-1" style="bottom: 3580px; width: 300px;">
+			<a href="https://ru.wikipedia.org/wiki/Мир_(орбитальная_станция)">Станция «Мир»</a><br>
+			<div class="height-2">358 км</div>
+			<div class="descr">
+			Исследовательская орбитальная станция.<br>
+			Первая многомодульная обитаемая станция.<br>
+			20 февраля 1986 — 23 марта 2001
+				</div>
+		</div>
+
+
+		<div class="badge col-1" style="bottom: 4000px;">
+			<a href="https://ru.wikipedia.org/wiki/Starfish_Prime">Старфиш-прайм</a><br>
+			<div class="height-2">400 км</div>
+			<div class="descr">
+			Испытание ядерной бомбы в космосе.<br>
+			Вывело из строя треть спутников на низкой орбите.<br>
+			1,4 Мт<br>
+			9 июля 1962
+				</div>
+		</div>
+
+
+		<div class="badge col-1" style="bottom: 4150px;">
+			<a href="https://ru.wikipedia.org/wiki/Международная_космическая_станция">МКС</a><br>
+			<div class="height-2">415 км</div>
+			<div class="descr">
+			7,6 км/с<br>
+			Действующая космическая станция.<br>
+			Заменила станцию «Мир»<br>
+			C 20 ноября 1998
+				</div>
+		</div>
+
+		<div id=iss class="bdg" style="bottom: 4150px; max-width: 100%; width: calc(100% - 30px);">
 			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaceShipOne</a>
-			</div>
-			<div class="badge_title height">112,01 км</div>
 		</div>
 
-		<div class="badge line" style="bottom: 1880px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Фау-2">ФАУ-2</a>
-			</div>
-			<div class="badge_title height">188 км</div>
-			<div class="badge_title badge_descriptor">В вертикальном полёте</div>
+
+		<div class="badge col-1" style="bottom: 5690px;">
+			<a href="https://ru.wikipedia.org/wiki/Хаббл_(телескоп)">Телескоп Хаббл</a><br>
+			<div class="height-2">569 км</div>
+			<div class="descr">
+			Автоматическая космическая абсерватория<br>
+			C 24 апреля 1990
+				</div>
 		</div>
 
-		<div class="badge line" style="bottom: 2150px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1</a>
+		<div class="badge col-1" style="bottom: 9390px;">
+			<a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1</a><br>
+			<div class="height-2">939 км, апогей</div>
+			<div class="descr">
+			Первый искусственный спутник земли<br>
+			4 октября 1957 — 4 января 1958
 			</div>
-			<div class="badge_title height">215 км</div>
-			<div class="badge_title badge_descriptor">Перицентр</div>
 		</div>
 
-		<div class="badge line" style="bottom: 3020px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Восток-1">Восток-1</a>
+		<div class="badge col-1" style="bottom: 13720px;">
+			<a href="https://ru.wikipedia.org/wiki/Джемини-11">Джемини-11</a>
+			<div class="height-2">1372 км</div>
+			<div class="descr">
+			Самый высокий пилотируемый полёт<br>после полёта на Луну<br>
+			1966 год
 			</div>
-			<div class="badge_title height">302 км</div>
-			<div class="badge_title badge_descriptor">Апогей полёта</div>
 		</div>
 
-		<div id=iss class="badge line" style="bottom: 4150px; max-width: 100%; width: calc(100% - 30px);">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Международная_космическая_станция">МКС</a>
+		<div class="badge col-1" style="bottom: 15180px;">
+			Блоустоун
+			<div class="height-2">1518 км</div>
+			<div class="descr">
+			Ядерный взрыв в космосе<br>
+			1,27 Мт<br>
+			30 июня 1962
 			</div>
-			<div class="badge_title height">415 км</div>
 		</div>
 
-		<div class="badge line" style="bottom: 5690px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Хаббл_(телескоп)">Телескоп Хаббл</a>
-			</div>
-			<div class="badge_title height">569 км</div>
+		<div class="badge col-2" style="bottom: 20000px;">
+			Верхняя граница низкой околоземной орбиты
+			<div class="height-2">2000 км</div>
 		</div>
 
-		<div class="badge line" style="bottom: 9390px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1</a>
+		<div class="badge col-1" style="bottom: 20000px;">
+			Космический мусор
+			<div class="height-2">160 — 2000 км</div>
+			<div class="descr">
+			300 тыс фрагментов<br>
+			5000 тонн
 			</div>
-			<div class="badge_title height">939 км</div>
-			<div class="badge_title badge_descriptor">Апоцентр</div>
 		</div>
 
-		<div class="badge line" style="bottom: 203500px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/GPS">Спутники GPS</a>
-			</div>
-			<div class="badge_title height">20 350 км</div>
-			<div class="badge_title badge_descriptor">Геосинхронная орбита</div>
+		<div class="badge col-2" style="bottom: 40000px;">
+			Внутренний радиационный пояс
+			<div class="height-2">~4000 км</div>
 		</div>
 
-		<div class="badge line" style="bottom: 277430px;">
-			<div class="dot"></div>
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/(367943)_Дуэнде">астеройд 2012 DA14</a>
+		<div class="badge col-1" style="bottom: 61500px;">
+			Астеройд 2004 TS<sub>26</sub>
+			<div class="height-2">6150 км — ближайшая точка к Земле</div>
+			<div class="descr">
+			Один из астеройдов максимально приблизившихся к земле<br>
+			9 октября 2008 года
 			</div>
-			<div class="badge_title height">27 743 км</div>
 		</div>
 
-		<div class="badge line" style="bottom: 357860px; width: 100%">
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Геостационарная_орбита">Геостационарная орбита</a>
-			</div>
-			<div class="badge_title height">35 786 км</div>
+		<div class="badge col-2" style="bottom: 170000px;">
+			Внейшний радиационный пояс
+			<div class="height-2">~17 000 км</div>
 		</div>
+
+		<div class="badge col-1" style="bottom: 191400px;">
+			<a href="https://ru.wikipedia.org/wiki/ГЛОНАСС">Спутники Глонасс</a>
+			<div class="height-2">19 140 км</div>
+			<div class="descr">
+			Глобальная навигационная спутниковая система.<br>
+			24 спутника в трёх плоскостях<br>
+			C октября 1982 года
+			</div>
+		</div>
+
+		<div class="badge col-1" style="bottom: 202000px;">
+			<a href="https://ru.wikipedia.org/wiki/GPS">Спутники GPS</a>
+			<div class="height-2">20 200 км</div>
+			<div class="descr">
+			Система глобального позиционирования.<br>
+			31 спутник на шести орбитах.<br>
+			Период обращения 11 часов 58 минут —<br>два оборота в сутки.<br>
+			C февраля 1978 года
+			</div>
+		</div>
+
+		<div class="badge col-1" style="bottom: 277430px;">
+			<a href="https://ru.wikipedia.org/wiki/(367943)_Дуэнде">Астеройд Дуэнде</a>
+			<div class="height-2">27 743 км</div>
+			<div class="descr">
+			Диаметр 30 м<br>
+			Масса 40 000 тонн<br>
+			Один из самых опасных для Земли.<br>
+			Подлетел к Земле в один день с Челябинским метеоритом, но c ним не связан.<br>
+			15 февраля 2013
+			</div>
+		</div>
+
+		<div class="badge col-1" style="bottom: 357860px;">
+			<a href="https://ru.wikipedia.org/wiki/Геостационарная_орбита">Геостационарная орбита</a>
+			<div class="height-2">35 786 км</div>
+			<div class="descr">
+			Орбита, над экватором земли.<br>
+			При движении по этой орбите спутник находиться над определённой точкой поверхности Земли.
+			</div>
+		</div>
+
+		<div class="badge col-1" style="bottom: 360210px;">
+			<a href="https://ru.wikipedia.org/wiki/Геостационарная_орбита">Орбита захоронения</a>
+			<div class="height-2">36 021 км</div>
+			<div class="descr">
+			На эту орбиту уводят спутники после окончания работ на геостацинарной орбите.
+			</div>
+		</div>
+
 
 		<div style="overflow: hidden; position: absolute; top: 0px; height: 600px; width: 100%;">
 			<div style="width: 34762.8px; 
@@ -541,13 +690,13 @@
 			</div>
 		</div>
 
-		<div class="badge line" style="bottom: 3843990px;">
-			<div class="badge_title">
-				<a href="https://ru.wikipedia.org/wiki/Луна">Луна</a>
+		<div class="badge col-1" style="bottom: 3843990px;">
+			<a href="https://ru.wikipedia.org/wiki/Луна">Луна</a>
+			<div class="height-2">384 399 км</div>
+			<div class="descr">
+			Естественный спутник Земли.
 			</div>
-			<div class="badge_title height">384 399 км</div>
 		</div>
-	</div>
 
 	<div id="infoscroll" class="infoscroll" style="background-color: black;">
 		<div id=termo_temp_gradient class="infoscroll gradient  termo-temp-grad"></div>
@@ -656,6 +805,8 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 			vh = document.documentElement.clientHeight;
 			y = H - h - vh/2;
 
+			window.location = "#" + Math.round(y/10);
+
 			float(mezo,mezo_fixed,50,85);
 			float(termo,termo_fixed,85,690);
 
@@ -690,7 +841,7 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 
 		function float(obj, obj_fix, min, max) {
 			h_top = H - h;
-			margin = 10;
+			margin = 0;
 			//console.log(h_top);
 			if(h_top < min*10+60) {
 				obj_fix.style.visibility = "hidden";
@@ -798,15 +949,6 @@ text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span><
 		function fly_to(Y) {
 			window.scrollTo(0,H-full_height(vh-Y)-vh/2);
 		}
-
-		//console.log(obj);
-		//console.log(pos+" "+document.documentElement.clientWidth);
-		/*function move() {
-			time = document.documentElement.clientWidth / plane_speed;
-			plane.style.animation = "move_p "+time+"s 0s linear infinite";
-
-		}*/
-
 
 		place_frame_2(temp_gradient,100,2000);
 		place_frame_2(termo_temp_gradient,2000,2000000);
