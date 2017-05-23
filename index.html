@@ -141,7 +141,7 @@
 		}
 
 		.infoscroll {
-			width: 40px; 
+			width: 50px; 
 			left: 0px; 
 			bottom: 0px; 
 			height: 100vh;
@@ -149,9 +149,9 @@
 		}
 
 		.infoscroll.slider {
-			width: 38px;
+			width: 48px;
 			height: auto;
-			border: 1px solid #001eff;
+			border: 1px solid blue; /*#001eff;*/
 
 		}		
 
@@ -167,7 +167,7 @@
 		.info_line {
 			position: fixed;
 			width: 10px;
-			left: 0px;
+			right: calc(100% - 50px);
 			height: 1px;
 			
 			background-color: rgba(255,255,255,0.2);
@@ -180,6 +180,15 @@
 
 		.info_line:nth-child(9n+5) {
 			background-color: rgba(255,255,255,0.4);
+		}
+
+		.info_line span{
+			position: absolute;
+			bottom: 0px;
+			font-size: 10px;
+			width: 50px;
+			right: 0px;
+			text-align: right;
 		}
 
 		.sticky {
@@ -202,9 +211,10 @@
 		.line {
 			position: absolute;
 			width: 100%;
-			height: 1px;
+			height: 0px;
 			bottom: 110px;
-			background-color: rgba(255,255,255,0.1);
+			/*background-color: rgba(255,255,255,0.1);*/
+			border-top: 1px dashed rgba(255,255,255,0.2);
 		}
 
 		.title {
@@ -242,7 +252,7 @@
 		}
 
 		.left {
-			left: 50px;
+			left: 60px;
 		}
 
 		.bdg_descriptor {
@@ -257,10 +267,6 @@
 
 		.height {
 			width: 80px;
-		}
-
-		.line {
-			background-color: rgba(255,255,255,0.2);
 		}
 
 		.dot {
@@ -388,7 +394,7 @@
 				<a href="https://ru.wikipedia.org/wiki/Экзосфера">Экзосфера</a>
 		</div>
 
-		<div class="bdg line all-width" style="bottom: 1000px;">
+		<div class="bdg line all-width" style="bottom: 1000px; border-top: 1px solid rgba(255,255,255,0.15)">
 			<div class="dot"></div>
 			<div class="bdg_title">
 				<a href="https://ru.wikipedia.org/wiki/Линия_Кармана">Линия Кармана</a>
@@ -751,11 +757,12 @@
 		<div id=termo_temp_gradient class="infoscroll gradient  termo-temp-grad"></div>
 		<div id=temp_gradient class="infoscroll gradient temp_gradient"></div>
 
-		<div id=log_greed class="infoscroll"></div>
 
 		<!--img src="img/grid.png" class="infoscroll" style="height: 100vh;"-->
 		<div id=info_slider class="infoscroll slider" ></div>
 		<div id=info_hover class="infoscroll slider hover" ></div>
+
+		<div id=log_greed class="infoscroll"></div>
 		</div>
 
 					<h1 id=atmos_title style="position: fixed; 
@@ -774,9 +781,13 @@
 						<span class="title_role_name">Константин Уланов</span>
 					</div>
 
-					<div id=art_title class="title_role">
+					<div id=art_title class="title_role" style="bottom: auto; top: 150px;">
 						<div class="title_role_role">Арт-директор</div>
 						<span class="title_role_name">Артём Горбунов</span>
+					</div>
+
+					<div id=school_title class="title_role" style="left: 10px; right: 10px; text-align: center; ">
+						<span style="font-size: 20px;">Сделано <a href="http://artgorbunov.ru/school/29aug2016/">в Школе стажёров Бюро Горбунова</a></span>
 					</div>
 
 <div class="title_box">
@@ -867,6 +878,7 @@
 			float_title(atmos_title,0,1);
 			float_credit(des_title,140,170);
 			float_credit(art_title,250,280);
+			float_credit(school_title,480-vh/300,480+vh/30);
 			float_arrow(up,0,1);
 
 
@@ -983,6 +995,14 @@
 
 		}
 
+
+		function place_line_2(obj, height) {
+			var he = height + "";
+			he = he.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&thinsp;')
+			obj.innerHTML += "<div class=info_line style='bottom:"+log_height(height*10)+"px'><span>"+he+"</span></div>";
+
+		}
+
 		/*возвращает уровень экрана, по верху низу или центру*/
 		function view_height(type) {
 				H = document.documentElement.scrollHeight;
@@ -999,7 +1019,10 @@
 		for(pow = 1; pow < 6; pow++) {
 			for (l = 1; l < 10; l++) {
 				//console.log(l*Math.pow(10,pow));
-				place_line(log_greed,l*Math.pow(10,pow));
+				if (l == 1) {
+					place_line_2(log_greed,l*Math.pow(10,pow));
+				}
+				else place_line(log_greed,l*Math.pow(10,pow));
 			}
 		}
 
@@ -1010,6 +1033,7 @@
 		для начала линейно, потом логарифмически*/
 		function log_height(height) {
 			return  vh * log(height/shize) / log(H/shize);
+			//return  vh * ((height/shize) / (H/shize));
 		}
 
 
@@ -1036,6 +1060,7 @@
 		infoscroll.onmousedown = function(event) {
 			drag = true;
 			fly_to(event.clientY);
+			place_frame(info_slider);
 		}
 
 		infoscroll.onmouseup = function() {
@@ -1047,6 +1072,7 @@
 
 			if(drag) {
 				fly_to(event.clientY);
+				place_frame(info_slider);
 			}
 		}
 
