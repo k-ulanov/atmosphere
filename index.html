@@ -25,9 +25,9 @@
 		}
 
 		.sky_gradient {
-			background: linear-gradient(to top, #8cb4da 0%,#5788c4 28%,#2c5f98 50%,#22112e 73%,#000000 100%);
+			background: linear-gradient(to top, #51a6f6 0%, rgba(37,132,221,0) 100%);
 			width: 100%;
-			height: 250px;
+			height: 200px;
 			position: absolute;
 			bottom: 0;
 		}
@@ -83,7 +83,6 @@
 
 		h1 {
 			letter-spacing: 0.3em;
-			font-size: 100px;
 		}
 		.title_role {
 			position: fixed;
@@ -123,7 +122,7 @@
 
 		.temp_gradient {
 			background: linear-gradient(to top, 
-				#753e27 0%,
+				/*#753e27 0%,*/
 				#00022e 5.9%,
 				#221854 25%,
 				#000226 43%,
@@ -195,10 +194,29 @@
 			position: fixed;
 			opacity: 0;
 			visibility: hidden;
-			top: 24px;
+			top: 10px;
 		}
 
 		/*--------------------------------------------------------------------------------------------*/
+
+			.main_title {
+				position: absolute; 
+				left: 80px; 
+				right: 80px;
+				bottom: 540px;
+				opacity: 0;
+				transition: opacity 10s ease-in;
+				text-align: center;
+				font-size: 100px;
+			}
+	
+
+		@media only screen and (max-width: 1200px) {
+
+			.main_title {
+				font-size: 8vw;
+			}
+		}
 
 		.point {
 			position: absolute;
@@ -246,7 +264,7 @@
 
 		.bdg_title {
 			position: absolute;
-			top: 4px;
+			top: 2px;
 			right: 0px;
 			width: 190px;
 		}
@@ -257,7 +275,7 @@
 
 		.bdg_descriptor {
 			position: absolute;
-			top: 24px;
+			top: 18px;
 		}
 
 		.bdg_sticky {
@@ -283,13 +301,22 @@
 			width: 250px;
 		}
 
+		.badge a {
+			font-size: 14px;
+			margin-bottom: 2px;
+		}
+
 		.badge object {
 			position: absolute; 
 			top: 0px;
 		}
 
-		.descr {
-			/*white-space: pre;*/
+		.height-2 {
+			margin-top: 4px;
+		}
+
+		.height-2, .descr {
+			opacity: 0.8;
 		}
 
 		.col-1 {
@@ -300,7 +327,11 @@
 			left: 75%;
 		}
 
-
+		.capt {
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+			font-size: 11px;
+		}
 
 
 	</style>
@@ -308,9 +339,17 @@
 <body onload="readurl()">
 <div class="content">
 	<div class="space">
-		<div class="sky_gradient"></div>
 		<div class="abso-100 temp_gradient"></div>
 		<div class="abso-100 termo-temp-grad"></div>
+		<div class="abso-100 sky_gradient" style="background: linear-gradient(to top, #a9d3fb 0%, #51a6f6 30%, #14146e 75%, #080736 100%);"></div>
+
+		<img src="img/clouds_right.png" style="position: absolute; bottom: 0; left: 50%; height: 160px ">
+		<img src="img/clouds_left.png" style="position: absolute; bottom: 0; right: 50%; height: 160px ">
+
+		<!--img src="img/untitled-2.png" style="position: absolute; bottom: 0;  height: 200px; left: -900px ">
+		<img src="img/mountains.jpg" style="position: absolute; bottom: -200px;  height: 400px; left: -1000px "-->
+
+
 
 		<!--div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
 			<div style="width: calc(127562px + 230px*2); 
@@ -337,7 +376,7 @@
 			<div class="bdg_title left">
 				20 км
 			</div>
-			<div class="bdg_title bdg_descriptor left">
+			<div class="bdg_title bdg_descriptor left capt">
 				<a href="https://ru.wikipedia.org/wiki/Тропосфера">Тропосфера</a>
 			</div>
 		</div>
@@ -351,7 +390,7 @@
 			<div class="bdg_title left">
 				50 км
 			</div>
-			<div class="bdg_title bdg_descriptor left">
+			<div class="bdg_title bdg_descriptor left capt">
 				<a href="https://ru.wikipedia.org/wiki/Стратосфера">Стратосфера</a>
 			</div>
 		</div>
@@ -364,12 +403,12 @@
 			<div class="bdg_title left top">
 				85 км
 			</div>
-			<div id=mezo class="bdg_title bdg_descriptor left">
+			<div id=mezo class="bdg_title bdg_descriptor left capt">
 				<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
 			</div>
 		</div>
 
-		<div id=mezo_fixed class="sticky left" style="visibility: hidden; opacity: 0; transition: opacity 0.2s ease-out">
+		<div id=mezo_fixed class="sticky left capt" style="visibility: hidden; opacity: 0; transition: opacity 0.2s ease-out">
 			<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
 		</div>
 
@@ -381,16 +420,16 @@
 			<div class="bdg_title left">
 				690 км
 			</div>
-			<div id=termo class="bdg_title bdg_descriptor left">
+			<div id=termo class="bdg_title bdg_descriptor left capt">
 				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
 			</div>
 		</div>
 
-		<div id=termo_fixed class="sticky left">
+		<div id=termo_fixed class="sticky left capt">
 				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
 		</div>
 
-		<div id=exo_fixed class="sticky left">
+		<div id=exo_fixed class="sticky left capt">
 				<a href="https://ru.wikipedia.org/wiki/Экзосфера">Экзосфера</a>
 		</div>
 
@@ -402,13 +441,13 @@
 			<div class="bdg_title height">100 км</div>
 		</div>
 
-		<div class="bdg line all-width" style="bottom: 0px;">
+		<!--div class="bdg line all-width" style="bottom: 0px;">
 			<div class="dot"></div>
 			<div class="bdg_title">
 				<a href="https://ru.wikipedia.org/wiki/Земля">Поверхность земли</a>
 			</div>
 			<div class="bdg_title height">0 км</div>
-		</div>
+		</div-->
 
 		<img src="img/everest.png" style="position: absolute; width: 300px; bottom: 0; left: calc(50% - 150px);">
 
@@ -425,7 +464,7 @@
 		<div class="badge col-2" style="bottom: 110px;">
 				<object data="img/airplan.svg" type="image/svg+xml" style="left: -60px; width: 50px;"></object>
 				<a href="https://ru.wikipedia.org/wiki/Пассажирский_самолёт">Авиалайнер</a>
-				<div class="height-2">10 — 12 км</div>
+				<div class="height-2">10—12 км</div>
 				<div class="descr">
 				Высота полёта гражданских лайнеров
 				</div>
@@ -440,7 +479,7 @@
 			<div class="bdg_title">
 				<a href="https://ru.wikipedia.org/wiki/Озоновый_слой">Озоновый слой</a>
 		</div>
-			<div class="bdg_title height">20-25 км</div>
+			<div class="bdg_title height">20—25 км</div>
 		</div>
 
 		<div class="badge col-1" style="bottom: 376px;">
@@ -477,7 +516,7 @@
 
 		<div class="badge col-1" style="bottom: 760px;">
 			<a href="https://ru.wikipedia.org/wiki/Серебристые_облака">Серебристые облака</a>
-			<div class="height-2">76 — 85 км</div>
+			<div class="height-2">76—85 км</div>
 			<div class="descr">
 			Сравнительно редкое<br>атмосферное явление.
 				</div>
@@ -486,7 +525,7 @@
 
 		<div class="badge" style="bottom: 800px; left: calc(50% + 350px)">
 			<a href="https://ru.wikipedia.org/wiki/Полярное_сияние">Полярное сияние</a>
-			<div class="height-2">80 — 400 км</div>
+			<div class="height-2">80—400 км</div>
 			<div class="descr">
 			Свечение верхних слоёв атмосферы.
 				</div>
@@ -495,7 +534,7 @@
 		<div class="badge col-1" style="bottom: 1000px;">
 			<object data="img/meteo_rocket.svg" type="image/svg+xml" style="left: -30px; height: 25px; top: 5px;"></object>
 			<a href="https://ru.wikipedia.org/wiki/Метеорологическая_ракета">Метеорологическая ракета</a><br>
-			<div class="height-2">40-100 км</div>
+			<div class="height-2">40—100 км</div>
 			<div class="descr">
 			Изучение cлоёв атмосферы
 				</div>
@@ -530,7 +569,7 @@
 
 		<div class="badge col-1" style="bottom: 1880px;">
 			<object data="img/fau-2.svg" type="image/svg+xml" style="left: -18px; height: 25px; top: 5px"></object>
-			<a href="https://ru.wikipedia.org/wiki/Фау-2">ФАУ-2</a><br>
+			<a href="https://ru.wikipedia.org/wiki/Фау-2">Фау-2</a><br>
 			<div class="height-2">188 км</div>
 			<div class="descr">
 			Первый беспилотный суборбитальный<br>космический полёт<br>
@@ -650,7 +689,7 @@
 
 		<div class="badge col-1" style="bottom: 20000px;">
 			Космический мусор
-			<div class="height-2">160 — 2000 км</div>
+			<div class="height-2">160—2000 км</div>
 			<div class="descr">
 			300 тыс фрагментов<br>
 			5000 тонн
@@ -659,7 +698,7 @@
 
 		<div class="badge col-2" style="bottom: 40000px;">
 			<a href="https://ru.wikipedia.org/wiki/Радиационный_пояс">Радиационный пояс Ван Аллена</a>
-			<div class="height-2">~4000 км</div>
+			<div class="height-2">Около 4000 км</div>
 			<div class="descr">
 				Внутренний радиационный пояс Земли.<br>
 				Из-за высокой радиации в этих высотах не проводят пилотируемых полётов.<br>
@@ -678,7 +717,7 @@
 
 		<div class="badge col-2" style="bottom: 170000px;">
 			<a href="https://ru.wikipedia.org/wiki/Радиационный_пояс"></a> Внейшний радиационный пояс
-			<div class="height-2">~17 000 км</div>
+			<div class="height-2">Около 17 000 км</div>
 		</div>
 
 		<div class="badge col-1" style="bottom: 191400px;">
@@ -765,13 +804,7 @@
 		<div id=log_greed class="infoscroll"></div>
 		</div>
 
-					<h1 id=atmos_title style="position: fixed; 
-					left: 80px; 
-					right: 80px;
-					bottom: calc(50% - 10px);
-					opacity: 0;
-					transition: opacity 10s ease-in;
-					text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1>
+					<h1 id=atmos_title class="main_title">АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1>
 
 					<div id=up style="position: fixed; left: calc(50% - 30px); width: 60px; top: 20px; visibility: hidden;">
 					<object data="img/up.svg" type="image/svg+xml" style="width: 60px; animation: pulse 2s infinite ease-in"></object>
@@ -908,7 +941,7 @@
 
 		function float(obj, obj_fix, min, max) {
 			h_top = H - h;
-			margin = 0;
+			margin = -8;
 			//console.log(h_top);
 			if(h_top < min*10+60) {
 				obj_fix.style.visibility = "hidden";
@@ -948,15 +981,7 @@
 		}
 
 		function float_title(obj, min, max) {
-			(view_height("bot") < min*10 || view_height("bot") > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "100"; 
-			if(obj.style.opacity == 0) {
-				obj.style.transition = "opacity 0.5s ease-in, visibility 0.5s step-end"; //visibility будет сохранять свойство до конца анимации
-				obj.style.visibility = "hidden";
-			}
-			else {
-				obj.style.transition = "opacity 10s ease-in, visibility 1s step-start"; //visibility сменит свойство в начале анимации
-				obj.style.visibility = "visible";
-			}
+	obj.style.opacity = 100;
 		}
 
 		function float_arrow(obj, min, max) {
