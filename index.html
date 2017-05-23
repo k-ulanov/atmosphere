@@ -121,6 +121,14 @@
 			position: absolute;
 			}
 
+		.greed_line {
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			
+			background-color: rgba(255,255,255,0.2);
+		}
+
 		.temp_gradient {
 			background: linear-gradient(to top, 
 				#753e27 0%,
@@ -281,6 +289,7 @@
 			position: absolute;
 			height: 1px;
 			width: 250px;
+			padding-top: 4px;
 		}
 
 		.badge object {
@@ -311,6 +320,7 @@
 		<div class="sky_gradient"></div>
 		<div class="abso-100 temp_gradient"></div>
 		<div class="abso-100 termo-temp-grad"></div>
+		<div id=greed style="position: absolute; width: 80px; bottom: 0px; top: 0px; right: 0"></div>
 
 		<!--div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
 			<div style="width: calc(127562px + 230px*2); 
@@ -1003,6 +1013,8 @@
 
 		}
 
+
+
 		/*возвращает уровень экрана, по верху низу или центру*/
 		function view_height(type) {
 				H = document.documentElement.scrollHeight;
@@ -1086,4 +1098,21 @@
 
 	</script>
 </body>
+<script type="text/javascript">
+			for (l = 3; l < 2000; l++) {
+				//console.log(l*Math.pow(10,pow));
+				place_line_3(greed,l*50);
+				console.log(l+50);
+			}
+
+		function place_line_3(obj, height) {
+			if(height%1000 == 0) {
+				var he = height + "";
+				he = he.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&thinsp;')
+				obj.innerHTML += "<div class=greed_line style='bottom:"+height*10+"px'><span>"+he+"</span></div>";
+			}
+
+		}
+
+</script>
 </html>
