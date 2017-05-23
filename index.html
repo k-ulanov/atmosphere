@@ -42,6 +42,19 @@
 			}
 		}
 
+		@keyframes pulse {
+			from {
+				opacity: 0;
+			}
+50% {
+	opacity: 100;
+}
+
+			to {
+				opacity: 0
+			}
+		}
+
 		a {
 			color: #fff;
 			text-decoration: none;
@@ -225,7 +238,7 @@
 			position: absolute;
 			top: 4px;
 			right: 0px;
-			width: 250px;
+			width: 190px;
 		}
 
 		.left {
@@ -280,6 +293,7 @@
 		.col-2 {
 			left: 75%;
 		}
+
 
 
 
@@ -369,6 +383,11 @@
 		<div id=termo_fixed class="sticky left">
 				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
 		</div>
+
+		<div id=exo_fixed class="sticky left">
+				<a href="https://ru.wikipedia.org/wiki/Экзосфера">Экзосфера</a>
+		</div>
+
 		<div class="bdg line all-width" style="bottom: 1000px;">
 			<div class="dot"></div>
 			<div class="bdg_title">
@@ -463,12 +482,12 @@
 			<a href="https://ru.wikipedia.org/wiki/Полярное_сияние">Полярное сияние</a>
 			<div class="height-2">80 — 400 км</div>
 			<div class="descr">
-			Сравнительно редкое<br>атмосферное явление.
+			Свечение верхних слоёв атмосферы.
 				</div>
 		</div>
 
 		<div class="badge col-1" style="bottom: 1000px;">
-			<object data="img/meteo_rocket.svg" type="image/svg+xml" style="left: -30px; height: 25px;"></object>
+			<object data="img/meteo_rocket.svg" type="image/svg+xml" style="left: -30px; height: 25px; top: 5px;"></object>
 			<a href="https://ru.wikipedia.org/wiki/Метеорологическая_ракета">Метеорологическая ракета</a><br>
 			<div class="height-2">40-100 км</div>
 			<div class="descr">
@@ -478,6 +497,7 @@
 
 
 		<div class="badge col-2" style="bottom: 1096px;">
+			<object data="img/x-15.svg" type="image/svg+xml" style="left: -30px; width: 25px; top: 5px"></object>
 			<a href="https://ru.wikipedia.org/wiki/North_American_X-15">X-15</a><br>
 			<div class="height-2">107,960 км</div>
 			<div class="descr">
@@ -493,6 +513,7 @@
 
 		<div class="badge col-1" style="bottom: 1120px;">
 			<a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaceShipOne</a><br>
+			<object data="img/spaceshipone.svg" type="image/svg+xml" style="left: -30px; width: 25px; top: 5px"></object>
 			<div class="height-2">112,01 км</div>
 			<div class="descr">
 			Рекорд суборбитального полёта<br>
@@ -502,6 +523,7 @@
 		</div>
 
 		<div class="badge col-1" style="bottom: 1880px;">
+			<object data="img/fau-2.svg" type="image/svg+xml" style="left: -18px; height: 25px; top: 5px"></object>
 			<a href="https://ru.wikipedia.org/wiki/Фау-2">ФАУ-2</a><br>
 			<div class="height-2">188 км</div>
 			<div class="descr">
@@ -511,6 +533,7 @@
 		</div>
 
 		<div class="badge col-1" style="bottom: 2150px;">
+				<object data="img/sputnik.svg" type="image/svg+xml" style="left: -35px; width: 25px; top: -4px"></object>
 			<a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1</a><br>
 			<div class="height-2">215 км, перигей</div>
 			<div class="descr">
@@ -520,6 +543,7 @@
 		</div>
 
 		<div class="badge col-1" style="bottom: 3020px;">
+		<object data="img/vostok-1.svg" type="image/svg+xml" style="left: -42px; width: 35px; top: 1px"></object>
 			<a href="https://ru.wikipedia.org/wiki/Спутник-1">Восток-1</a><br>
 			<div class="height-2">302 км, апогей</div>
 			<div class="descr">
@@ -530,6 +554,7 @@
 
 
 		<div class="badge col-1" style="bottom: 3580px; width: 300px;">
+		<object data="img/mir.svg" type="image/svg+xml" style="left: -65px; width: 55px; top: 5px"></object>
 			<a href="https://ru.wikipedia.org/wiki/Мир_(орбитальная_станция)">Станция «Мир»</a><br>
 			<div class="height-2">358 км</div>
 			<div class="descr">
@@ -541,6 +566,7 @@
 
 
 		<div class="badge col-1" style="bottom: 4000px;">
+		<img src="img/starfishprime.png" style="position: absolute; left: -70px; height: 50px;">
 			<a href="https://ru.wikipedia.org/wiki/Starfish_Prime">Старфиш-прайм</a><br>
 			<div class="height-2">400 км</div>
 			<div class="descr">
@@ -553,6 +579,7 @@
 
 
 		<div class="badge col-1" style="bottom: 4150px;">
+		<object data="img/iss.svg" type="image/svg+xml" style="left: -85px; width: 75px; top: 5px"></object>
 			<a href="https://ru.wikipedia.org/wiki/Международная_космическая_станция">МКС</a><br>
 			<div class="height-2">415 км</div>
 			<div class="descr">
@@ -569,6 +596,7 @@
 
 
 		<div class="badge col-1" style="bottom: 5690px;">
+		<object data="img/hubble.svg" type="image/svg+xml" style="left: -45px; width: 35px; top: -3px"></object>
 			<a href="https://ru.wikipedia.org/wiki/Хаббл_(телескоп)">Телескоп Хаббл</a><br>
 			<div class="height-2">569 км</div>
 			<div class="descr">
@@ -578,6 +606,7 @@
 		</div>
 
 		<div class="badge col-1" style="bottom: 9390px;">
+		<object data="img/sputnik.svg" type="image/svg+xml" style="left: -35px; width: 25px; top: -4px"></object>
 			<a href="https://ru.wikipedia.org/wiki/Спутник-1">Спутник-1</a><br>
 			<div class="height-2">939 км, апогей</div>
 			<div class="descr">
@@ -587,19 +616,22 @@
 		</div>
 
 		<div class="badge col-1" style="bottom: 13720px;">
+		<object data="img/gemini.svg" type="image/svg+xml" style="left: -75px; width: 65px; top: 4px"></object>
 			<a href="https://ru.wikipedia.org/wiki/Джемини-11">Джемини-11</a>
 			<div class="height-2">1372 км</div>
 			<div class="descr">
-			Самый высокий пилотируемый полёт<br>после полёта на Луну<br>
+			Самый высокий пилотируемый полёт<br>после полёта на Луну.<br>
+			Отрабатывали стыковку кораблей.<br>
 			1966 год
 			</div>
 		</div>
 
 		<div class="badge col-1" style="bottom: 15180px;">
-			Блоустоун
+		<img src="img/bluestone.png" style="position: absolute; left: -70px; height: 50px;">
+			<a href="https://ru.wikipedia.org/wiki/Проект_«Доминик»">Блустоун</a>
 			<div class="height-2">1518 км</div>
 			<div class="descr">
-			Ядерный взрыв в космосе<br>
+			Самый высокий ядерный взрыв в космосе<br>
 			1,27 Мт<br>
 			30 июня 1962
 			</div>
@@ -620,8 +652,13 @@
 		</div>
 
 		<div class="badge col-2" style="bottom: 40000px;">
-			Внутренний радиационный пояс
+			<a href="https://ru.wikipedia.org/wiki/Радиационный_пояс">Радиационный пояс Ван Аллена</a>
 			<div class="height-2">~4000 км</div>
+			<div class="descr">
+				Внутренний радиационный пояс Земли.<br>
+				Из-за высокой радиации в этих высотах не проводят пилотируемых полётов.<br>
+				Спутники на элептической орбите, которые проходят этот пояс несколько раз в день, быстро выходят из строя.
+			</div>
 		</div>
 
 		<div class="badge col-1" style="bottom: 61500px;">
@@ -634,11 +671,12 @@
 		</div>
 
 		<div class="badge col-2" style="bottom: 170000px;">
-			Внейшний радиационный пояс
+			<a href="https://ru.wikipedia.org/wiki/Радиационный_пояс"></a> Внейшний радиационный пояс
 			<div class="height-2">~17 000 км</div>
 		</div>
 
 		<div class="badge col-1" style="bottom: 191400px;">
+		<object data="img/glonass.svg" type="image/svg+xml" style="left: -35px; width: 25px; top: 6px"></object>
 			<a href="https://ru.wikipedia.org/wiki/ГЛОНАСС">Спутники Глонасс</a>
 			<div class="height-2">19 140 км</div>
 			<div class="descr">
@@ -649,6 +687,7 @@
 		</div>
 
 		<div class="badge col-1" style="bottom: 202000px;">
+		<object data="img/gps.svg" type="image/svg+xml" style="left: -35px; width: 25px; top: 6px"></object>
 			<a href="https://ru.wikipedia.org/wiki/GPS">Спутники GPS</a>
 			<div class="height-2">20 200 км</div>
 			<div class="descr">
@@ -727,6 +766,9 @@
 					transition: opacity 10s ease-in;
 					text-align: center;">АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1>
 
+					<div id=up style="position: fixed; left: calc(50% - 30px); width: 60px; top: 20px; visibility: hidden;">
+					<object data="img/up.svg" type="image/svg+xml" style="width: 60px; animation: pulse 2s infinite ease-in"></object>
+					</div>
 					<div id=des_title class="title_role">
 						<div class="title_role_role">Дизайнер</div>
 						<span class="title_role_name">Константин Уланов</span>
@@ -820,10 +862,12 @@
 
 			float(mezo,mezo_fixed,50,85);
 			float(termo,termo_fixed,85,690);
+			float("",exo_fixed,690,190000);
 
 			float_title(atmos_title,0,1);
 			float_credit(des_title,140,170);
 			float_credit(art_title,250,280);
+			float_arrow(up,0,1);
 
 
 			place_frame(info_slider);
@@ -865,11 +909,11 @@
 				obj_fix.style.transition = "none";
 				obj_fix.style.opacity = "0";
 				
-				obj.style.visibility = "visible";
+				if(obj != "")obj.style.visibility = "visible";
 			}
 
 			else {
-				obj.style.visibility = "hidden";
+				if(obj != "")obj.style.visibility = "hidden";
 
 				obj_fix.style.visibility = "visible";
 				obj_fix.style.opacity = "100";
@@ -903,6 +947,17 @@
 			}
 		}
 
+		function float_arrow(obj, min, max) {
+			(view_height("bot") < min*10 || view_height("bot") > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "100"; 
+			if(obj.style.opacity == 0) {
+				obj.style.transition = "opacity 0.5s ease-in, visibility 0.5s step-end"; //visibility будет сохранять свойство до конца анимации
+				obj.style.visibility = "hidden";
+			}
+			else {
+				obj.style.transition = "opacity 2s ease-in 10s, visibility 1s step-start 10s"; //visibility сменит свойство в начале анимации
+				obj.style.visibility = "visible";
+			}
+		}
 
 		function log(x) {
 			 return Math.log(x) / Math.log(10);
