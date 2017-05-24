@@ -131,6 +131,18 @@
 			bottom: 0;
 		}
 
+
+		.info-temp_gradient {
+			background: linear-gradient(to top, 
+				#753e27 0%,
+				#00022e 22%,
+				#221854 52%,
+				#000226 72%,
+				#ca3b21 100%);
+			height: 2000px;
+			bottom: 0;
+		}
+
 		.termo-temp-grad {
 			background: linear-gradient(to top, 
 				#ca3b21 0%,#000000 100%);
@@ -140,15 +152,42 @@
 		}
 
 		.infoscroll {
-			width: 50px; 
+			width: 90px; 
 			left: 0px; 
 			bottom: 0px; 
 			height: 100vh;
 			position: fixed;
 		}
 
+		.info_temp {
+			left: 50px;
+			width: 40px;
+		}
+
+		.info_temp div {
+			text-align: right;
+			position: absolute;
+			width: 40px;
+			height: 1px;
+			/*background-color: rgba(255,255,255,0.4);*/
+		}
+
+		.info_temp div span {
+			text-align: right;
+			padding-right: 2px;
+			opacity: 0.6;
+			font-size: 10px;
+		}
+		.info_temp div:first-child span {
+			position: absolute;
+			width: 40px;
+			bottom: 0;
+			right: 0;
+			text-align: right;
+		}
+
 		.infoscroll.slider {
-			width: 48px;
+			width: 89px;
 			height: auto;
 			border: 1px solid blue; /*#001eff;*/
 
@@ -172,8 +211,28 @@
 			background-color: rgba(255,255,255,0.2);
 		}
 
+		.layer_line {
+			position: fixed;
+			width: 90px;
+			height: 0px;
+			border-top: 1px dashed #000;
+			text-align: left;
+		}
+
+		.layer_line:last-child {
+			border-color: #222;
+		}
+
+		.layer_line span {
+			padding-left: 2px;
+			opacity: 0.6;
+			font-size: 10px;
+			text-transform: uppercase;
+			
+		}
+
 		.info_line:nth-child(9n+1) {
-			background-color: rgba(255,255,255,0.8);
+			background-color: rgba(255,255,255,0.6);
 			width: 20px;
 		}
 
@@ -188,6 +247,13 @@
 			width: 50px;
 			right: 0px;
 			text-align: right;
+		}
+
+		.info_title {
+			position: fixed;
+			top: 2px;
+			left: 2px;
+			font-size: 10px;
 		}
 
 		.sticky {
@@ -270,7 +336,7 @@
 		}
 
 		.left {
-			left: 60px;
+			left: 110px;
 		}
 
 		.bdg_descriptor {
@@ -336,7 +402,7 @@
 
 	</style>
 </head>
-<body onload="readurl()">
+<body onload="readurl(); info_resize();">
 <div class="content">
 	<div class="space">
 		<div class="abso-100 temp_gradient"></div>
@@ -795,15 +861,22 @@
 		</div>
 
 	<div id="infoscroll" class="infoscroll" style="background-color: black;">
-		<div id=termo_temp_gradient class="infoscroll gradient  termo-temp-grad"></div>
-		<div id=temp_gradient class="infoscroll gradient temp_gradient"></div>
+		<div id=termo_temp_gradient class="infoscroll gradient termo-temp-grad"></div>
+		<div id=temp_gradient class="infoscroll gradient info-temp_gradient"></div>
 
 
 		<!--img src="img/grid.png" class="infoscroll" style="height: 100vh;"-->
 		<div id=info_slider class="infoscroll slider" ></div>
 		<div id=info_hover class="infoscroll slider hover" ></div>
 
-		<div id=log_greed class="infoscroll"></div>
+		<div id=info_moon class="infoscroll" style="bottom: 0px; overflow-x: hidden; height: 80px">
+			<img src="img/moon_small.png" style="position: absolute; bottom: 0; left: calc(50% - 40px); width: 80px;">
+		</div>
+		<div id=info_layers class="infoscroll"></div>
+		<div id=log_greed class="infoscroll" style="width: 50px;"></div>
+		<div id=info_temp class="infoscroll info_temp"></div>
+		<div class="info_title">Выс., км</div>
+		<div class="info_title" style="left: 52px;">Темп., °C</div>
 		</div>
 
 					<h1 id=atmos_title class="main_title">АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1>
@@ -824,39 +897,6 @@
 					<div id=school_title class="title_role" style="left: 10px; right: 10px; text-align: center; ">
 						<span style="font-size: 20px;">Сделано <a href="http://artgorbunov.ru/school/29aug2016/">в Школе стажёров Бюро Горбунова</a></span>
 					</div>
-
-<div class="title_box">
-	<!--table border="1" cellpadding="0" cellspacing="0" style="margin: 0 auto; border: none">
-		<tbody>
-			<tr>
-				<td colspan="2" style="text-align: center; vertical-align: top; height: 300px"></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="text-align: center;">
-					<div class="title_role">
-						<div class="title_role_role">Дизайнер</div>
-						<span class="title_role_name">Константин Уланов</span>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="text-align: center;">
-					<div class="title_role">
-						<div class="title_role_role">Арт-директор</div>
-						<span class="title_role_name">Артём Горбунов</span>
-					</div>
-				</td>
-			</tr>
-			<tr class="title_link">
-				<td><a href="http://artgorbunov.ru/school" class="title_link">Школа стажёров Бюро Горбунова</a>, 2017</td>
-				<td style="text-align: right;"><a href="https://docs.google.com/document/d/1cNWj1mYV7mxqBgzl8CVFIlhgKXnwfUTpuR9kq_Dtsdw/edit?usp=sharing" class="title_link">Пользовательское соглашение</a></td>
-			</tr>
-		</tbody>
-	</table-->
-</div>
-
-	
-
 
 </div>
 
@@ -920,23 +960,60 @@
 			place_frame(info_slider);
 		}
 
-		//window.onresize = console.log("resize");
+		window.onresize = function () {info_resize();}
+
+		function info_resize() {
+			vh = document.documentElement.clientHeight;
+			info_moon.style.bottom = log_height(H)+"px";
+			console.log(info_moon.style.bottom);
+
+			info_layers.innerHTML = "<div class=layer_line style='bottom:"+log_height(20*10)+"px'><span>Тропо</span></div>";
+			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(50*10)+"px'><span>Страто</span></div>";
+			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(85*10)+"px'><span>Мезо</span></div>";
+			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(690*10)+"px'><span>Термо</span></div>";
+			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(190000*10)+"px'><span>Экзо</span></div>";
+
+
+			info_temp.innerHTML = "<div style='bottom:"+log_height(10*10)+"px'><span>+20</span></div>";
+			info_temp.innerHTML += "<div style='bottom:"+log_height(20*10)+"px'><span>−70°</span></div>";
+			info_temp.innerHTML += "<div style='bottom:"+log_height(50*10)+"px'><span>−40°</span></div>";
+			info_temp.innerHTML += "<div style='bottom:"+log_height(85*10)+"px'><span>−100°</span></div>";
+			info_temp.innerHTML += "<div style='bottom:"+log_height(690*10)+"px'><span>2000°</span></div>";
+			info_temp.innerHTML += "<div style='bottom:"+log_height(190000*10)+"px'><span>2000°</span></div>";
+
+			place_frame(info_slider);
+
+			log_greed.innerHTML = "";
+			for(pow = 1; pow < 6; pow++) {
+				for (l = 1; l < 10; l++) {
+					//console.log(l*Math.pow(10,pow));
+					if (l == 1 || (pow == 5 && l == 4)) {
+						place_line_2(log_greed,l*Math.pow(10,pow));
+					}
+					else place_line(log_greed,l*Math.pow(10,pow));
+				}
+			}
+
+			place_frame_2(temp_gradient,100,2000);
+			place_frame_2(termo_temp_gradient,2000,2000000);
+		}
+
 
 		function readurl() {
-			    var url = decodeURIComponent(document.URL).split("#");
-			    H = document.documentElement.scrollHeight;
-			    //console.log(H+" "+url.length);
-			    if(url.length*1 > 1) {
-			    	y = url[1]*10;
-			    	vh = document.documentElement.clientHeight;
-					h = H - y - vh/2;
+			var url = decodeURIComponent(document.URL).split("#");
+			H = document.documentElement.scrollHeight;
+			//console.log(H+" "+url.length);
+			if(url.length*1 > 1) {
+				y = url[1]*10;
+				vh = document.documentElement.clientHeight;
+				h = H - y - vh/2;
 
-			    	//console.log(H+" "+h);
-					window.scrollTo(0,h);
-			    }
-			    else {
-			    	window.scrollTo(0,H);
-			    }
+				//console.log(H+" "+h);
+				window.scrollTo(0,h);
+			}
+			else {
+				window.scrollTo(0,H);
+			}
 			}
 
 
@@ -965,7 +1042,6 @@
 				obj_fix.style.visibility = "visible";
 				obj_fix.style.opacity = "100";
 			}
-
 		}
 
 
@@ -1002,18 +1078,32 @@
 			 return Math.log(x) / Math.log(10);
 		}
 
+		/*принимает высоту
+		отдаёт высоту относительно экрана
+		для начала линейно, потом логарифмически*/
+		function log_height(height) {
+			return  (vh-40) * log(height/shize) / log(H/shize);
+			//return  vh * ((height/shize) / (H/shize));
+		}
+
+
+		function full_height(num) {
+			return Math.pow(10,(num*log(H/shize)/(vh-40)))*shize;
+		}
+
 		/*принимает объект
 		делает ему нижний край как низ на схеме, верхний, как верх. через ботом и высоту*/
 		function place_frame(obj) {
 			obj.style.bottom = log_height(view_height("bot")) + "px";
-			obj.style.top = log_height(H) - log_height(view_height("top")) + "px";
+			obj.style.top = vh - log_height(view_height("top")) + "px";
+			console.log(log_height(1000));
 		}
 
 
 		function place_frame_2(obj,bot,top) {
 			//console.log(top+" "+bot);
 			obj.style.bottom = log_height(bot) + "px";
-			obj.style.top = log_height(H) - log_height(top) + "px";
+			obj.style.top = vh - log_height(top) + "px";
 		}
 
 
@@ -1043,30 +1133,7 @@
 			}
 		}
 
-		for(pow = 1; pow < 6; pow++) {
-			for (l = 1; l < 10; l++) {
-				//console.log(l*Math.pow(10,pow));
-				if (l == 1) {
-					place_line_2(log_greed,l*Math.pow(10,pow));
-				}
-				else place_line(log_greed,l*Math.pow(10,pow));
-			}
-		}
 
-
-
-		/*принимает высоту
-		отдаёт высоту относительно экрана
-		для начала линейно, потом логарифмически*/
-		function log_height(height) {
-			return  vh * log(height/shize) / log(H/shize);
-			//return  vh * ((height/shize) / (H/shize));
-		}
-
-
-		function full_height(num) {
-			return Math.pow(10,(num*log(H/shize)/vh))*shize;
-		}
 
 		function draw_info(Y) {
 			//console.log(Y+" "+(vh-Y)+" "+full_height(vh-Y));
@@ -1079,8 +1146,6 @@
 			window.scrollTo(0,H-full_height(vh-Y)-vh/2);
 		}
 
-		place_frame_2(temp_gradient,100,2000);
-		place_frame_2(termo_temp_gradient,2000,2000000);
 
 		var drag = false;
 
