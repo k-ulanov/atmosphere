@@ -4,444 +4,19 @@
 	<title>Atmosptere</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
-	<style type="text/css">
-		body {
-			margin: 0;
-			padding: 0;
-			overflow-x: hidden;
-			background-color: #000;
+	<link rel="stylesheet" type="text/css" href="style.css">
 
-			font-size: 12px;
-			color: #fff;
-			line-height: 130%;
-			
-			font-family: Geometria-Light,sans-serif;
-		}
-		.space {
-			width: 100%;
-			height: 3844590px;
-			position: relative;
-			overflow: hidden;
-		}
-
-		.sky_gradient {
-			background: linear-gradient(to top, #51a6f6 0%, rgba(37,132,221,0) 100%);
-			width: 100%;
-			height: 200px;
-			position: absolute;
-			bottom: 0;
-		}
-
-		@keyframes move_p {
-			from {
-				left: 0;
-			}
-
-			to {
-				left: 100%;
-			}
-		}
-
-		@keyframes pulse {
-			from {
-				opacity: 0;
-			}
-50% {
-	opacity: 100;
-}
-
-			to {
-				opacity: 0
-			}
-		}
-
-		a {
-			color: #fff;
-			text-decoration: none;
-			border-bottom: 1px solid rgba(255,255,255,0.2);
-		}
-
-		a:hover {
-			border-bottom-color: #fff;
-		}
-
-		a:visited {
-			color: #fff; /* #ebd4ff;*/
-			border-color: #fff; /*#ebd4ff;*/
-		}
-
-
-		.title_box {
-			position: absolute;
-			bottom: 1350px;
-			width: 100%;
-		}
-
-		table, tr, td {
-			border: none;
-		}
-
-		h1 {
-			letter-spacing: 0.3em;
-		}
-		.title_role {
-			position: fixed;
-			left: 130px;
-			bottom: 20%;
-			opacity: 0;
-		}
-
-		.title_role_role {
-			font-size: 12px;
-			margin-bottom: 7px;
-		}
-
-		.title_role_name {
-			font-size: 20px;
-			letter-spacing: 3px;
-			margin: 0;
-			text-transform: uppercase;
-
-			font-family: Geometria-Light;
-
-		}
-
-		.title_link {
-			font-size: 12px;
-
-		}
-
-		.content {
-			position: relative;
-		}
-
-		.abso-100 {
-			width: 100%;
-			position: absolute;
-			}
-
-		.temp_gradient {
-			background: linear-gradient(to top, 
-				/*#753e27 0%,*/
-				#00022e 5.9%,
-				#221854 25%,
-				#000226 43%,
-				#ca3b21 100%);
-			height: 2000px;
-			bottom: 0;
-		}
-
-
-		.info-temp_gradient {
-			background: linear-gradient(to top, 
-				#753e27 0%,
-				#00022e 22%,
-				#221854 52%,
-				#000226 72%,
-				#ca3b21 100%);
-			height: 2000px;
-			bottom: 0;
-		}
-
-		.termo-temp-grad {
-			background: linear-gradient(to top, 
-				#ca3b21 0%,#000000 100%);
-			height: 1500000px;
-			bottom: 1999px;
-
-		}
-
-		.infoscroll {
-			width: 90px; 
-			left: 0px; 
-			bottom: 0px; 
-			height: 100vh;
-			position: fixed;
-		}
-
-		.info_temp {
-			left: -3px;
-			width: 40px;
-		}
-
-		.info_temp div {
-			text-align: right;
-			position: absolute;
-			width: 40px;
-			height: 1px;
-			/*background-color: rgba(255,255,255,0.4);*/
-		}
-
-		.info_temp div span {
-			text-align: right;
-			padding-right: 2px;
-			opacity: 0.6;
-			font-size: 10px;
-		}
-		.info_temp div:first-child span {
-			position: absolute;
-			width: 40px;
-			bottom: 0;
-			right: 0;
-			text-align: right;
-		}
-
-		.infoscroll.slider {
-			width: 89px;
-			height: auto;
-			border: 1px solid blue; /*#001eff;*/
-
-		}		
-
-		.infoscroll.slider.hover {
-			opacity: 0.5;
-			display: none;
-		}
-
-		.infoscroll.gradient {
-			height: auto;
-		}
-
-		.info_line {
-			position: fixed;
-			width: 10px;
-			right: calc(100% - 90px);
-			height: 1px;
-			
-			background-color: rgba(255,255,255,0.2);
-		}
-
-		.layer_line {
-			position: fixed;
-			width: 90px;
-			height: 0px;
-			border-top: 1px dashed #000;
-			text-align: left;
-		}
-
-		.layer_line:last-child {
-			border-color: #222;
-		}
-
-		.layer_line span {
-			padding-left: 44px;
-			opacity: 0.6;
-			font-size: 10px;
-			text-transform: uppercase;
-			
-		}
-
-		.info_line:nth-child(9n+1) {
-			background-color: rgba(255,255,255,0.6);
-			width: 20px;
-		}
-
-		.info_line:nth-child(9n+5) {
-			background-color: rgba(255,255,255,0.4);
-		}
-
-		.info_line span{
-			position: absolute;
-			bottom: 0px;
-			font-size: 10px;
-			width: 50px;
-			right: 0px;
-			text-align: right;
-		}
-
-		.info_title {
-			position: fixed;
-			top: 2px;
-			left: 2px;
-			font-size: 10px;
-		}
-
-		.sticky {
-			position: fixed;
-			opacity: 0;
-			visibility: hidden;
-			top: 10px;
-		}
-
-		/*--------------------------------------------------------------------------------------------*/
-
-			.main_title {
-				position: absolute; 
-				left: 80px; 
-				right: 80px;
-				bottom: 540px;
-				opacity: 0;
-				transition: opacity 10s ease-in;
-				text-align: center;
-				font-size: 100px;
-			}
-	
-
-		@media only screen and (max-width: 1200px) {
-
-			.main_title {
-				font-size: 8vw;
-			}
-		}
-
-		.point {
-			position: absolute;
-			width: 1px;
-			height: 1px;
-			bottom: 110px;
-			background-color: #fff;
-		}
-
-		.line {
-			position: absolute;
-			width: 100%;
-			height: 0px;
-			bottom: 110px;
-			/*background-color: rgba(255,255,255,0.1);*/
-			border-top: 1px dashed rgba(255,255,255,0.2);
-		}
-
-		.title {
-			position: absolute;
-			height: 20px;
-			left: 10px;
-		}
-
-		.left-1 {
-			left: 5px;
-		}
-
-		.left-2 {
-			left: 60px;
-		}
-
-		.bdg {
-			position: absolute;
-			height: 1px;
-			right: -10px;
-			width: 250px;
-		}
-
-		.all-width
-		{
-			width: calc(100% + 10px); 
-			max-width: calc(100% + 10px);
-		}
-
-		.bdg_title {
-			position: absolute;
-			top: 2px;
-			right: 0px;
-			width: 190px;
-		}
-
-		.left {
-			left: 110px;
-		}
-
-		.bdg_descriptor {
-			position: absolute;
-			top: 18px;
-		}
-
-		.bdg_sticky {
-			position: fixed;
-			top: 10px;
-		}
-
-		.height {
-			width: 80px;
-		}
-
-		.dot {
-			position: absolute;
-			width: 1px;
-			height: 1px;
-			left: -10px;
-			background-color: #fff;
-		}
-
-		.badge {
-			position: absolute;
-			height: 1px;
-			width: 250px;
-		}
-
-		.badge a {
-			font-size: 14px;
-			margin-bottom: 2px;
-		}
-
-		.badge object {
-			position: absolute; 
-			top: 0px;
-		}
-
-		.height-2 {
-			margin-top: 4px;
-		}
-
-		.height-2, .descr {
-			opacity: 0.8;
-		}
-
-		.col-1 {
-			left: 50%;left: calc(50% + 130px)
-		}
-
-		.col-2 {
-			left: 75%;
-		}
-
-		.capt {
-			text-transform: uppercase;
-			letter-spacing: 0.2em;
-			font-size: 11px;
-		}
-
-		.autopilot {
-			padding: 8px 14px ;
-			background-color: #29479d;
-			border-radius: 3px;
-			color: white;
-			position: fixed;
-			right: 30px;
-			bottom: 20px;
-			font-size: 14px;
-		}
-
-		.autopilot:hover {
-			background-color: blue;
-			cursor: pointer;
-		}
-	</style>
 </head>
 <body onload="readurl(); info_resize();">
 <div class="content">
 	<div class="space">
 		<div class="abso-100 temp_gradient"></div>
 		<div class="abso-100 termo-temp-grad"></div>
-		<div class="abso-100 sky_gradient" style="background: linear-gradient(to top, #a9d3fb 0%, #51a6f6 30%, #14146e 75%, #080736 100%);"></div>
+		<div class="abso-100 sky_gradient"></div>
 
 		<img src="img/clouds_right.png" style="position: absolute; bottom: 0; left: 50%; height: 160px ">
 		<img src="img/clouds_left.png" style="position: absolute; bottom: 0; right: 50%; height: 160px ">
 
-		<!--img src="img/untitled-2.png" style="position: absolute; bottom: 0;  height: 200px; left: -900px ">
-		<img src="img/mountains.jpg" style="position: absolute; bottom: -200px;  height: 400px; left: -1000px "-->
-
-
-
-		<!--div style="position: absolute; width: 100%; bottom: 0; height: 230px; overflow: hidden;">
-			<div style="width: calc(127562px + 230px*2); 
-						height: calc(127136px + 230px*2);
-						position: absolute; 
-						border: 1px solid rgba(90,255,255,0.2); 
-						left: calc(50% - 127562px/2 - 230px); 
-						top: 1px;
-						border-radius: 50%">
-					</div>
-		</div-->
-	
 		<img src="img/silver_clouds.png" style="position: absolute; width: calc(1072px/2); bottom: 760px; left: calc(50% - 1072px/4) ">
 
 		<img src="img/aurora_top.png" style="position: absolute; height: 457px; bottom: 873px; left: calc(50% - 260px) ">
@@ -520,15 +95,6 @@
 			<div class="bdg_title height">100 км</div>
 		</div>
 
-		<!--div class="bdg line all-width" style="bottom: 0px;">
-			<div class="dot"></div>
->>>>>>> origin/gh-pages
-			<div class="bdg_title">
-				<a href="https://ru.wikipedia.org/wiki/Земля">Поверхность земли</a>
-			</div>
-			<div class="bdg_title height">0 км</div>
-		</div-->
-
 		<img src="img/everest.png" style="position: absolute; width: 300px; bottom: 0; left: calc(50% - 150px);">
 
 		<div class="badge" style="bottom: 88px; left: calc(50% + 130px)">
@@ -549,11 +115,6 @@
 				Высота полёта гражданских лайнеров
 				</div>
 		</div>
-
-		<!--div id=plane class="bdg" style="bottom: 110px; max-width: 100%; width: calc(50% + 100px);">
-			<div class="dot"></div>
-			<div class="bdg_title"></div>
-		</div-->
 
 		<div class="bdg line all-width" style="bottom: 230px;">
 			<div class="bdg_title">
@@ -631,10 +192,6 @@
 			1963 год
 				</div>
 		</div>
-
-		<!--div id=x15 class="bdg" style="bottom: 1096px; max-width: 100%;  width: calc(100% - 300px);">
-			<div class="dot"></div>
-		</div-->
 
 		<div class="badge col-1" style="bottom: 1120px;">
 			<a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaceShipOne</a><br>
@@ -714,11 +271,6 @@
 			C 20 ноября 1998
 				</div>
 		</div>
-
-		<!--div id=iss class="bdg" style="bottom: 4150px; max-width: 100%; width: calc(100% - 30px);">
-			<div class="dot"></div>
-		</div-->
-
 
 		<div class="badge col-1" style="bottom: 5690px;">
 		<object data="img/hubble.svg" type="image/svg+xml" style="left: -45px; width: 35px; top: -3px"></object>
@@ -856,14 +408,7 @@
 		<div style="overflow: hidden; position: absolute; top: 0px; height: 600px; width: 100%;">
 			<img src="img/moon.png" style="position: absolute; bottom: 0; height: 600px;
 			left: calc(50% - 1394px)">
-			<!--div style="width: 34762.8px; 
-						height: 34719.4px;
-						position: absolute; 
-						background-color: #7c7876;
-						left: calc(50% - 34762.8px/2); 
-						bottom: 0px;
-						border-radius: 50%">
-			</div-->
+
 		</div>
 
 		<div class="badge col-1" style="bottom: 3843990px;">
@@ -874,12 +419,31 @@
 			</div>
 		</div>
 
-	<div id="infoscroll" class="infoscroll" style="background-color: black;">
-		<div id=termo_temp_gradient class="infoscroll gradient termo-temp-grad"></div>
-		<div id=temp_gradient class="infoscroll gradient info-temp_gradient"></div>
+		<h1 id=atmos_title class="main_title">АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1>
 
+		<div id=up style="position: fixed; left: calc(50% - 30px); width: 60px; top: 20px; visibility: hidden;">
+		<object data="img/up.svg" type="image/svg+xml" style="width: 60px; animation: pulse 2s infinite ease-in"></object>
+		</div>
+		<div id=des_title class="title_role">
+			<div class="title_role_role">Дизайнер</div>
+			<span class="title_role_name">Константин Уланов</span>
+		</div>
 
-		<!--img src="img/grid.png" class="infoscroll" style="height: 100vh;"-->
+		<div id=art_title class="title_role" style="bottom: auto; top: 150px;">
+			<div class="title_role_role">Арт-директор</div>
+			<span class="title_role_name">Артём Горбунов</span>
+		</div>
+
+		<div id=school_title class="title_role" style="left: 10px; right: 10px; text-align: center; ">
+			<span style="font-size: 20px;">Сделано <a href="http://artgorbunov.ru/school/29aug2016/">в Школе стажёров Бюро Горбунова</a></span>
+		</div>
+
+	</div>
+
+	<div class="infoscroll" style="background-color: black;">
+		<div id=termo_temp_gradient class="gradient termo-temp-grad"></div>
+		<div id=temp_gradient class=" gradient info-temp_gradient"></div>
+
 		<div id=info_slider class="infoscroll slider" ></div>
 		<div id=info_hover class="infoscroll slider hover" ></div>
 
@@ -891,322 +455,10 @@
 		<div id=info_temp class="infoscroll info_temp"></div>
 		<div class="info_title" style=" top: 0px; left: 45px; width: 40px; text-align: right;">Выс., км</div>
 		<div class="info_title" style="top: 0px; left: 3px; width: 38px; text-align: left;">t, °C</div>
-		</div>
+	</div>
 
-					<h1 id=atmos_title class="main_title">АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1>
-
-					<div id=up style="position: fixed; left: calc(50% - 30px); width: 60px; top: 20px; visibility: hidden;">
-					<object data="img/up.svg" type="image/svg+xml" style="width: 60px; animation: pulse 2s infinite ease-in"></object>
-					</div>
-					<div id=des_title class="title_role">
-						<div class="title_role_role">Дизайнер</div>
-						<span class="title_role_name">Константин Уланов</span>
-					</div>
-
-					<div id=art_title class="title_role" style="bottom: auto; top: 150px;">
-						<div class="title_role_role">Арт-директор</div>
-						<span class="title_role_name">Артём Горбунов</span>
-					</div>
-
-					<div id=school_title class="title_role" style="left: 10px; right: 10px; text-align: center; ">
-						<span style="font-size: 20px;">Сделано <a href="http://artgorbunov.ru/school/29aug2016/">в Школе стажёров Бюро Горбунова</a></span>
-					</div>
-
-</div>
 	<div class="autopilot" onclick="autopilot()">Автопилот ↑</div>
-
-	<script type="text/javascript">
-		//console.log("move("+plane+")");
-		FPS = 1;
-		t= 1000/FPS;
-
-		vh = document.documentElement.clientHeight;
-		shize = 100;
-
-		go = false;
-
-		//move_interval(plane,700*10/3600/FPS,document.documentElement.clientWidth/2+100,t); //700 km/h
-		//move_interval(x15,6437*10/3600/FPS,document.documentElement.clientWidth-300,t); //6437 км/ч
-		//move_interval(iss,7.6*10/FPS,document.documentElement.clientWidth-30,t); //7.6 km/s
-
-
-		function move(obj,speed,pos,time) {
-				
-				if(pos < 0) pos = document.documentElement.clientWidth;
-				obj.style.width = pos + "px";
-				setTimeout(move,time,obj,speed,pos-speed,time);
-		}
-
-		function move_interval(obj,speed,pos,time) {
-			setInterval(function() {
-					pos -= speed;
-					if(pos < 0) { 
-						obj.style.transition = "none";
-						pos = document.documentElement.clientWidth;
-						obj.style.width = pos + "px";
-					}		
-					else {
-						obj.style.transition = "width "+time+"ms linear";
-						obj.style.width = Math.floor(pos) + "px";
-					}
-			},time);
-		} 
-
-		readurl();
-
-		window.onscroll = function position() {
-			H = document.documentElement.scrollHeight;
-			h = window.pageYOffset || document.documentElement.scrollTop;
-			vh = document.documentElement.clientHeight;
-			y = H - h - vh/2;
-
-			window.location = "#" + Math.round(y/10);
-
-			float(mezo,mezo_fixed,50,85);
-			float(termo,termo_fixed,84,690);
-			float("",exo_fixed,690,190000);
-
-			float_title(atmos_title,0,1);
-			float_credit(des_title,140,170);
-			float_credit(art_title,250,280);
-			float_credit(school_title,480-vh/300,480+vh/30);
-			float_arrow(up,0,1);
-
-
-			place_frame(info_slider);
-		}
-
-		window.onresize = function () {info_resize();}
-
-		function info_resize() {
-			vh = document.documentElement.clientHeight;
-			info_moon.style.bottom = log_height(H)+"px";
-
-
-			place_frame_2(temp_gradient,100,2000);
-			place_frame_2(termo_temp_gradient,1900,2000000);
-
-			info_layers.innerHTML = "<div class=layer_line style='bottom:"+log_height(20*10)+"px'><span>Тропо</span></div>";
-			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(50*10)+"px'><span>Страто</span></div>";
-			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(85*10)+"px'><span>Мезо</span></div>";
-			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(690*10)+"px'><span>Термо</span></div>";
-			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(190000*10)+"px'><span>Экзо</span></div>";
-
-
-			info_temp.innerHTML = "<div style='bottom:"+log_height(10*10)+"px'><span>+20°</span></div>";
-			info_temp.innerHTML += "<div style='bottom:"+log_height(20*10)+"px'><span>−70°</span></div>";
-			info_temp.innerHTML += "<div style='bottom:"+log_height(50*10)+"px'><span>−40°</span></div>";
-			info_temp.innerHTML += "<div style='bottom:"+log_height(85*10)+"px'><span>−100°</span></div>";
-			info_temp.innerHTML += "<div style='bottom:"+log_height(690*10)+"px'><span>2000°</span></div>";
-			info_temp.innerHTML += "<div style='bottom:"+log_height(190000*10)+"px'><span>2000°</span></div>";
-
-			place_frame(info_slider);
-
-			log_greed.innerHTML = "";
-			for(pow = 1; pow < 6; pow++) {
-				for (l = 1; l < 10; l++) {
-					//console.log(l*Math.pow(10,pow));
-					if (l == 1 || (pow == 5 && l == 4)) {
-						place_line_2(log_greed,l*Math.pow(10,pow));
-					}
-					else place_line(log_greed,l*Math.pow(10,pow));
-				}
-			}
-
-		}
-
-
-		function readurl() {
-			var url = decodeURIComponent(document.URL).split("#");
-			H = document.documentElement.scrollHeight;
-			//console.log(H+" "+url.length);
-			if(url.length*1 > 1) {
-				y = url[1]*10;
-				vh = document.documentElement.clientHeight;
-				h = H - y - vh/2;
-
-				//console.log(H+" "+h);
-				window.scrollTo(0,h);
-			}
-			else {
-				window.scrollTo(0,H);
-			}
-			}
-
-			info_resize();
-
-		function float(obj, obj_fix, min, max) {
-			h_top = H - h;
-			margin = -8;
-			//console.log(h_top);
-			if(h_top < min*10+60) {
-				obj_fix.style.visibility = "hidden";
-				obj_fix.style.opacity = "0";
-				obj_fix.style.transition = "opacity 0.2s ease-out";
-			}
-
-			else if (h_top > max*10+margin) {
-				obj_fix.style.visibility = "hidden";
-				obj_fix.style.transition = "none";
-				obj_fix.style.opacity = "0";
-				
-				if(obj != "")obj.style.visibility = "visible";
-			}
-
-			else {
-				if(obj != "")obj.style.visibility = "hidden";
-
-				obj_fix.style.visibility = "visible";
-				obj_fix.style.opacity = "100";
-			}
-		}
-
-
-		function float_credit(obj, min, max) {
-			//console.log(h_top);
-			(y < min*10 || y > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "100"; 
-			if(obj.style.opacity == 0) {
-				obj.style.transition = "opacity 0.5s ease-in-out, visibility 0.5s step-end"; //visibility будет сохранять свойство до конца анимации
-				obj.style.visibility = "hidden";
-			}
-			else {
-				obj.style.transition = "opacity 0.3s ease-in-out, visibility 0.3s step-start"; //visibility сменит свойство в начале анимации
-				obj.style.visibility = "visible";
-			}
-		}
-
-		function float_title(obj, min, max) {
-	obj.style.opacity = 100;
-		}
-
-		function float_arrow(obj, min, max) {
-			(view_height("bot") < min*10 || view_height("bot") > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "100"; 
-			if(obj.style.opacity == 0) {
-				obj.style.transition = "opacity 0.5s ease-in, visibility 0.5s step-end"; //visibility будет сохранять свойство до конца анимации
-				obj.style.visibility = "hidden";
-			}
-			else {
-				obj.style.transition = "opacity 2s ease-in 10s, visibility 1s step-start 10s"; //visibility сменит свойство в начале анимации
-				obj.style.visibility = "visible";
-			}
-		}
-
-		function log(x) {
-			 return Math.log(x) / Math.log(10);
-		}
-
-		/*принимает высоту
-		отдаёт высоту относительно экрана
-		для начала линейно, потом логарифмически*/
-		function log_height(height) {
-			return  (vh-40) * log(height/shize) / log(H/shize);
-			//return  vh * ((height/shize) / (H/shize));
-		}
-
-
-		function full_height(num) {
-			return Math.pow(10,(num*log(H/shize)/(vh-40)))*shize;
-		}
-
-		/*принимает объект
-		делает ему нижний край как низ на схеме, верхний, как верх. через ботом и высоту*/
-		function place_frame(obj) {
-			obj.style.bottom = log_height(view_height("bot")) + "px";
-			obj.style.top = vh - log_height(view_height("top")) + "px";
-			console.log(log_height(1000));
-		}
-
-
-		function place_frame_2(obj,bot,top) {
-			//console.log(top+" "+bot);
-			obj.style.bottom = log_height(bot) + "px";
-			obj.style.top = vh - log_height(top) + "px";
-		}
-
-
-		function place_line(obj, height) {
-			obj.innerHTML += "<div class=info_line style='bottom:"+log_height(height*10)+"px'></div>";
-
-		}
-
-
-		function place_line_2(obj, height) {
-			var he = height + "";
-			he = he.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&thinsp;')
-			obj.innerHTML += "<div class=info_line style='bottom:"+log_height(height*10)+"px'><span>"+he+"</span></div>";
-
-		}
-
-		/*возвращает уровень экрана, по верху низу или центру*/
-		function view_height(type) {
-				H = document.documentElement.scrollHeight;
-			    vh = document.documentElement.clientHeight;
-			    h = window.pageYOffset || document.documentElement.scrollTop;
-
-			switch (type) {
-				case "top": return  H - h; break;
-				case "mid": return  H - h - vh/2; break;
-				case "bot": return  H - h - vh; break;
-			}
-		}
-
-
-
-		function draw_info(Y) {
-			//console.log(Y+" "+(vh-Y)+" "+full_height(vh-Y));
-
-			var y = full_height(vh-Y);
-			place_frame_2(info_hover,y-vh/2,y+vh/2);
-		}
-
-		function fly_to(Y) {
-			window.scrollTo(0,H-full_height(vh-Y)-vh/2);
-		}
-
-
-		var drag = false;
-
-		infoscroll.onmousedown = function(event) {
-			drag = true;
-			fly_to(event.clientY);
-			place_frame(info_slider);
-		}
-
-		infoscroll.onmouseup = function() {
-			drag = false;
-		}
-
-		infoscroll.onmousemove = function(event) {
-			draw_info(event.clientY);
-
-			if(drag) {
-				fly_to(event.clientY);
-				place_frame(info_slider);
-			}
-		}
-
-		infoscroll.onmouseover = function() {
-			info_hover.style.display='block';
-		}
-
-		infoscroll.onmouseout = function() {
-			info_hover.style.display='none';
-		}
-
-		function autopilot() {
-			go = !go;
-			(go) ? lets_go() : lets_stop();
-		}
-
-		function lets_go() {
-			scroll = setInterval(function(){ window.scrollBy(0,-2); }, 10);
-		}
-
-		function lets_stop() {
-			clearInterval(scroll);
-
-		}
-
-	</script>
+</div>
 </body>
+<script src="script.js" type="text/javascript"></script>
 </html>
