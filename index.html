@@ -86,7 +86,7 @@
 		}
 		.title_role {
 			position: fixed;
-			left: 100px;
+			left: 130px;
 			bottom: 20%;
 			opacity: 0;
 		}
@@ -399,7 +399,20 @@
 			font-size: 11px;
 		}
 
+		.autopilot {
+			padding: 8px 14px ;
+			background-color: #29479d;
+			border-radius: 3px;
+			color: white;
+			position: fixed;
+			right: 30px;
+			bottom: 20px;
+			font-size: 14px;
+		}
 
+		.autopilot:hover {
+			background-color: blue;
+		}
 	</style>
 </head>
 <body onload="readurl(); info_resize();">
@@ -899,7 +912,7 @@
 					</div>
 
 </div>
-
+	<div class="autopilot" onclick="autopilot()">Автопилот ↑</div>
 
 	<script type="text/javascript">
 		//console.log("move("+plane+")");
@@ -908,6 +921,8 @@
 
 		vh = document.documentElement.clientHeight;
 		shize = 100;
+
+		go = false;
 
 		//move_interval(plane,700*10/3600/FPS,document.documentElement.clientWidth/2+100,t); //700 km/h
 		//move_interval(x15,6437*10/3600/FPS,document.documentElement.clientWidth-300,t); //6437 км/ч
@@ -947,7 +962,7 @@
 			window.location = "#" + Math.round(y/10);
 
 			float(mezo,mezo_fixed,50,85);
-			float(termo,termo_fixed,85,690);
+			float(termo,termo_fixed,84,690);
 			float("",exo_fixed,690,190000);
 
 			float_title(atmos_title,0,1);
@@ -965,7 +980,10 @@
 		function info_resize() {
 			vh = document.documentElement.clientHeight;
 			info_moon.style.bottom = log_height(H)+"px";
-			console.log(info_moon.style.bottom);
+
+
+			place_frame_2(temp_gradient,100,2000);
+			place_frame_2(termo_temp_gradient,1900,2000000);
 
 			info_layers.innerHTML = "<div class=layer_line style='bottom:"+log_height(20*10)+"px'><span>Тропо</span></div>";
 			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(50*10)+"px'><span>Страто</span></div>";
@@ -994,8 +1012,6 @@
 				}
 			}
 
-			place_frame_2(temp_gradient,100,2000);
-			place_frame_2(termo_temp_gradient,2000,2000000);
 		}
 
 
@@ -1016,7 +1032,7 @@
 			}
 			}
 
-
+			info_resize();
 
 		function float(obj, obj_fix, min, max) {
 			h_top = H - h;
@@ -1174,6 +1190,20 @@
 
 		infoscroll.onmouseout = function() {
 			info_hover.style.display='none';
+		}
+
+		function autopilot() {
+			go = !go;
+			(go) ? lets_go() : lets_stop();
+		}
+
+		function lets_go() {
+			scroll = setInterval(function(){ window.scrollBy(0,-2); }, 10);
+		}
+
+		function lets_stop() {
+			clearInterval(scroll);
+
 		}
 
 	</script>
