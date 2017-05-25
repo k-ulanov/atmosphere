@@ -162,30 +162,26 @@
 
 
 		.info_temp {
-			left: -3px;
+			left: 0px;
 			width: 40px;
 		}
 
 		.info_temp div {
-			text-align: right;
+			text-align: left;
 			position: absolute;
 			width: 40px;
-			height: 1px;
+			height: 0px;
 			/*background-color: rgba(255,255,255,0.4);*/
 		}
 
 		.info_temp div span {
-			text-align: right;
-			padding-right: 2px;
+			padding-left: 2px;
 			opacity: 0.6;
 			font-size: 10px;
 		}
-		.info_temp div:first-child span {
+		.info_temp div:first-child span { /* стиль для первой температуры */
+			bottom: 1px;
 			position: absolute;
-			width: 40px;
-			bottom: 0;
-			right: 0;
-			text-align: right;
 		}
 
 		.infoscroll.slider {
@@ -213,13 +209,10 @@
 			position: fixed;
 			width: 90px;
 			height: 0px;
-			border-top: 1px dashed #000;
+			border-top: 1px dashed rgba(255,255,255,0.4);
 			text-align: left;
 		}
 
-		.layer_line:last-child {
-			border-color: #222;
-		}
 
 		.layer_line span {
 			padding-left: 44px;
