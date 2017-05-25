@@ -27,27 +27,11 @@
 			bottom: 0;
 		}
 
-		@keyframes move_p {
-			from {
-				left: 0;
-			}
-
-			to {
-				left: 100%;
-			}
-		}
 
 		@keyframes pulse {
-			from {
-				opacity: 0;
-			}
-50% {
-	opacity: 100;
-}
-
-			to {
-				opacity: 0
-			}
+			from { opacity: 0; }
+			50% { opacity: 100; }
+			to { opacity: 0; }
 		}
 
 		a {
@@ -65,20 +49,56 @@
 			border-color: #fff; /*#ebd4ff;*/
 		}
 
-
-		.title_box {
-			position: absolute;
-			bottom: 1350px;
-			width: 100%;
-		}
-
-		table, tr, td {
-			border: none;
-		}
-
 		h1 {
 			letter-spacing: 0.3em;
 		}
+
+		.main_title {
+			position: absolute; 
+			left: 80px; 
+			right: 80px;
+			bottom: calc(396px - 0.5em);
+			opacity: 0;
+			transition: opacity 7s ease-in;
+			text-align: center;
+			font-size: 100px;
+		}
+
+		.aerostat {
+			left: calc(50% + 490px);
+			right: auto;
+		}
+
+		.react {
+			left: calc(50vw + 286.5px);
+			right: auto;
+		}
+
+
+		.zond {
+			left: calc(50% - 253.5px);
+			right: auto;
+		}
+
+		@media only screen and (max-width: 1300px) {
+			.main_title {
+				font-size: 7.5vw;
+			}
+
+			.aerostat {
+				left: 86vw;
+			}	
+
+			.react {
+				left: calc(58.6vw - 13px);
+			}
+
+			.zond {
+				left: 30.3vw;
+			}
+
+		}
+
 		.title_role {
 			position: fixed;
 			left: 130px;
@@ -255,25 +275,6 @@
 		}
 
 		/*--------------------------------------------------------------------------------------------*/
-
-			.main_title {
-				position: absolute; 
-				left: 80px; 
-				right: 80px;
-				bottom: 540px;
-				opacity: 0;
-				transition: opacity 10s ease-in;
-				text-align: center;
-				font-size: 100px;
-			}
-	
-
-		@media only screen and (max-width: 1200px) {
-
-			.main_title {
-				font-size: 8vw;
-			}
-		}
 
 		.point {
 			position: absolute;
