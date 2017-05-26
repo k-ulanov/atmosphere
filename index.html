@@ -23,7 +23,7 @@
 		<img src="img/aurora_mid.png" style="position: absolute; height: 580px; bottom: 759px; left: calc(50% - 435px) ">
 		<img src="img/aurora_bot.png" style="position: absolute; height: 303px; bottom: 839px; left: calc(50% - 434px) ">
 
-			<h1 id=atmos_title class="main_title">АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1>
+		<h1 id=atmos_title class="main_title">АТМОСФЕР<span style="letter-spacing: 0;">А</span></h1>
 
 		<div class="bdg line all-width" style="bottom: 200px;">
 			<div class="bdg_title height">20 км</div>
@@ -65,9 +65,7 @@
 			</div>
 		</div>
 
-		<div id=mezo_fixed class="sticky left capt" style="visibility: hidden; opacity: 0; transition: opacity 0.2s ease-out">
-			<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
-		</div>
+		
 
 		<div class="bdg line all-width" style="bottom: 6900px;">
 			<div class="bdg_title height">690 км</div>
@@ -82,13 +80,19 @@
 			</div>
 		</div>
 
-		<div id=termo_fixed class="sticky left capt">
-				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
+		
+		<div id=mezo_fixed class="sticky left capt bdg_descriptor" style="visibility: hidden; opacity: 0; transition: opacity 0.2s ease-out">
+			<a href="https://ru.wikipedia.org/wiki/Мезосфера">Мезосфера</a>
 		</div>
 
-		<div id=exo_fixed class="sticky left capt">
+		<div id=termo_fixed class="sticky left capt bdg_descriptor">
+				<a href="https://ru.wikipedia.org/wiki/Термосфера">Термосфера</a>
+		</div>
+		
+		<div id=exo_fixed class="sticky left capt bdg_descriptor">
 				<a href="https://ru.wikipedia.org/wiki/Экзосфера">Экзосфера</a>
 		</div>
+		
 
 		<div class="bdg line all-width" style="bottom: 1000px; border-top: 1px solid rgba(255,255,255,0.15)">
 			<div class="bdg_title">
@@ -157,7 +161,7 @@
 				</div>
 		</div>
 
-		<div class="badge col-1" style="bottom: 760px;">
+		<div class="badge" style="bottom: 760px; left: 50vw;">
 			<a href="https://ru.wikipedia.org/wiki/Серебристые_облака">Серебристые облака</a>
 			<div class="height-2">76—85 км</div>
 			<div class="descr">
@@ -166,7 +170,7 @@
 		</div>
 
 
-		<div class="badge" style="bottom: 800px; left: calc(50% + 350px)">
+		<div class="badge polar" style="bottom: 800px; width: 20vw">
 			<a href="https://ru.wikipedia.org/wiki/Полярное_сияние">Полярное сияние</a>
 			<div class="height-2">80—400 км</div>
 			<div class="descr">
@@ -174,7 +178,7 @@
 				</div>
 		</div>
 
-		<div class="badge col-1" style="bottom: 1000px;">
+		<div class="badge col-1" style="bottom: 1000px; left: 29vw;">
 			<object data="img/meteo_rocket.svg" type="image/svg+xml" style="left: -30px; height: 25px; top: 5px;"></object>
 			<a href="https://ru.wikipedia.org/wiki/Метеорологическая_ракета">Метеорологическая ракета</a><br>
 			<div class="height-2">40—100 км</div>
@@ -184,7 +188,7 @@
 		</div>
 
 
-		<div class="badge col-2" style="bottom: 1096px;">
+		<div class="badge" style="bottom: 1096px; left: 72vw; width: 23vw">
 			<object data="img/x-15.svg" type="image/svg+xml" style="left: -30px; width: 25px; top: 5px"></object>
 			<a href="https://ru.wikipedia.org/wiki/North_American_X-15">X-15</a><br>
 			<div class="height-2">107,960 км</div>
@@ -195,13 +199,13 @@
 				</div>
 		</div>
 
-		<div class="badge col-1" style="bottom: 1120px;">
+		<div class="badge" style="bottom: 1120px; left: 50vw; width: 19vw">
 			<a href="https://ru.wikipedia.org/wiki/SpaceShipOne">SpaceShipOne</a><br>
 			<object data="img/spaceshipone.svg" type="image/svg+xml" style="left: -30px; width: 25px; top: 5px"></object>
 			<div class="height-2">112,01 км</div>
 			<div class="descr">
 			Рекорд суборбитального полёта<br>
-			Брайан Бинни, 2004 год<br>
+			Брайан Бинни, 2004 год<br>
 			Побит рекорд X-15
 				</div>
 		</div>
@@ -424,17 +428,17 @@
 		<div id=up style="position: fixed; left: calc(50% - 30px); width: 60px; top: 20px; visibility: hidden;">
 		<object data="img/up.svg" type="image/svg+xml" style="width: 60px; animation: pulse 2s infinite ease-in"></object>
 		</div>
-		<div id=des_title class="title_role">
+		<div id=des_title class="title_role bdg_descriptor">
 			<div class="title_role_role">Дизайнер</div>
 			<span class="title_role_name">Константин Уланов</span>
 		</div>
 
-		<div id=art_title class="title_role" style="bottom: auto; top: 150px;">
+		<div id=art_title class="title_role bdg_descriptor" style="bottom: auto; top: 70px;">
 			<div class="title_role_role">Арт-директор</div>
 			<span class="title_role_name">Артём Горбунов</span>
 		</div>
 
-		<div id=school_title class="title_role" style="left: 10px; right: 10px; text-align: center; ">
+		<div id=school_title class="title_role" style="left: 10px; right: 10px; text-align: center; bottom: 24px; ">
 			<span style="font-size: 20px;">Сделано <a href="http://artgorbunov.ru/school/29aug2016/">в Школе стажёров Бюро Горбунова</a></span>
 		</div>
 

@@ -46,8 +46,8 @@
 
 			float_title(atmos_title,0,1);
 			float_credit(des_title,140,170);
-			float_credit(art_title,250,280);
-			float_credit(school_title,480-vh/300,480+vh/30);
+			float_credit(art_title,220,280);
+			float_credit(school_title,450-vh/300,550+vh/30);
 			float_arrow(up,0,1);
 
 
@@ -115,7 +115,7 @@
 
 		function float(obj, obj_fix, min, max) {
 			h_top = H - h;
-			margin = -8;
+			margin = 10;
 			//console.log(h_top);
 			if(h_top < min*10+60) {
 				obj_fix.style.visibility = "hidden";
