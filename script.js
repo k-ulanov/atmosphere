@@ -198,30 +198,31 @@
 
 			info_obj.innerHTML = "<div  style='left: 10px; bottom: calc("+log_height(12*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(23*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(37*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(53*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(76*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(100*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 20px;bottom: calc("+log_height(37*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -14px; bottom: calc("+log_height(53*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -4px;  bottom: calc("+log_height(76*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(100*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 20px;  bottom: calc("+log_height(107*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(112*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(188*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(215*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 15px; bottom: calc("+log_height(302*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -20px;bottom: calc("+log_height(358*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div ht(400*10));' style='bottom: calc("+log_height(400*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(188*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 10px;  bottom: calc("+log_height(215*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -5px;  bottom: calc("+log_height(302*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(358*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(400*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='left: 20px; bottom: calc("+log_height(415*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(569*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(939*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(939*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(1372*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 30px; bottom: calc("+log_height(1518*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 20px; bottom: calc("+log_height(1518*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(2000*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(4000*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(4000*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(6150*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(17000*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(19140*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(20200*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 20px;bottom: calc("+log_height(17000*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -15px; bottom: calc("+log_height(19140*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 7px;bottom: calc("+log_height(20200*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(27743*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(35786*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(36021*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 15px; bottom: calc("+log_height(35786*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -8px;bottom: calc("+log_height(36021*10)+"px - 2px)'></div>";
 
 			place_frame(info_slider);
 

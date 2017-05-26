@@ -56,7 +56,9 @@
 
 		.main_title {
 			position: absolute;
-			width: 100%;
+			width: 300%;
+			left: -100%;
+			right: -100%;
 			text-align: center;
 			bottom: calc(396px - 0.5em);
 			opacity: 0;
