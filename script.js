@@ -40,6 +40,7 @@
 
 			window.location = "#" + Math.round(y/10);
 
+			if(y < 1370) {
 			float(mezo,mezo_fixed,50,85);
 			float(termo,termo_fixed,84,690);
 			float("",exo_fixed,690,190000);
@@ -49,6 +50,25 @@
 			float_credit(art_title,220,280);
 			float_credit(school_title,450-vh/300,550+vh/30);
 			float_arrow(up,0,1);
+
+			float_credit(t1,570);
+			float_credit(t2,710);
+			float_credit(t3,810);
+
+			float_credit(t4,950,1000);
+			float_credit(t5,1040,1160);
+			float_credit(t6,1200,1300);
+			}
+			else {
+			float_credit(t7,1370); //пространство - вакуум
+
+			float_credit(t9,1520,1580); //про выживание в вакууме
+			float_credit(t10,1600,1670);
+			float_credit(t11,1690,1780);
+			float_credit(t12,1810,1890);
+			float_credit(t13,1910,1980);
+			}
+
 
 
 			place_frame(info_slider);
@@ -141,6 +161,10 @@
 
 
 		function float_credit(obj, min, max) {
+			if(typeof max == 'undefined') {
+				max = min + 90; 
+			console.log("obj = "+obj.id+" min = "+min+" max = "+max);
+			}
 			//console.log(h_top);
 			(y < min*10 || y > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "100"; 
 			if(obj.style.opacity == 0) {
@@ -191,7 +215,7 @@
 		function place_frame(obj) {
 			obj.style.bottom = log_height(view_height("bot")) + "px";
 			obj.style.top = vh - log_height(view_height("top")) + "px";
-			console.log(log_height(1000));
+			//console.log(log_height(1000));
 		}
 
 
