@@ -12,7 +12,8 @@
 			font-family: Geometria-Light,sans-serif;
 		}
 		.space {
-			width: 100%;
+			width: calc(100% - 90px);
+			left: 90px;
 			height: 3844590px;
 			position: relative;
 			overflow: hidden;
@@ -54,14 +55,14 @@
 		}
 
 		.main_title {
-			position: absolute; 
-			left: 80px; 
-			right: 80px;
+			position: absolute;
+			width: 100%;
+			text-align: center;
 			bottom: calc(396px - 0.5em);
 			opacity: 0;
 			transition: opacity 7s ease-in;
 			text-align: center;
-			font-size: 100px;
+			font-size: 90px;
 		}
 
 		.aerostat {
@@ -70,13 +71,13 @@
 		}
 
 		.react {
-			left: calc(50vw + 286.5px);
+			left: calc(58.6vw);
 			right: auto;
 		}
 
 
 		.zond {
-			left: calc(50% - 253.5px);
+			left: calc(50% - 200px);
 			right: auto;
 		}
 
@@ -85,7 +86,7 @@
 		}
 
 		@media only screen and (max-width: 1300px) {
-			.main_title {
+			/*.main_title {
 				font-size: 7.5vw;
 			}
 
@@ -99,7 +100,7 @@
 
 			.zond {
 				left: 30.3vw;
-			}
+			}*/
 
 			.polar {
 				left: 75vw;
@@ -217,6 +218,12 @@
 			background-color: #fff;
 			opacity: 0.8;
 			left: -1px;
+			margin: 5px;
+		}
+
+		.info_obj div a {
+			display: block;
+			padding: 5px;
 
 		}
 
@@ -298,6 +305,7 @@
 			opacity: 0;
 			visibility: hidden;
 			top: 10px;
+			left: 150px;
 		}
 
 		/*--------------------------------------------------------------------------------------------*/
@@ -345,11 +353,11 @@
 		}
 
 		.left {
-			left: 100px;
+			left: 10px;
 		}
 
 		.bdg_descriptor {
-			    left: 150px;
+			    left: 60px;
 		}
 
 		.bdg_sticky {
@@ -410,19 +418,31 @@
 		}
 
 		.autopilot {
-			padding: 8px 14px ;
-			background-color: #29479d;
+			padding: 6px 14px 7px;
+			background-color: rgba(13,10,61,0.1);
+			border: 1px solid #fff;
+			color: #fff;
 			border-radius: 3px;
-			color: white;
 			position: fixed;
 			right: 30px;
 			bottom: 20px;
 			font-size: 14px;
 		}
 
+		.autopilot_active {
+			background-color: #2c2ca1;
+			border: 1px solid #2c2ca1;
+		}
+		.autopilot.autopilot_active:hover {
+			background-color: #3434b2;
+
+			border: 1px solid #3434b2;
+		}
+
 		.autopilot:hover {
-			background-color: blue;
+			background-color: rgba(13,10,61,0.3);
 			cursor: pointer;
+			border: 1px solid #fff;
 		}
 
 		.credit {
@@ -430,6 +450,7 @@
 			top: 30%;
 			left: 200px;
 			width: 400px;
-			font-size: 14px;
+			font-size: 18px;
+			line-height: 130%;
 			visibility: hidden;
 		}

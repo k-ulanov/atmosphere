@@ -49,7 +49,7 @@
 			float(termo,termo_fixed,84,690);
 			float("",exo_fixed,690,190000);
 
-			float_title(atmos_title,0,1);
+			float_title(atmos_title,-100,10);
 			float_credit(des_title,140,170);
 			float_credit(art_title,220,280);
 			float_credit(school_title,450-vh/300,550+vh/30);
@@ -163,10 +163,12 @@
 						}
 					}
 				}
-				if(h == 0) {
-					go = !go;
+				if(h < 1) {
+					go = false;
+					ap.classList.remove("autopilot_active");
 						lets_stop();
 				}
+				console.log(go);
 
 
 		}
@@ -194,7 +196,8 @@
 			info_temp.innerHTML += "<div style='bottom:"+log_height(690*10)+"px'><span>2000°</span></div>";
 			info_temp.innerHTML += "<div style='bottom:"+log_height(190000*10)+"px'><span>2000°</span></div>";
 
-			info_obj.innerHTML = "<div style='bottom: calc("+log_height(23*10)+"px - 2px)'></div>";
+			info_obj.innerHTML = "<div href='atmoscheme.ru/#10' style='bottom: calc("+log_height(12*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(23*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(37*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(53*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(76*10)+"px - 2px)'></div>";
@@ -202,14 +205,14 @@
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(112*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(188*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(215*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(302*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(358*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 15px; bottom: calc("+log_height(302*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: -20px;bottom: calc("+log_height(358*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(400*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(415*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 20px; bottom: calc("+log_height(415*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(569*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(939*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(1372*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(1518*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='left: 30px; bottom: calc("+log_height(1518*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(2000*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(4000*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(6150*10)+"px - 2px)'></div>";
@@ -323,13 +326,13 @@
 		отдаёт высоту относительно экрана
 		для начала линейно, потом логарифмически*/
 		function log_height(height) {
-			return  (vh-40) * log(height/shize) / log(H/shize);
+			return  (vh-34) * log(height/shize) / log(H/shize);
 			//return  vh * ((height/shize) / (H/shize));
 		}
 
 
 		function full_height(num) {
-			return Math.pow(10,(num*log(H/shize)/(vh-40)))*shize;
+			return Math.pow(10,(num*log(H/shize)/(vh-34)))*shize;
 		}
 
 		/*принимает объект
@@ -419,7 +422,13 @@
 
 		function autopilot() {
 			go = !go;
-			(go) ? lets_go() : lets_stop();
+			if(go) {
+				ap.classList.add("autopilot_active");
+				lets_go();
+			}
+				else {
+					ap.classList.remove("autopilot_active");
+				 lets_stop();}
 		}
 
 		function lets_go() {
