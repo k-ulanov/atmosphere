@@ -6,7 +6,11 @@
 		shize = 100;
 
 		go = false;
-
+		SPEED = 2;
+		v1 = 2;
+		v2 = 20;
+		v3 = 100;
+		v4 = 400;
 
 		function move(obj,speed,pos,time) {
 				
@@ -40,7 +44,7 @@
 
 			window.location = "#" + Math.round(y/10);
 
-			if(y < 1370) {
+			
 			float(mezo,mezo_fixed,50,85);
 			float(termo,termo_fixed,84,690);
 			float("",exo_fixed,690,190000);
@@ -52,14 +56,14 @@
 			float_arrow(up,0,1);
 
 			float_credit(t1,570);
+
 			float_credit(t2,710);
 			float_credit(t3,810);
 
 			float_credit(t4,950,1000);
 			float_credit(t5,1040,1160);
 			float_credit(t6,1200,1300);
-			}
-			else {
+
 			float_credit(t7,1370); //пространство - вакуум
 
 			float_credit(t9,1520,1580); //про выживание в вакууме
@@ -67,11 +71,104 @@
 			float_credit(t11,1690,1780);
 			float_credit(t12,1810,1890);
 			float_credit(t13,1910,1980);
-			}
 
+			float_credit(t14,2500,3500); 
+			float_credit(t15,4500,5500);
+			float_credit(t16,6250,12000);
+			float_credit(t17,17100,17800);
+			float_credit(t18,18100,18900);
+			float_credit(t19,19200,20000); 
+			float_credit(t20,20300,21100);
 
+			float_credit(t21,169000,1780);
+			float_credit(t22,181000,1890);
+			float_credit(t23,191000,1980);
+			float_credit(t24,152000,1580); 
+			float_credit(t25,160000,1670);
+			float_credit(t26,169000,1780);
+			float_credit(t27,181000,1890);
+
+			float_credit(t28,191000,1980);
+			float_credit(t29,191000,1980);
+			float_credit(t30,160000,1670);
+			float_credit(t31,169000,1780);
+
+			float_credit(t32,160000,176000); 
+			float_credit(t33,180000,196000);
+			float_credit(t34,200000,216000); 
+			float_credit(t35,220000,236000);
+			float_credit(t36,240000,256000);
+			float_credit(t37,260000,276000);
+			float_credit(t38,280000,296000);
+			float_credit(t39,300000,316000);
+			float_credit(t40,320000,336000);
+			float_credit(t41,340000,356000);
+			float_credit(t42,360000,376000);
 
 			place_frame(info_slider);
+
+				if(y<62000) {
+					if (SPEED != v1) {
+						SPEED = v1;
+						if(go) { 
+						lets_stop();
+						lets_go();
+						}
+					}
+				}
+				if(y>20600 && y<210500) {
+					if (SPEED != v2) {
+						SPEED = v2;
+						if(go) { 
+						lets_stop();
+						lets_go();
+						}
+					}
+		
+				}
+				if(y>61500 && y<1600000) {
+					if (SPEED != v3) {
+						SPEED = v3;
+						if(go) { 
+						lets_stop();
+						lets_go();
+						}
+					}
+				}
+				if((y>39500 && y<40500) || (y>60000 && y<62000) || (y>169400 && y<170600) || (y>190500 && y<192000) || (y>201500 && y<202500) || (y>276900 && y<278200)) {
+					if (SPEED != v1) {
+						SPEED = v1;
+						if(go) { 
+						lets_stop();
+						lets_go();
+						}
+					}
+				}
+
+				if(y>1600000) {
+					if (SPEED != v4) {
+						SPEED = v4;
+						if(go) { 
+						lets_stop();
+						lets_go();
+						}
+					}
+				}
+				if(y>3843360) {
+					if (SPEED != v1) {
+						SPEED = v1;
+						if(go) { 
+						lets_stop();
+						lets_go();
+						}
+					}
+				}
+				if(h == 0) {
+					go = !go;
+						lets_stop();
+				}
+
+
 		}
 
 		window.onresize = function () {info_resize();}
@@ -163,7 +260,7 @@
 		function float_credit(obj, min, max) {
 			if(typeof max == 'undefined') {
 				max = min + 90; 
-			console.log("obj = "+obj.id+" min = "+min+" max = "+max);
+			//console.log("obj = "+obj.id+" min = "+min+" max = "+max);
 			}
 			//console.log(h_top);
 			(y < min*10 || y > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "100"; 
@@ -301,10 +398,11 @@
 		}
 
 		function lets_go() {
-			scroll = setInterval(function(){ window.scrollBy(0,-2); }, 10);
+			scroll = setInterval(function (){window.scrollBy(0,-1*SPEED); console.log(go+" "+SPEED);}, 10);
 		}
 
 		function lets_stop() {
 			clearInterval(scroll);
 
 		}
+
