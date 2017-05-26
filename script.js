@@ -184,6 +184,7 @@
 			place_frame_2(temp_gradient,100,2000);
 			place_frame_2(termo_temp_gradient,1900,2000000);
 
+
 			info_layers.innerHTML = "<div class=layer_line style='bottom:"+log_height(20*10)+"px'><span>Тропо</span></div>";
 			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(50*10)+"px'><span>Страто</span></div>";
 			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(85*10)+"px'><span>Мезо</span></div>";
@@ -197,33 +198,35 @@
 			info_temp.innerHTML += "<div style='bottom:"+log_height(690*10)+"px'><span>2000°</span></div>";
 			info_temp.innerHTML += "<div style='bottom:"+log_height(190000*10)+"px'><span>2000°</span></div>";
 
-			info_obj.innerHTML = "<div  style='left: 10px; bottom: calc("+log_height(12*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(23*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 20px;bottom: calc("+log_height(37*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -14px; bottom: calc("+log_height(53*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -4px;  bottom: calc("+log_height(76*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(100*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 20px;  bottom: calc("+log_height(107*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(112*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(188*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 10px;  bottom: calc("+log_height(215*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -5px;  bottom: calc("+log_height(302*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(358*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(400*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 20px; bottom: calc("+log_height(415*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(569*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(939*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(1372*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 20px; bottom: calc("+log_height(1518*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(2000*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -18px; bottom: calc("+log_height(4000*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(6150*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 20px;bottom: calc("+log_height(17000*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -15px; bottom: calc("+log_height(19140*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 7px;bottom: calc("+log_height(20200*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(27743*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: 15px; bottom: calc("+log_height(35786*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='left: -8px;bottom: calc("+log_height(36021*10)+"px - 2px)'></div>";
+
+			info_obj.innerHTML = "";
+			place_log_point(12,10);
+			place_log_point(23,0);
+			place_log_point(37,20);
+			place_log_point(53,-14);
+			place_log_point(76,-4);
+			place_log_point(100,-18);
+			place_log_point(107,20);
+			place_log_point(112,0);
+			place_log_point(188,-18);
+			place_log_point(215,10);
+			place_log_point(302,-5);
+			place_log_point(358,-18);
+			place_log_point(400,0);
+			place_log_point(415,20);
+			place_log_point(569,0);
+			place_log_point(939,-18);
+			place_log_point(1372,0);
+			place_log_point(1518,20);
+			place_log_point(2000,0);
+			place_log_point(4000,-18);
+			place_log_point(6150,0);
+			place_log_point(17000,20);
+			place_log_point(19140,-15);
+			place_log_point(20200,7);
+			place_log_point(27743,0);
+			place_log_point(35786,15);
+			place_log_point(36021,-8);
 
 			place_frame(info_slider);
 
@@ -240,6 +243,9 @@
 
 		}
 
+		function place_log_point(height,left){
+			info_obj.innerHTML += "<div onclick='fly_to("+(vh-log_height(height*10))+")' class=click_area style='left: "+left+"px; bottom: calc("+log_height(height*10)+"px - 6px)'><div class='log_point'></div></div>";
+		}
 
 		function readurl() {
 			var url = decodeURIComponent(document.URL).split("#");

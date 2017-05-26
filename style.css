@@ -225,10 +225,10 @@
 		.info_obj {
 			position: absolute;
 			width: 1px;
-			left: 40px;
+			left: 36px;
 		}
 
-		.info_obj div {
+		/*.info_obj div {
 			position: absolute;
 			width: 4px;
 			height: 4px;
@@ -236,11 +236,22 @@
 			background-color: #fff;
 			opacity: 0.8;
 			left: -2px;
+		}*/
+
+
+		.click_area {
+			position: absolute;
+			border-radius: 50%;
+			background-color: rgba(0,0,0,0.0);
+			cursor: pointer;
 		}
 
-		.info_obj div a {
-			display: block;
-
+		.log_point {
+			width: 2px;
+			height: 2px;
+			margin: 5px;
+			border-radius: 50%;
+			background-color: #fff;
 		}
 
 		.info_temp div span {
