@@ -11,6 +11,12 @@
 			
 			font-family: Geometria-Light,sans-serif;
 		}
+
+		   @font-face {
+			    font-family: Geometria; /* Имя шрифта */
+			    src: url(webfonts/Geometria.otf); /* Путь к файлу со шрифтом */
+			   }
+
 		.space {
 			width: calc(100% - 90px);
 			left: 90px;
@@ -51,7 +57,8 @@
 		}
 
 		h1 {
-			letter-spacing: 0.3em;
+			letter-spacing: 0.7em;
+			font-weight: normal;
 		}
 
 		.main_title {
@@ -60,11 +67,11 @@
 			left: -100%;
 			right: -100%;
 			text-align: center;
-			bottom: calc(396px - 0.5em);
+			bottom: calc(402px - 0.5em);
 			opacity: 0;
 			transition: opacity 7s ease-in;
 			text-align: center;
-			font-size: 90px;
+			font-size: 62px;
 		}
 
 		.aerostat {
@@ -130,6 +137,15 @@
 			text-transform: uppercase;
 
 			font-family: Geometria-Light;
+
+		}
+
+		.law_title {
+			position: fixed;
+			bottom: 24px;
+			left: 10px; 
+			right: 10px; 
+			text-align: center;
 
 		}
 
@@ -369,6 +385,11 @@
 			text-align: right;
 			right: 4px;
 			width: auto;
+			opacity: 0.5;
+		}
+
+		.transp {
+			opacity: 0.5;
 		}
 
 		.dot {
@@ -418,8 +439,10 @@
 		}
 
 		.autopilot {
-			padding: 6px 14px 7px;
+			padding: 6px 14px 8px;
 			background-color: rgba(13,10,61,0.1);
+
+			font-family: Geometria;
 			border: 1px solid #fff;
 			color: #fff;
 			border-radius: 3px;
@@ -445,12 +468,29 @@
 			border: 1px solid #fff;
 		}
 
+		.autopilot_speed {
+			padding: 6px 14px 8px;
+			background-color: rgba(0,0,0,0);
+			border: 1px solid rgba(0,0,0,0);
+
+			font-family: Geometria;
+			font-size: 14px;
+
+			color: #fff;
+			border-radius: 3px;
+
+			position: fixed;
+			right: 150px;
+			bottom: 20px;
+		}
+
 		.credit {
 			position: fixed;
 			top: 30%;
 			left: 200px;
-			width: 400px;
-			font-size: 18px;
+			width: 460px;
+			font-size: 23px;
 			line-height: 130%;
 			visibility: hidden;
+			font-family: Geometria;
 		}

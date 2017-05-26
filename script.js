@@ -50,9 +50,10 @@
 			float("",exo_fixed,690,190000);
 
 			float_title(atmos_title,-100,10);
-			float_credit(des_title,140,170);
+			float_credit(des_title,120,180);
 			float_credit(art_title,220,280);
-			float_credit(school_title,450-vh/300,550+vh/30);
+			float_credit(school_title,410+vh/20,490+vh/20);
+			float_credit(law_title,600+vh/20,670+vh/20);
 			float_arrow(up,0,1);
 
 			float_credit(t1,570);
@@ -66,13 +67,13 @@
 
 			float_credit(t7,1370); //пространство - вакуум
 
-			float_credit(t9,1520,1580); //про выживание в вакууме
-			float_credit(t10,1600,1670);
-			float_credit(t11,1690,1780);
-			float_credit(t12,1810,1890);
-			float_credit(t13,1910,1980);
+			float_credit(t9,1520,1600); //про выживание в вакууме
+			float_credit(t10,1600,1690);
+			float_credit(t11,1690,1810);
+			float_credit(t12,1810,1910);
+			float_credit(t13,1910,2000);
 
-			float_credit(t14,2500,3500); 
+			float_credit(t14,2030,3000); 
 			float_credit(t15,4500,5500);
 			float_credit(t16,6250,12000);
 			float_credit(t17,17100,17800);
@@ -434,10 +435,14 @@
 		}
 
 		function lets_go() {
-			scroll = setInterval(function (){window.scrollBy(0,-1*SPEED); console.log(go+" "+SPEED);}, 10);
+			ap_speed.innerHTML =  SPEED*100+" км/с";
+			scroll = setInterval(function (){
+					window.scrollBy(0,-1*SPEED); 
+					console.log(go+" "+SPEED);}, 10);
 		}
 
 		function lets_stop() {
 			clearInterval(scroll);
+			ap_speed.innerHTML =  "";
 		}
 
