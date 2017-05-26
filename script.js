@@ -196,7 +196,7 @@
 			info_temp.innerHTML += "<div style='bottom:"+log_height(690*10)+"px'><span>2000°</span></div>";
 			info_temp.innerHTML += "<div style='bottom:"+log_height(190000*10)+"px'><span>2000°</span></div>";
 
-			info_obj.innerHTML = "<div href='atmoscheme.ru/#10' style='bottom: calc("+log_height(12*10)+"px - 2px)'></div>";
+			info_obj.innerHTML = "<div  style='left: 10px; bottom: calc("+log_height(12*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(23*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(37*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(53*10)+"px - 2px)'></div>";
@@ -207,7 +207,7 @@
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(215*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='left: 15px; bottom: calc("+log_height(302*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='left: -20px;bottom: calc("+log_height(358*10)+"px - 2px)'></div>";
-			info_obj.innerHTML += "<div style='bottom: calc("+log_height(400*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div ht(400*10));' style='bottom: calc("+log_height(400*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='left: 20px; bottom: calc("+log_height(415*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(569*10)+"px - 2px)'></div>";
 			info_obj.innerHTML += "<div style='bottom: calc("+log_height(939*10)+"px - 2px)'></div>";
@@ -387,6 +387,7 @@
 		}
 
 		function fly_to(Y) {
+			console.log(H-full_height(vh-Y)-vh/2);
 			window.scrollTo(0,H-full_height(vh-Y)-vh/2);
 		}
 

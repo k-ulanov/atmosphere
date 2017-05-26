@@ -217,13 +217,11 @@
 			border-radius: 50%;
 			background-color: #fff;
 			opacity: 0.8;
-			left: -1px;
-			margin: 5px;
+			left: -2px;
 		}
 
 		.info_obj div a {
 			display: block;
-			padding: 5px;
 
 		}
 
