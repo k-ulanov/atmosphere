@@ -203,6 +203,23 @@
 			/*background-color: rgba(255,255,255,0.4);*/
 		}
 
+		.info_obj {
+			position: absolute;
+			width: 1px;
+			left: 40px;
+		}
+
+		.info_obj div {
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: #fff;
+			opacity: 0.8;
+			left: -1px;
+
+		}
+
 		.info_temp div span {
 			padding-left: 2px;
 			opacity: 0.6;

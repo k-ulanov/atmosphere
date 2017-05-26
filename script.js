@@ -135,7 +135,7 @@
 						}
 					}
 				}
-				if((y>39500 && y<40500) || (y>60000 && y<62000) || (y>169400 && y<170600) || (y>190500 && y<192000) || (y>201500 && y<202500) || (y>276900 && y<278200)) {
+				if((y>39500 && y<40500) || (y>60000 && y<62000) || (y>169400 && y<170600) || (y>190500 && y<192000) || (y>201500 && y<202500) || (y>276900 && y<278200) || (y>276900 && y<278200))  {
 					if (SPEED != v1) {
 						SPEED = v1;
 						if(go) { 
@@ -187,13 +187,38 @@
 			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(690*10)+"px'><span>Термо</span></div>";
 			info_layers.innerHTML += "<div class=layer_line style='bottom:"+log_height(190000*10)+"px'><span>Экзо</span></div>";
 
-
 			info_temp.innerHTML = "<div style='bottom:"+log_height(10*10)+"px'><span>+20°</span></div>";
 			info_temp.innerHTML += "<div style='bottom:"+log_height(20*10)+"px'><span>−70°</span></div>";
 			info_temp.innerHTML += "<div style='bottom:"+log_height(50*10)+"px'><span>−40°</span></div>";
 			info_temp.innerHTML += "<div style='bottom:"+log_height(85*10)+"px'><span>−100°</span></div>";
 			info_temp.innerHTML += "<div style='bottom:"+log_height(690*10)+"px'><span>2000°</span></div>";
 			info_temp.innerHTML += "<div style='bottom:"+log_height(190000*10)+"px'><span>2000°</span></div>";
+
+			info_obj.innerHTML = "<div style='bottom: calc("+log_height(23*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(37*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(53*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(76*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(100*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(112*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(188*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(215*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(302*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(358*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(400*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(415*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(569*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(939*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(1372*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(1518*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(2000*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(4000*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(6150*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(17000*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(19140*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(20200*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(27743*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(35786*10)+"px - 2px)'></div>";
+			info_obj.innerHTML += "<div style='bottom: calc("+log_height(36021*10)+"px - 2px)'></div>";
 
 			place_frame(info_slider);
 
@@ -403,6 +428,5 @@
 
 		function lets_stop() {
 			clearInterval(scroll);
-
 		}
 
