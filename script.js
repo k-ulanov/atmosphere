@@ -67,20 +67,19 @@
 
 			float_credit(t7,1370); //пространство - вакуум
 
-			float_credit(t9,1520,2976); //про выживание в вакууме
-			float_credit(t10,2976,4432);
-			float_credit(t11,4432,5888);
-			float_credit(t12,5888,7344);
-			float_credit(t13,7344,8800);
-
-			float_credit(t14,8800,10256); //про радиацию
-			float_credit(t15,10256,11712);
-			float_credit(t16,11712,13168);
-			float_credit(t17,13168,13670);
-			float_credit(t18,13670,14624);
-			float_credit(t182,14624,16080);
-			float_credit(t19,16080,17536); 
-			float_credit(t20,17536,19080);//закончили про космический мусор
+			float_credit(t9,1520,  2865); //про выживание в вакууме
+			float_credit(t10,2865, 4210);
+			float_credit(t11,4210, 5555);
+			float_credit(t12,5555, 6900);
+			float_credit(t13,6900, 8245);
+			float_credit(t14,8245, 9590); //про радиацию
+			float_credit(t15,9590, 10935);
+			float_credit(t16,10935,12280);
+			float_credit(t17,12280,13625);
+			float_credit(t18,13625,14970);
+		   float_credit(t182,14970,16315);
+			float_credit(t19,16315,17660); 
+			float_credit(t20,17660,19080);//закончили про космический мусор
 
 			float_credit(t21,20250,22000);
 			float_credit(t22,22000,24000);
