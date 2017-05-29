@@ -82,18 +82,19 @@
 			float_credit(t19,14600,16950); 
 			float_credit(t20,17050,19080);//закончили про космический мусор
 
-			float_credit(t21,169000,1780);
-			float_credit(t22,181000,1890);
-			float_credit(t23,191000,1980);
-			float_credit(t24,152000,1580); 
-			float_credit(t25,160000,1670);
-			float_credit(t26,169000,1780);
-			float_credit(t27,181000,1890);
+			float_credit(t21,20250,22000);
+			float_credit(t22,22000,24000);
+			float_credit(t23,24000,25700);
+			float_credit(t24,25700,27700);
 
-			float_credit(t28,191000,1980);
-			float_credit(t29,191000,1980);
-			float_credit(t30,160000,1670);
-			float_credit(t31,169000,1780);
+			float_credit(t25,27800,30000);
+			float_credit(t26,32000,34000);
+			float_credit(t27,34000,35700);
+			float_credit(t28,35800,35950);
+			float_credit(t29,36060,38000);
+			float_credit(t30,38000,40000);
+			float_credit(t31,40000,42000);
+			float_credit(t312,42000,44000);
 
 			float_credit(t32,160000,176000); 
 			float_credit(t33,180000,196000);
