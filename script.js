@@ -68,8 +68,8 @@
 			float_credit(t7,1370); //пространство - вакуум
 
 			float_credit(t9,1520,  2865); //про выживание в вакууме
-			float_credit(t10,2865, 4210);
-			float_credit(t11,4210, 5555);
+			float_credit(t10,2865, 3950);
+			float_credit(t11,4050, 5555);
 			float_credit(t12,5555, 6900);
 			float_credit(t13,6900, 8245);
 			float_credit(t14,8245, 9590); //про радиацию
