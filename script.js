@@ -49,7 +49,7 @@
 			float(termo,termo_fixed,84,690);
 			float("",exo_fixed,690,190000);
 
-			float_title(atmos_title,-100,10);
+			float_title(atmos_title,-100,20);
 			float_credit(des_title,120,180);
 			float_credit(art_title,220,280);
 			float_credit(school_title,410+vh/20,490+vh/20);
@@ -289,7 +289,7 @@
 				if(obj != "")obj.style.visibility = "hidden";
 
 				obj_fix.style.visibility = "visible";
-				obj_fix.style.opacity = "100";
+				obj_fix.style.opacity = "1";
 			}
 		}
 
@@ -300,7 +300,7 @@
 			//console.log("obj = "+obj.id+" min = "+min+" max = "+max);
 			}
 			//console.log(h_top);
-			(y < min*10 || y > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "100"; 
+			(y < min*10 || y > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "1"; 
 			if(obj.style.opacity == 0) {
 				obj.style.transition = "opacity 0.5s ease-in-out, visibility 0.5s step-end"; //visibility будет сохранять свойство до конца анимации
 				obj.style.visibility = "hidden";
