@@ -61,9 +61,9 @@
 			float_credit(t2,710);
 			float_credit(t3,810);
 
-			float_credit(t4,950,1000);
-			float_credit(t5,1000,1200);
-			float_credit(t6,1200,1300);
+			float_credit(t4,950,1096);
+			float_credit(t5,1096,1242);
+			float_credit(t6,1242,1300);
 
 			float_credit(t7,1370); //пространство - вакуум
 
@@ -87,9 +87,9 @@
 			float_credit(t24,25700,27700);
 
 			float_credit(t25,27800,30000);
-			float_credit(t26,32000,34000);
-			float_credit(t27,34000,35700);
-			float_credit(t28,35800,35950);
+			float_credit(t26,30000,32000);
+			float_credit(t27,32000,34000);
+			float_credit(t28,34000,36000);
 			float_credit(t29,36060,38000);
 			float_credit(t30,38000,40000);
 			float_credit(t31,40000,42000);
@@ -104,31 +104,15 @@
 			float_credit(t38,280000,296000);
 			float_credit(t39,300000,316000);
 			float_credit(t40,320000,336000);
-			float_credit(t41,340000,356000);
+			float_credit(t41,340000,355900);
 			float_credit(t42,360000,376000);
 
 			place_frame(info_slider);
 
-				if(y<62000) {
-					if (SPEED != v1) {
-						SPEED = v1;
-						if(go) { 
-						lets_stop();
-						lets_go();
-						}
-					}
-				}
-				if(y>20600 && y<210500) {
-					if (SPEED != v2) {
-						SPEED = v2;
-						if(go) { 
-						lets_stop();
-						lets_go();
-						}
-					}
-		
-				}
-				if(y>61500 && y<1600000) {
+			//console.log(y+" speed = "+SPEED);
+
+				if(y>190800 && y<1600000) {
+			console.log("block1");
 					if (SPEED != v3) {
 						SPEED = v3;
 						if(go) { 
@@ -137,7 +121,42 @@
 						}
 					}
 				}
-				if((y>39500 && y<40500) || (y>60000 && y<62000) || (y>169400 && y<170600) || (y>190500 && y<192000) || (y>201500 && y<202500) || (y>276900 && y<278200) || (y>276900 && y<278200))  {
+
+				if(y>15200 && y <440000) {
+			console.log("block2");
+					if (SPEED != v2) {
+						SPEED = v2;
+						if(go) { 
+						lets_stop();
+						lets_go();
+						}
+					}
+
+				}
+
+				if(y>1600000) {
+			console.log("block4");
+					if (SPEED != v4) {
+						SPEED = v4;
+						if(go) { 
+						lets_stop();
+						lets_go();
+						}
+					}
+				}
+
+				if((y<15750) 
+					|| (y>2000*10-vh && y<2000*10+vh/2) //граница низких орбит
+					|| (y>4000*10-vh && y<4000*10+vh/2) //пояс Ван Алена
+					|| (y>6150*10-vh && y<6150*10+vh/2) //Астерод ТС26
+					|| (y>17000*10-vh && y<17000*10+vh/2) //радиация
+					|| (y>19140*10-vh && y<19140*10+vh/2) //глонасс
+					|| (y>20200*10-vh && y<20200*10+vh/2) //глонасс
+					|| (y>27743*10-vh && y<27743*10+vh/2) //дуэнде
+					|| (y>35786*10-vh && y<35786*10+vh/2) //гсо
+					|| (y>36021*10-vh && y<36021*10+vh/2) //захорон
+					|| (y>3843360))  { //луна
+						console.log("block3");
 					if (SPEED != v1) {
 						SPEED = v1;
 						if(go) { 
@@ -147,30 +166,11 @@
 					}
 				}
 
-				if(y>1600000) {
-					if (SPEED != v4) {
-						SPEED = v4;
-						if(go) { 
-						lets_stop();
-						lets_go();
-						}
-					}
-				}
-				if(y>3843360) {
-					if (SPEED != v1) {
-						SPEED = v1;
-						if(go) { 
-						lets_stop();
-						lets_go();
-						}
-					}
-				}
-				if(h < 1) {
+				if(h < 1) { //полная остановка около луны
 					go = false;
 					ap.classList.remove("autopilot_active");
 						lets_stop();
 				}
-				console.log(go);
 
 
 		}
@@ -396,7 +396,7 @@
 		}
 
 		function fly_to(Y) {
-			console.log(H-full_height(vh-Y)-vh/2);
+			//console.log(H-full_height(vh-Y)-vh/2);
 			window.scrollTo(0,H-full_height(vh-Y)-vh/2);
 		}
 
@@ -445,7 +445,7 @@
 			ap_speed.innerHTML =  SPEED*10+" км/с";
 			scroll = setInterval(function (){
 					window.scrollBy(0,-1*SPEED); 
-					console.log(go+" "+SPEED);}, 10);
+					}, 10);
 		}
 
 		function lets_stop() {
