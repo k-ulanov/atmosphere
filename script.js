@@ -443,7 +443,7 @@
 		}
 
 		function lets_go() {
-			ap_speed.innerHTML =  SPEED*100+" км/с";
+			ap_speed.innerHTML =  SPEED*10+" км/с";
 			scroll = setInterval(function (){
 					window.scrollBy(0,-1*SPEED); 
 					console.log(go+" "+SPEED);}, 10);
