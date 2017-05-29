@@ -73,13 +73,14 @@
 			float_credit(t12,1810,1910);
 			float_credit(t13,1910,2000);
 
-			float_credit(t14,2030,3000); 
-			float_credit(t15,4500,5500);
-			float_credit(t16,6250,12000);
-			float_credit(t17,17100,17800);
-			float_credit(t18,18100,18900);
-			float_credit(t19,19200,20000); 
-			float_credit(t20,20300,21100);
+			float_credit(t14,2030,3950); //про радиацию
+			float_credit(t15,4050,6100);
+			float_credit(t16,6200,8300);
+			float_credit(t17,8300,10400);
+			float_credit(t18,10400,12500);
+			float_credit(t182,12500,14600);
+			float_credit(t19,14600,16950); 
+			float_credit(t20,17050,19080);//закончили про космический мусор
 
 			float_credit(t21,169000,1780);
 			float_credit(t22,181000,1890);
