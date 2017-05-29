@@ -212,7 +212,7 @@
 			place_log_point(215,10);
 			place_log_point(302,-5);
 			place_log_point(358,-18);
-			place_log_point(400,0);
+			place_log_point(400,-2);
 			place_log_point(415,20);
 			place_log_point(569,0);
 			place_log_point(939,-18);
@@ -244,7 +244,7 @@
 		}
 
 		function place_log_point(height,left){
-			info_obj.innerHTML += "<div onclick='fly_to("+(vh-log_height(height*10))+")' class=click_area style='left: "+left+"px; bottom: calc("+log_height(height*10)+"px - 6px)'><div class='log_point'></div></div>";
+			info_obj.innerHTML += "<div onclick='fly_to("+(vh-log_height(height*10))+")' class=click_area style='left: "+left+"px; bottom: calc("+log_height(height*10)+"px - 9px)'><div class='log_point'></div></div>";
 		}
 
 		function readurl() {

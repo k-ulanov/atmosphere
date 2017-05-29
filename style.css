@@ -146,7 +146,7 @@
 			left: 10px; 
 			right: 10px; 
 			text-align: center;
-			opacity: 0;
+			opacity: 0; 
 
 		}
 
@@ -226,7 +226,7 @@
 		.info_obj {
 			position: absolute;
 			width: 1px;
-			left: 36px;
+			left: 32px;
 		}
 
 		/*.info_obj div {
@@ -250,7 +250,7 @@
 		.log_point {
 			width: 2px;
 			height: 2px;
-			margin: 5px;
+			margin: 8px;
 			border-radius: 50%;
 			background-color: #fff;
 		}
