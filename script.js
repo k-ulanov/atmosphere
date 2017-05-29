@@ -89,7 +89,7 @@
 			float_credit(t25,27800,30000);
 			float_credit(t26,30000,32000);
 			float_credit(t27,32000,34000);
-			float_credit(t28,34000,36000);
+			float_credit(t28,34000,35950);
 			float_credit(t29,36060,38000);
 			float_credit(t30,38000,40000);
 			float_credit(t31,40000,42000);
@@ -104,7 +104,7 @@
 			float_credit(t38,280000,296000);
 			float_credit(t39,300000,316000);
 			float_credit(t40,320000,336000);
-			float_credit(t41,340000,355900);
+			float_credit(t41,340000,356000);
 			float_credit(t42,360000,376000);
 
 			place_frame(info_slider);
