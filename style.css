@@ -37,7 +37,7 @@
 
 		@keyframes pulse {
 			from { opacity: 0; }
-			50% { opacity: 100; }
+			50% { opacity: 1; }
 			to { opacity: 0; }
 		}
 

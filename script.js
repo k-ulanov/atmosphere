@@ -313,7 +313,7 @@
 		}
 
 		function float_title(obj, min, max) {
-	obj.style.opacity = 100;
+	obj.style.opacity = 1;
 		}
 
 		function float_arrow(obj, min, max) {
