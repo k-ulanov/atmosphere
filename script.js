@@ -62,7 +62,7 @@
 			float_credit(t3,810);
 
 			float_credit(t4,950,1000);
-			float_credit(t5,1040,1160);
+			float_credit(t5,1000,1200);
 			float_credit(t6,1200,1300);
 
 			float_credit(t7,1370); //пространство - вакуум
@@ -74,7 +74,7 @@
 			float_credit(t13,1910,2000);
 
 			float_credit(t14,2030,3950); //про радиацию
-			float_credit(t15,4050,6100);
+			float_credit(t15,4020,6100);
 			float_credit(t16,6200,8300);
 			float_credit(t17,8300,10400);
 			float_credit(t18,10400,12500);
