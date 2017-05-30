@@ -463,17 +463,17 @@
 			ap_speed.innerHTML =  "";
 		}
 
-
+ /*
 		links = document.getElementsByTagName("a");
 
 		 for (l = 0; l < links.length; l++) {
 		 	links[l].addEventListener("click", function() {link(links[l].href);}, false);
+		 	console.log(links[l].href);
 		 }
-		console.log(links);
 		//document.getElementsByTagName("a").addEventListener("click", link, false);
 
 		function link(href){
 			lets_stop();
 			console.log(href);
 			setTimeout(function (){location.href=href},30);
-		}
+		}*/
