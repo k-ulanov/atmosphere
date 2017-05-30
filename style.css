@@ -122,7 +122,6 @@
 			position: fixed;
 			left: 130px;
 			bottom: 20%;
-			opacity: 0;
 		}
 
 		.title_role_role {
@@ -145,8 +144,7 @@
 			bottom: 24px;
 			left: 10px; 
 			right: 10px; 
-			text-align: center;
-			opacity: 0; 
+			text-align: center;s
 
 		}
 
@@ -330,10 +328,21 @@
 
 		.sticky {
 			position: fixed;
-			opacity: 0;
-			visibility: hidden;
 			top: 10px;
 			left: 150px;
+
+			visibility: hidden;
+			opacity: 0;
+			transition: none;
+		}
+
+		.sticky_lower {
+			transition: opacity 0.2s ease-out, visibility 0.2s step-start;
+		}
+
+		.sticky_visible {
+			visibility: visible;
+			opacity: 1;
 		}
 
 		/*--------------------------------------------------------------------------------------------*/
@@ -366,6 +375,10 @@
 			height: 1px;
 			right: 0px;
 			width: 250px;
+		}
+
+		.bdg_hidden {
+			visibility: hidden;
 		}
 
 		.all-width
@@ -503,6 +516,15 @@
 			width: 460px;
 			font-size: 23px;
 			line-height: 130%;
-			visibility: hidden;
 			font-family: Geometria;
+
+			opacity: 1;
+			visibility: visible;
+			transition: opacity 0.3s ease-in-out, visibility 0.3s step-start;
+		}
+
+		.credit_hidden {
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.5s ease-in-out, visibility 0.5s step-end;
 		}

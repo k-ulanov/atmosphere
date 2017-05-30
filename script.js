@@ -113,7 +113,6 @@
 			//console.log(y+" speed = "+SPEED);
 
 				if(y>190800 && y<1600000) {
-			console.log("block1");
 					if (SPEED != v3) {
 						SPEED = v3;
 						if(go) { 
@@ -124,7 +123,6 @@
 				}
 
 				if(y>15200 && y <440000) {
-			console.log("block2");
 					if (SPEED != v2) {
 						SPEED = v2;
 						if(go) { 
@@ -136,7 +134,6 @@
 				}
 
 				if(y>1600000) {
-			console.log("block4");
 					if (SPEED != v4) {
 						SPEED = v4;
 						if(go) { 
@@ -157,7 +154,6 @@
 					|| (y>35786*10-vh && y<35786*10+vh/2) //гсо
 					|| (y>36021*10-vh && y<36021*10+vh/2) //захорон
 					|| (y>3843360))  { //луна
-						console.log("block3");
 					if (SPEED != v1) {
 						SPEED = v1;
 						if(go) { 
@@ -267,18 +263,18 @@
 			}
 
 			info_resize();
-
+/*
 		function float(obj, obj_fix, min, max) {
 			h_top = H - h;
 			margin = 10;
 			//console.log(h_top);
-			if(h_top < min*10+60) {
+			if(h_top < min*10+60) { //ниже планки
 				obj_fix.style.visibility = "hidden";
 				obj_fix.style.opacity = "0";
 				obj_fix.style.transition = "opacity 0.2s ease-out";
 			}
 
-			else if (h_top > max*10+margin) {
+			else if (h_top > max*10+margin) { //выше планки исчезает
 				obj_fix.style.visibility = "hidden";
 				obj_fix.style.transition = "none";
 				obj_fix.style.opacity = "0";
@@ -292,32 +288,49 @@
 				obj_fix.style.visibility = "visible";
 				obj_fix.style.opacity = "1";
 			}
-		}
+		}*/
+		
+		function float(obj, sticky, min, max) {
+			h_top = view_height("top");
+			margin = 10;
 
-
-		function float_credit(obj, min, max) {
-			if(typeof max == 'undefined') {
-				max = min + 90; 
-			//console.log("obj = "+obj.id+" min = "+min+" max = "+max);
-			}
-			//console.log(h_top);
-			(y < min*10 || y > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "1"; 
-			if(obj.style.opacity == 0) {
-				obj.style.transition = "opacity 0.5s ease-in-out, visibility 0.5s step-end"; //visibility будет сохранять свойство до конца анимации
-				obj.style.visibility = "hidden";
+			if(h_top > max*10+margin || h_top < min*10+60) {
+				sticky.classList.remove("sticky_visible");
 			}
 			else {
-				obj.style.transition = "opacity 0.3s ease-in-out, visibility 0.3s step-start"; //visibility сменит свойство в начале анимации
-				obj.style.visibility = "visible";
+				sticky.classList.add("sticky_visible");
+			}
+
+			if (h_top < max*10+margin) {
+				if(obj!="")obj.classList.add("bdg_hidden");
+				sticky.classList.add("sticky_lower");
+			}
+			else {
+				if(obj!="")obj.classList.remove("bdg_hidden");
+				sticky.classList.remove("sticky_lower");
+			}
+
+	}
+
+		function float_credit(obj, min, max) {
+			if(min*10 < y && y < max*10) {
+				/*if(obj.classList.contains("credit_hidden")) {//класслист-ремув не срабатывает если этого стиля уже нет*/
+					obj.classList.remove("credit_hidden");
+				/*}*/
+			}
+			else {
+				/*if(!obj.classList.contains("credit_hidden")) {*/
+					obj.classList.add("credit_hidden");
+				/*}*/
 			}
 		}
 
 		function float_title(obj, min, max) {
-	obj.style.opacity = 1;
+			obj.style.opacity = 1;
 		}
 
 		function float_arrow(obj, min, max) {
-			(view_height("bot") < min*10 || view_height("bot") > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "100"; 
+			(view_height("bot") < min*10 || view_height("bot") > max*10) ? obj.style.opacity = "0" : obj.style.opacity = "1"; 
 			if(obj.style.opacity == 0) {
 				obj.style.transition = "opacity 0.5s ease-in, visibility 0.5s step-end"; //visibility будет сохранять свойство до конца анимации
 				obj.style.visibility = "hidden";
@@ -332,16 +345,12 @@
 			 return Math.log(x) / Math.log(10);
 		}
 
-		/*принимает высоту
-		отдаёт высоту относительно экрана
-		для начала линейно, потом логарифмически*/
 		function log_height(height) {
 			return  (vh-34) * log(height/shize) / log(H/shize);
 			//return  vh * ((height/shize) / (H/shize));
 		}
 
-
-		function full_height(num) {
+		function full_height(num) { //конвертирует логарфмическую высоту в высоту от низа экрана
 			return Math.pow(10,(num*log(H/shize)/(vh-34)))*shize;
 		}
 
