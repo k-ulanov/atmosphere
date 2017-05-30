@@ -443,16 +443,15 @@
 		function autopilot() {
 			go = !go;
 			if(go) {
-				ap.classList.add("autopilot_active");
 				lets_go();
 			}
 				else {
-					ap.classList.remove("autopilot_active");
 				 lets_stop();}
 		}
 
 		function lets_go() {
 			ap_speed.innerHTML =  SPEED*10+" км/с";
+			ap.classList.add("autopilot_active");
 			scroll = setInterval(function (){
 					window.scrollBy(0,-1*SPEED); 
 					}, 10);
@@ -460,6 +459,21 @@
 
 		function lets_stop() {
 			clearInterval(scroll);
+					ap.classList.remove("autopilot_active");
 			ap_speed.innerHTML =  "";
 		}
 
+
+		links = document.getElementsByTagName("a");
+
+		 for (l = 0; l < links.length; l++) {
+		 	links[l].addEventListener("click", function() {link(links[l].href);}, false);
+		 }
+		console.log(links);
+		//document.getElementsByTagName("a").addEventListener("click", link, false);
+
+		function link(href){
+			lets_stop();
+			console.log(href);
+			setTimeout(function (){location.href=href},30);
+		}
