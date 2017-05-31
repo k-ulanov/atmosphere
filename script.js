@@ -441,17 +441,28 @@
 		}
 
 		function autopilot() {
-			go = !go;
-			if(go) {
+			if(!go) {
 				lets_go();
+				go = !go;
 			}
-				else {
-				 lets_stop();}
+			else {
+				lets_stop();
+				go = !go;
+			}
+		}
+
+		function change_gear() {
+			ap_speed.innerHTML =  SPEED*10+" км/с";
+			clearInterval(scroll);
+			scroll = setInterval(function (){
+				window.scrollBy(0,-1*SPEED); 
+				}, 10);
 		}
 
 		function lets_go() {
 			ap_speed.innerHTML =  SPEED*10+" км/с";
 			ap.classList.add("autopilot_active");
+			set_a_listenner();
 			scroll = setInterval(function (){
 					window.scrollBy(0,-1*SPEED); 
 					}, 10);
@@ -461,6 +472,37 @@
 			clearInterval(scroll);
 					ap.classList.remove("autopilot_active");
 			ap_speed.innerHTML =  "";
+			remove_a_listener();
+		}
+
+  		links = document.getElementsByTagName("a");
+
+		function set_a_listenner() {
+			for (var i = 0; i < links.length; i++) {
+				var new_href = links[i].href;
+				
+				links[i].addEventListener("click", listen);
+				//console.log(links[i], new_href);
+			}
+		}
+
+		function listen(event) {
+			event.preventDefault();
+			lets_stop();
+			console.log(event.target.href);
+			setTimeout(function (href){
+				window.location = href
+				},20,event.target.href);
+		}
+
+
+		function remove_a_listener() {
+			for (var i = 0; i < links.length; i++) {
+				var new_href = links[i].href;
+				
+				links[i].removeEventListener("click", listen);
+				//console.log(links[i], new_href);
+			}
 		}
 
  /*
