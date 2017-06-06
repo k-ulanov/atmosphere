@@ -57,11 +57,12 @@
 		}
 
 		h1 {
-			letter-spacing: 0.7em;
 			font-weight: normal;
 		}
 
 		.main_title {
+
+			letter-spacing: 0.4em;/*0.7em;*/
 			position: absolute;
 			width: 300%;
 			left: -100%;
@@ -69,10 +70,28 @@
 			text-align: center;
 			bottom: calc(402px - 0.5em);
 			opacity: 0;
-			transition: opacity 7s ease-in;
+			transition: opacity 7s ease-in, letter-spacing 7s ease-out;
 			text-align: center;
 			font-size: 62px;
 		}
+
+		.title_visible {
+			letter-spacing: 0.7em;/*0.7em;*/
+			opacity: 1;
+		}
+
+		@media (min-height: 800px){
+			.main_title {
+				bottom: calc(590px - 0.5em);
+				transition: opacity 7s ease-in, letter-spacing 7s ease-out, font-size: 1s ease-in-out;
+			}
+
+			@media (min-width: 1000px){.main_title { font-size: 70px;}}
+			@media (min-width: 1100px){.main_title { font-size: 80px;}}
+			@media (min-width: 1210px){.main_title { font-size: 90px;}}
+		}
+
+
 
 		.aerostat {
 			left: calc(50% + 490px);
