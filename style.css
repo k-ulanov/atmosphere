@@ -74,6 +74,52 @@
 			font-size: 62px;
 		}
 
+		.hipsta_title {
+			width: 900px;
+			left: calc(50% - 450px);
+
+			height: 100vh;
+			max-height: 720px;
+			min-height: 680px;
+
+
+			position: absolute;
+			bottom: 0px;
+
+
+			font-size: 180px;
+			line-height: 123px;
+		}
+
+		.hipsta_title table {
+
+			width: 100%;
+
+			position: absolute;
+			bottom: 0px;
+			height: 100%;
+
+			text-align: center;
+			font-weight: normal;
+
+			border-collapse: collapse;
+
+		}
+
+		.hipsta_title td {
+			/*border: 1px solid rgba(255,255,255,0.4);*/
+		}
+
+		.hipsta_title tr:first-child td {
+			vertical-align: top;
+		}
+
+
+		.hipsta_title tr:last-child td {
+			vertical-align: bottom;
+		}
+
+
 		.aerostat {
 			left: calc(50% + 490px);
 			right: auto;
