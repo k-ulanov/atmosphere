@@ -88,10 +88,8 @@
 			max-height: 720px;
 			min-height: 680px;
 
-
 			position: absolute;
 			bottom: 0px;
-
 
 			font-size: 180px;
 			line-height: 123px;
@@ -404,12 +402,14 @@
 		.bdg_title {
 			position: absolute;
 			top: 2px;
-			right: 0px;
+			right: 50px;
 			width: 160px;
+			text-align: right;
 		}
 
 		.left {
 			left: 10px;
+			text-align: left;
 		}
 
 		.bdg_descriptor {
@@ -449,6 +449,7 @@
 			line-height: 110%;
 			margin-bottom: 8px;
 			display: block;
+			padding-bottom: 3px;
 		}
 		.badge object {
 			/*position: absolute; 
@@ -459,7 +460,7 @@
 		}
 		.height-2 {
 			margin-top: 4px;
-			margin-bottom: 4px;
+			margin-bottom: 2px;
 		}
 		.height-2, .descr {
 			opacity: 0.8;
