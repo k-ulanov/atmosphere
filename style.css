@@ -81,10 +81,7 @@
 			font-size: 62px;
 		}
 
-		.hipsta_title {
-			width: 900px;
-			left: calc(50% - 450px);
-    }
+
 		.title_visible {
 			letter-spacing: 0.7em;/*0.7em;*/
 			opacity: 1;
@@ -107,6 +104,11 @@
 			left: calc(50% + 490px);
 			right: auto;
 		}
+
+
+		.hipsta_title {
+			width: 900px;
+			left: calc(50% - 450px);
 
 			height: 100vh;
 			max-height: 720px;
