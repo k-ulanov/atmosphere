@@ -52,8 +52,8 @@
 
 			//float_title(atmos_title,-100,3000000);
 			float_credit(des_title,120,180);
-			float_credit(art_title,220,280);
-			float_credit(school_title,410+vh/20,490+vh/20);
+			//float_credit(art_title,220,280);
+			//float_credit(school_title,410+vh/20,490+vh/20);
 			float_credit(law_title,600+vh/20,670+vh/20);
 			float_arrow(up,0,1);
 
