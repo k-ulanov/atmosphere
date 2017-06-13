@@ -35,7 +35,7 @@
 		} 
 
 		readurl();
-		float_title(atmos_title,-100,3000000);
+		//float_title(atmos_title,-100,3000000);
 
 		window.onscroll = function position() {
 			H = document.documentElement.scrollHeight;
@@ -50,7 +50,7 @@
 			float(termo,termo_fixed,84,690);
 			float("",exo_fixed,690,190000);
 
-			float_title(atmos_title,-100,3000000);
+			//float_title(atmos_title,-100,3000000);
 			float_credit(des_title,120,180);
 			float_credit(art_title,220,280);
 			float_credit(school_title,410+vh/20,490+vh/20);

@@ -17,6 +17,12 @@
 			    src: url(webfonts/Geometria.otf); /* Путь к файлу со шрифтом */
 			   }
 
+			 @font-face {
+			    font-family: Geometria-Bold; /* Имя шрифта */
+			    src: url(webfonts/Geometria-Bold.otf); /* Путь к файлу со шрифтом */
+			   }
+
+
 		.space {
 			width: calc(100% - 90px);
 			left: 90px;
@@ -75,6 +81,10 @@
 			font-size: 62px;
 		}
 
+		.hipsta_title {
+			width: 900px;
+			left: calc(50% - 450px);
+    }
 		.title_visible {
 			letter-spacing: 0.7em;/*0.7em;*/
 			opacity: 1;
@@ -98,44 +108,52 @@
 			right: auto;
 		}
 
-		.react {
-			left: calc(58.6vw);
+			height: 100vh;
+			max-height: 720px;
+			min-height: 680px;
+
+			position: absolute;
+			bottom: 0px;
+
+			font-size: 180px;
+			line-height: 123px;
+		}
+
+		.hipsta_title table {
+
+			width: 100%;
+
+			position: absolute;
+			bottom: 0px;
+			height: 100%;
+
+			text-align: center;
+			font-weight: normal;
+
+			border-collapse: collapse;
+
+		}
+
+		.hipsta_title td {
+			/*border: 1px solid rgba(255,255,255,0.4);*/
+		}
+
+		.hipsta_title tr:first-child td {
+			vertical-align: top;
+		}
+
+
+		.hipsta_title tr:last-child td {
+			vertical-align: bottom;
+		}
+
+
+		.aerostat {
+			left: calc(50% + 490px);
 			right: auto;
 		}
 
 
-		.zond {
-			left: calc(50% - 200px);
-			right: auto;
-		}
-
-		.polar {
-			left: calc(50% + 350px);
-		}
-
-		@media only screen and (max-width: 1300px) {
-			/*.main_title {
-				font-size: 7.5vw;
-			}
-
-			.aerostat {
-				left: 86vw;
-			}	
-
-			.react {
-				left: calc(58.6vw - 13px);
-			}
-
-			.zond {
-				left: 30.3vw;
-			}*/
-
-			.polar {
-				left: 75vw;
-				width: 23vw;
-			}
-
-		}
 
 		.title_role {
 			position: fixed;
@@ -408,12 +426,14 @@
 		.bdg_title {
 			position: absolute;
 			top: 2px;
-			right: 0px;
+			right: 50px;
 			width: 160px;
+			text-align: right;
 		}
 
 		.left {
 			left: 10px;
+			text-align: left;
 		}
 
 		.bdg_descriptor {
@@ -431,11 +451,9 @@
 			width: auto;
 			opacity: 0.5;
 		}
-
 		.transp {
 			opacity: 0.5;
 		}
-
 		.dot {
 			position: absolute;
 			width: 1px;
@@ -443,29 +461,81 @@
 			left: -10px;
 			background-color: #fff;
 		}
-
 		.badge {
 			position: absolute;
 			height: 1px;
 			width: 250px;
 		}
-
 		.badge a {
-			font-size: 14px;
-			margin-bottom: 2px;
+			font-family: Geometria-Bold;
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 110%;
+			margin-bottom: 8px;
+			display: block;
+			padding-bottom: 3px;
 		}
 
+		.badge .simple_link {
+			font-size: 12px;
+			display: inline;
+			padding: 0;
+			color: #fff;
+			line-height: 16px;
+			font-family: Geometria-Light,sans-serif;
+		}
 		.badge object {
-			position: absolute; 
-			top: 0px;
+			margin-bottom: 3px;
+			/*position: absolute; 
+			top: 0px;*/
 		}
-
+		.badge .year {
+			margin-top: 8px;
+		}
 		.height-2 {
-			margin-top: 4px;
+			/*margin-top: 4px;
+			margin-bottom: 2px;*/
 		}
-
 		.height-2, .descr {
 			opacity: 0.8;
+		}
+
+		.aerostat {
+			left: calc(50% + 70px);
+		}
+
+		.react {
+			left: calc(50% - 200px); 
+		}
+		.zond {
+			left: calc(50% - 300px);
+		}
+		.polar {
+			left: calc(50% + 350px);
+		}
+
+		@media only screen and (max-width: 1300px) {
+			/*.main_title {
+				font-size: 7.5vw;
+			}
+
+			.aerostat {
+				left: 86vw;
+			}	
+
+			.react {
+				left: calc(58.6vw - 13px);
+			}
+
+			.zond {
+				left: 30.3vw;
+			}*/
+
+			.polar {
+				left: 75vw;
+				width: 23vw;
+			}
+
 		}
 
 		.col-1 {
