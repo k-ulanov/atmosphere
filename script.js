@@ -326,7 +326,7 @@
 		}
 
 		function float_title(obj, min, max) {
-			obj.style.opacity = 1;
+			obj.classList.add("title_visible");
 		}
 
 		function float_arrow(obj, min, max) {
