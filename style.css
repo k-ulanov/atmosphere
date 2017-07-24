@@ -107,8 +107,8 @@
 
 
 		.hipsta_title {
-			width: 900px;
-			left: calc(50% - 450px);
+			width: 720px;
+			left: calc(50% - 360px);
 
 			height: 100vh;
 			max-height: 720px;
@@ -117,38 +117,17 @@
 			position: absolute;
 			bottom: 0px;
 
-			font-size: 180px;
-			line-height: 123px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
 		}
 
-		.hipsta_title table {
-
-			width: 100%;
-
-			position: absolute;
-			bottom: 0px;
-			height: 100%;
-
-			text-align: center;
-			font-weight: normal;
-
-			border-collapse: collapse;
-
+		.title_column {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 		}
 
-		.hipsta_title td {
-			/*border: 1px solid rgba(255,255,255,0.4);*/
-			padding: 0px;
-		}
-
-		.hipsta_title tr:first-child td {
-			vertical-align: top;
-		}
-
-
-		.hipsta_title tr:last-child td {
-			vertical-align: bottom;
-		}
 
 
 		.aerostat {
