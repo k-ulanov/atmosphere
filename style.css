@@ -138,6 +138,7 @@
 
 		.hipsta_title td {
 			/*border: 1px solid rgba(255,255,255,0.4);*/
+			padding: 0px;
 		}
 
 		.hipsta_title tr:first-child td {
