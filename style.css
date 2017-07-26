@@ -90,7 +90,7 @@
 		@media (min-height: 800px){
 			.main_title {
 				bottom: calc(590px - 0.5em);
-				transition: opacity 7s ease-in, letter-spacing 7s ease-out, font-size: 1s ease-in-out;
+				transition: opacity 7s ease-in, letter-spacing 7s ease-out, font-size 1s ease-in-out;
 			}
 
 			@media (min-width: 1000px){.main_title { font-size: 70px;}}
@@ -163,7 +163,7 @@
 			bottom: 24px;
 			left: 10px; 
 			right: 10px; 
-			text-align: center;s
+			text-align: center;
 
 		}
 

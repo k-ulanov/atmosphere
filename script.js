@@ -336,7 +336,7 @@
 				obj.style.visibility = "hidden";
 			}
 			else {
-				obj.style.transition = "opacity 2s ease-in 10s, visibility 1s step-start 10s"; //visibility сменит свойство в начале анимации
+				obj.style.transition = "opacity 2s ease-in 6s, visibility 1s step-start 6s"; //visibility сменит свойство в начале анимации
 				obj.style.visibility = "visible";
 			}
 		}
