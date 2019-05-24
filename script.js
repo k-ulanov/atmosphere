@@ -245,11 +245,18 @@
 			info_obj.innerHTML += "<div onclick='fly_to("+(vh-log_height(height*10))+")' class=click_area style='left: "+left+"px; bottom: calc("+log_height(height*10)+"px - 9px)'><div class='log_point'></div></div>";
 		}
 
+
+
+
+
+
+
+
 		function readurl() {
 			console.log('reading url');
 			var url = decodeURIComponent(document.URL).split("#");
 			console.log(url[1]);
-			console.log(url[1]=="");
+			console.log((url.length*1 > 1)+" && "+(url[1]!="")+" = "+(url.length*1 > 1 && url[1]!=""));
 			H = document.documentElement.scrollHeight;
 			console.log(H);
 			if(url.length*1 > 1 && url[1]!="") {
