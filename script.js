@@ -1,4 +1,6 @@
 
+		load = false; //равно false пока я не прочитаю урл
+
 		FPS = 1;
 		t= 1000/FPS;
 
@@ -261,9 +263,11 @@
 				window.scrollTo(0,h);
 			}
 			else {window.scrollTo(0,H);} //скролить в самый низ, если пустой якорь
+			
+			load = true; //прочитали урл
 			}
 			
-			window.addEventListener("scroll",position);
+			if(load){window.addEventListener("scroll",position);}
 
 			info_resize();
 /*
