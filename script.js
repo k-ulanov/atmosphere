@@ -248,18 +248,19 @@
 
 		function readurl() {
 			var url = decodeURIComponent(document.URL).split("#");
+			console.log(url[1]);
 			H = document.documentElement.scrollHeight;
-			//console.log(H+" "+url.length);
+			console.log(H);
 			if(url.length*1 > 1) {
 				y = url[1]*10;
 				vh = document.documentElement.clientHeight;
 				h = H - y - vh/2;
 
-				//console.log(H+" "+h);
+				console.log(h);
 				window.scrollTo(0,h);
 			}
 			else {
-				window.scrollTo(0,H);
+				window.scrollTo(0,H); //скролить в самый низ, если пустой якорь
 			}
 			}
 
