@@ -1,5 +1,6 @@
 
 		load = false; //равно false пока я не прочитаю урл
+		window.removeEventListener("scroll",position);			
 
 		FPS = 1;
 		t= 1000/FPS;
