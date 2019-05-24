@@ -247,6 +247,7 @@
 		}
 
 		function readurl() {
+			console.log('reading url');
 			var url = decodeURIComponent(document.URL).split("#");
 			console.log(url[1]);
 			H = document.documentElement.scrollHeight;
