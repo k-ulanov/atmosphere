@@ -36,7 +36,7 @@
 
 		document.body.onload =readurl();
 		//float_title(atmos_title,-100,3000000);
-
+		
 		function position() {
 			H = document.documentElement.scrollHeight;
 			h = window.pageYOffset || document.documentElement.scrollTop;
@@ -261,9 +261,9 @@
 				window.scrollTo(0,h);
 			}
 			else {window.scrollTo(0,H);} //скролить в самый низ, если пустой якорь
+			}
 			
 			window.addEventListener("scroll",position);
-			}
 
 			info_resize();
 /*
