@@ -43,7 +43,8 @@
 			vh = document.documentElement.clientHeight;
 			y = H - h - vh/2;
 
-			window.location = "#" + Math.round(y/10);
+			/*window.location = "#" + Math.round(y/10);*/
+			history.replaceState(null, null, location.href.split('#')[0] + Math.round(y/10));
 
 			
 			float(mezo,mezo_fixed,50,85);
