@@ -47,7 +47,8 @@
 			y = H - h - vh/2;
 			console.log(y+'; '+location.href.split('#')[1]);
 			/*window.location = "#" + Math.round(y/10);*/
-			history.replaceState(null, null, location.href.split('#')[0] + '#' + Math.round(y/10));
+			if(load){history.replaceState(null, null, location.href.split('#')[0] + '#' + Math.round(y/10));}
+			else{readurl();}
 
 			
 			float(mezo,mezo_fixed,50,85);
