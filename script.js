@@ -260,10 +260,9 @@
 				console.log(h);
 				window.scrollTo(0,h);
 			}
-			else {
-				window.scrollTo(0,H); //скролить в самый низ, если пустой якорь
-			}
-			window.onscroll = position();
+			else {window.scrollTo(0,H);} //скролить в самый низ, если пустой якорь
+			
+			window.addEventListener("scroll",position);
 			}
 
 			info_resize();
