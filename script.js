@@ -1,7 +1,3 @@
-
-		load = false; //равно false пока я не прочитаю урл
-		window.removeEventListener("scroll",position);			
-
 		FPS = 1;
 		t= 1000/FPS;
 
@@ -47,8 +43,7 @@
 			y = H - h - vh/2;
 			console.log(y+'; '+location.href.split('#')[1]);
 			/*window.location = "#" + Math.round(y/10);*/
-			if(load){history.replaceState(null, null, location.href.split('#')[0] + '#' + Math.round(y/10));}
-			else{readurl();}
+			history.replaceState(null, null, location.href.split('#')[0] + '#' + Math.round(y/10));
 
 			
 			float(mezo,mezo_fixed,50,85);
@@ -257,19 +252,19 @@
 			H = document.documentElement.scrollHeight;
 			console.log(H);
 			if(url.length*1 > 1) {
+				if(url[1]==""){window.scrollTo(0,H);} //скролить в самый низ, если пустой якорь
+				else {
 				y = url[1]*10;
 				vh = document.documentElement.clientHeight;
 				h = H - y - vh/2;
 
 				console.log(h);
-				window.scrollTo(0,h);
+				window.scrollTo(0,h);}
 			}
 			else {window.scrollTo(0,H);} //скролить в самый низ, если пустой якорь
-			
-			load = true; //прочитали урл
 			}
 			
-			if(load){window.addEventListener("scroll",position);}
+			window.addEventListener("scroll",position);
 
 			info_resize();
 /*
