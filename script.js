@@ -249,17 +249,16 @@
 			console.log('reading url');
 			var url = decodeURIComponent(document.URL).split("#");
 			console.log(url[1]);
+			console.log(url[1]=="");
 			H = document.documentElement.scrollHeight;
 			console.log(H);
-			if(url.length*1 > 1) {
-				if(url[1]==""){window.scrollTo(0,H);} //скролить в самый низ, если пустой якорь
-				else {
+			if(url.length*1 > 1 && url[1]!="") {
 				y = url[1]*10;
 				vh = document.documentElement.clientHeight;
 				h = H - y - vh/2;
 
 				console.log(h);
-				window.scrollTo(0,h);}
+				window.scrollTo(0,h);
 			}
 			else {window.scrollTo(0,H);} //скролить в самый низ, если пустой якорь
 			}
