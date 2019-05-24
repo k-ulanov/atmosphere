@@ -42,7 +42,7 @@
 			h = window.pageYOffset || document.documentElement.scrollTop;
 			vh = document.documentElement.clientHeight;
 			y = H - h - vh/2;
-			console/log('y',y,location.href.split('#')[0]);
+			console.log('y',y,location.href.split('#')[0]);
 			/*window.location = "#" + Math.round(y/10);*/
 			history.replaceState(null, null, location.href.split('#')[0] + '#' + Math.round(y/10));
 
