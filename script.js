@@ -260,6 +260,7 @@
 			H = document.documentElement.scrollHeight;
 			console.log(H);
 			if(url.length*1 > 1 && url[1]!="") {
+				console.log('scroll to height');
 				y = url[1]*10;
 				vh = document.documentElement.clientHeight;
 				h = H - y - vh/2;
