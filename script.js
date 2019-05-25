@@ -241,16 +241,9 @@ function float(obj, sticky, min, max) {
 }
 
 function float_credit(obj, min, max) {
-	if(min*10 < y && y < max*10) {
-		/*if(obj.classList.contains("credit_hidden")) {//класслист-ремув не срабатывает если этого стиля уже нет*/
-			obj.classList.remove("credit_hidden");
-		/*}*/
-	}
-	else {
-		/*if(!obj.classList.contains("credit_hidden")) {*/
-			obj.classList.add("credit_hidden");
-		/*}*/
-	}
+	(min*10 < y && y < max*10)
+	?obj.classList.add("credit_show")
+	:obj.classList.remove("credit_show");
 }
 
 function float_title(obj, min, max) {

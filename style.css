@@ -141,6 +141,9 @@
 			position: fixed;
 			left: 130px;
 			bottom: 20%;
+			
+			visibility: hidden;
+			opacity: 0;
 		}
 
 		.title_role_role {
@@ -589,13 +592,13 @@
 			line-height: 130%;
 			font-family: Geometria;
 
+			visibility: hidden;
+			opacity: 0;
+			/*transition: opacity 5s ease-in-out, visibility 5s step-end;*/
+		}
+
+		.credit_show {
 			opacity: 1;
 			visibility: visible;
 			transition: opacity 0.3s ease-in-out, visibility 0.3s step-start;
-		}
-
-		.credit_hidden {
-			opacity: 0;
-			visibility: hidden;
-			transition: opacity 0.5s ease-in-out, visibility 0.5s step-end;
 		}
