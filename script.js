@@ -46,7 +46,7 @@ function move_interval(obj,speed,pos,time) {
 
 function position_trottling() {
 	clearTimeout(timer);
-	timer = setTimeout(position, 20);
+	timer = setTimeout(position, 50);
 
 
 	place_frame(info_slider);
