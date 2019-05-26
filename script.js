@@ -3,7 +3,7 @@ vh = document.documentElement.clientHeight; //высота экрана
 H = document.documentElement.scrollHeight;	//высота контента
 
 log_cut = 100; //отрезает нижнюю часть инфоскроллера (100 отрежет 10 км)
-
+var timer;
 
 document.body.addEventListener('load',readurl);
 document.body.addEventListener('load',info_resize);
@@ -12,7 +12,7 @@ readurl();
 
 info_resize(); //запустить инфо ресайз
 
-window.addEventListener("scroll",position);
+window.addEventListener("scroll", position_trottling);
 
 function readurl() {
 	var url = location.href.split('#');
@@ -44,6 +44,14 @@ function move_interval(obj,speed,pos,time) {
 	},time);
 } 
 
+function position_trottling() {
+	clearTimeout(timer);
+	timer = setTimeout(position, 10);
+
+
+	place_frame(info_slider);
+}
+
 function position() {
 	H = document.documentElement.scrollHeight;
 	h = window.pageYOffset || document.documentElement.scrollTop;
@@ -51,7 +59,6 @@ function position() {
 	y = H - h - vh/2;
 	
 	history.replaceState(null, null, location.href.split('#')[0] + '#' + Math.round(y/10));
-
 	
 	float(mezo,mezo_fixed,50,85);
 	float(termo,termo_fixed,84,690);
@@ -85,7 +92,7 @@ function position() {
 	float_credit(t16,10935,12280);
 	float_credit(t17,12280,13625);
 	float_credit(t18,13625,14970);
-   float_credit(t182,14970,16315);
+   	float_credit(t182,14970,16315);
 	float_credit(t19,16315,17660); 
 	float_credit(t20,17660,19080);//закончили про космический мусор
 
@@ -115,7 +122,6 @@ function position() {
 	float_credit(t41,340000,356000);
 	float_credit(t42,360000,376000);
 
-	place_frame(info_slider);
 }
 
 
@@ -187,7 +193,6 @@ function info_resize() {
 function place_log_point(height,left){
 	info_obj.innerHTML += "<div onclick='fly_to("+(vh-log_height(height*10))+")' class=click_area style='left: "+left+"px; bottom: calc("+log_height(height*10)+"px - 9px)'><div class='log_point'></div></div>";
 }
-
 
 
 
@@ -278,7 +283,8 @@ function full_height(num) { //конвертирует логарфмическ�
 /*принимает объект
 делает ему нижний край как низ на схеме, верхний, как верх. через ботом и высоту*/
 function place_frame(obj) {
-	obj.style.bottom = log_height(view_height("bot")) + "px";
+	(view_height("bot")<=log_cut)?obj.style.bottom = "0px"
+	:obj.style.bottom = log_height(view_height("bot")) + "px";
 	obj.style.top = vh - log_height(view_height("top")) + "px";
 	//console.log(log_height(1000));
 }
@@ -286,7 +292,9 @@ function place_frame(obj) {
 
 function place_frame_2(obj,bot,top) {
 	//console.log(top+" "+bot);
-	obj.style.bottom = log_height(bot) + "px";
+	(bot<=log_cut)
+	?obj.style.bottom = "0px"
+	:obj.style.bottom = log_height(bot) + "px";
 	obj.style.top = vh - log_height(top) + "px";
 }
 
