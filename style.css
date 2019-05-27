@@ -46,7 +46,6 @@
 			50% { opacity: 1; }
 			to { opacity: 0; }
 		}
-
 		a {
 			color: #fff;
 			text-decoration: none;
@@ -288,12 +287,32 @@
 			cursor: pointer;
 		}
 
+		.click_area:hover:after {
+			content: attr(data-title);
+
+			position: absolute;
+			top:3px;
+			left: 13px;
+
+			/*padding: 1px 1px;
+			background-color: rgba(0,0,0,.4);*/
+
+			line-height: 0.9;
+			white-space: nowrap;
+
+			pointer-events: none;
+
+		}
+
 		.log_point {
 			width: 2px;
 			height: 2px;
 			margin: 8px;
-			border-radius: 50%;
-			background-color: #fff;
+			background-color: rgba(255,255,255,.4);
+		}
+
+		.click_area:hover .log_point {
+			background-color: rgba(255,255,255,.8);
 		}
 
 		.info_temp div span {
@@ -310,12 +329,18 @@
 			width: 89px;
 			height: auto;
 			border: 1px solid blue; /*#001eff;*/
-
+			transition: bottom 0.1s ease-in-out;
+			transition-property: bottom, top;
 		}		
+
+		.infoscroll:hover .slider {
+			transition: none;
+		}
 
 		.infoscroll.slider.hover {
 			opacity: 0.5;
 			display: none;
+			transition: none;
 		}
 
 		.info_line {

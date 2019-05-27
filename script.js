@@ -12,7 +12,9 @@ readurl();
 
 info_resize(); //запустить инфо ресайз
 
+window.addEventListener("scroll", frame_trottling);
 window.addEventListener("scroll", position_trottling);
+window.addEventListener("scroll", scroll_debouncing);
 
 function readurl() {
 	var url = location.href.split('#');
@@ -44,12 +46,24 @@ function move_interval(obj,speed,pos,time) {
 	},time);
 } 
 
-function position_trottling() {
-	clearTimeout(timer);
-	timer = setTimeout(position, 50);
-
-
+function frame_trottling() {
+	window.removeEventListener("scroll", frame_trottling);
+	setTimeout(function(){window.addEventListener("scroll", frame_trottling);},100);
+	
 	place_frame(info_slider);
+	}
+
+function position_trottling() {
+	window.removeEventListener("scroll", position_trottling);
+	setTimeout(function(){window.addEventListener("scroll", position_trottling);},300);
+	position();
+	}
+
+function scroll_debouncing() {
+	clearTimeout(timer);
+	timer = setTimeout(position,place_frame, 50);
+
+
 }
 
 function position() {
@@ -147,34 +161,34 @@ function info_resize() {
 
 
 	info_obj.innerHTML = "";
-	place_log_point(12,10);
-	place_log_point(23,0);
-	place_log_point(37,20);
-	place_log_point(53,-14);
-	place_log_point(76,-4);
-	place_log_point(100,-18);
-	place_log_point(107,20);
-	place_log_point(112,0);
-	place_log_point(188,-18);
-	place_log_point(215,10);
-	place_log_point(302,-5);
-	place_log_point(358,-18);
-	place_log_point(400,-2);
-	place_log_point(415,20);
-	place_log_point(569,0);
-	place_log_point(939,-18);
-	place_log_point(1372,0);
-	place_log_point(1518,20);
-	place_log_point(2000,0);
-	place_log_point(4000,-18);
-	place_log_point(6150,0);
-	place_log_point(17000,20);
-	place_log_point(19140,-15);
-	place_log_point(20200,7);
-	place_log_point(27743,0);
-	place_log_point(35786,15);
-	place_log_point(36021,-8);
-
+	place_log_point(12,10,'Авиалайнер');
+	/*place_log_point(23,0,'Озоновый слой');*/
+	place_log_point(37,0,'Реакт. самолёт');
+	place_log_point(41,20,'Аэростат');
+	place_log_point(53,-14,'Метеозонд');
+	place_log_point(76,-4,'Серебр. облака');
+	place_log_point(100,-18,'Метеоракета');
+	place_log_point(107,20,'X-15');
+	place_log_point(112,0,'SpaceShipOne');
+	place_log_point(188,-18,'Фау-2');
+	place_log_point(215,10,'Спутник-1');
+	place_log_point(302,-5,'Восток-1');
+	place_log_point(358,-18,'Станция «Мир»');
+	place_log_point(400,-2,'Старфиш-прайм');
+	place_log_point(415,20,'МКС');
+	place_log_point(569,0,'Хаббл');
+	place_log_point(939,-18,'Спутник-1');
+	place_log_point(1372,0,'Джемини-11');
+	place_log_point(1518,20,'Блоустоун');
+	/*place_log_point(2000,0,'Низкая орбита');*/
+	/*place_log_point(4000,-18,'Радиационный пояс');*/
+	place_log_point(6150,0,'Астероид 2008 TS26');
+	/*place_log_point(17000,20,'Внеш. рад. пояс');*/
+	place_log_point(19140,-15,'Глонасс');
+	place_log_point(20200,7,'GPS');
+	place_log_point(27743,0,'Астероид Дуэнде');
+	/*place_log_point(35786,15,'Геостационарная орбита');
+	place_log_point(36021,-8,'Орбита захоронения');*/
 	place_frame(info_slider);
 
 	log_greed.innerHTML = "";
@@ -190,38 +204,9 @@ function info_resize() {
 
 }
 
-function place_log_point(height,left){
-	info_obj.innerHTML += "<div onclick='fly_to("+(vh-log_height(height*10))+")' class=click_area style='left: "+left+"px; bottom: calc("+log_height(height*10)+"px - 9px)'><div class='log_point'></div></div>";
+function place_log_point(height,left,title){
+	info_obj.innerHTML += "<div onclick='fly_to("+(vh-log_height(height*10))+")' class=click_area data-title=\""+title+"\" style='left: "+left+"px; bottom: calc("+log_height(height*10)+"px - 9px)'><div class='log_point'></div></div>";
 }
-
-
-
-/*
-function float(obj, obj_fix, min, max) {
-	h_top = H - h;
-	margin = 10;
-	//console.log(h_top);
-	if(h_top < min*10+60) { //ниже планки
-		obj_fix.style.visibility = "hidden";
-		obj_fix.style.opacity = "0";
-		obj_fix.style.transition = "opacity 0.2s ease-out";
-	}
-
-	else if (h_top > max*10+margin) { //выше планки исчезает
-		obj_fix.style.visibility = "hidden";
-		obj_fix.style.transition = "none";
-		obj_fix.style.opacity = "0";
-		
-		if(obj != "")obj.style.visibility = "visible";
-	}
-
-	else {
-		if(obj != "")obj.style.visibility = "hidden";
-
-		obj_fix.style.visibility = "visible";
-		obj_fix.style.opacity = "1";
-	}
-}*/
 
 function float(obj, sticky, min, max) {
 	h_top = view_height("top");
