@@ -1,6 +1,8 @@
 
 vh = document.documentElement.clientHeight; //высота экрана
 H = document.documentElement.scrollHeight;	//высота контента
+h = window.pageYOffset || document.documentElement.scrollTop;
+y = H - h - vh/2;
 
 log_cut = 100; //отрезает нижнюю часть инфоскроллера (100 отрежет 10 км)
 var timer;
@@ -12,8 +14,8 @@ readurl();
 
 info_resize(); //запустить инфо ресайз
 
-window.addEventListener("scroll", frame_trottling);
-window.addEventListener("scroll", position_trottling);
+window.addEventListener("scroll", frame_throttling);
+window.addEventListener("scroll", position_throttling);
 window.addEventListener("scroll", scroll_debouncing);
 
 function readurl() {
@@ -46,24 +48,28 @@ function move_interval(obj,speed,pos,time) {
 	},time);
 } 
 
-function frame_trottling() {
-	window.removeEventListener("scroll", frame_trottling);
-	setTimeout(function(){window.addEventListener("scroll", frame_trottling);},100);
+function frame_throttling() {
+	window.removeEventListener("scroll", frame_throttling);
+	setTimeout(function(){window.addEventListener("scroll", frame_throttling);},100);
 	
 	place_frame(info_slider);
 	}
 
-function position_trottling() {
-	window.removeEventListener("scroll", position_trottling);
-	setTimeout(function(){window.addEventListener("scroll", position_trottling);},300);
+function position_throttling() {
+	window.removeEventListener("scroll", position_throttling);
+	setTimeout(function(){window.addEventListener("scroll", position_throttling);},300);
 	position();
 	}
 
 function scroll_debouncing() {
 	clearTimeout(timer);
-	timer = setTimeout(position,place_frame, 50);
+	timer = setTimeout(debouncing, 50);
+}
 
-
+function debouncing() {
+	position();
+	place_frame(info_slider);
+	history.replaceState(null, null, location.href.split('#')[0] + '#' + Math.round(y/10));
 }
 
 function position() {
@@ -71,8 +77,6 @@ function position() {
 	h = window.pageYOffset || document.documentElement.scrollTop;
 	vh = document.documentElement.clientHeight;
 	y = H - h - vh/2;
-	
-	history.replaceState(null, null, location.href.split('#')[0] + '#' + Math.round(y/10));
 	
 	float(mezo,mezo_fixed,50,85);
 	float(termo,termo_fixed,84,690);
@@ -135,7 +139,6 @@ function position() {
 	float_credit(t40,320000,336000);
 	float_credit(t41,340000,356000);
 	float_credit(t42,360000,376000);
-
 }
 
 
